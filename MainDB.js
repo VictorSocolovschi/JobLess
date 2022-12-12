@@ -18,8 +18,7 @@ const app = initializeApp(firebaseConfig);
 //Get Default DB
 const db = getFirestore(app);
 
-document.getElementbyId("firstName").addEventListener("SUBMIT",submitForm);
-
+document.getElementbyId("firstName").addEventListener("register",submitForm);
 
 function submitForm(e)
 {
@@ -28,8 +27,10 @@ function submitForm(e)
     var lastName = getElementVal('lastName');
     var userName = getElementVal('userName');
     var email = getElementVal('email');
+    var phoneNumber = getElementVal('phoneNumber');
+    var age = getElementVal('age')
     //console.log(firstName,lastName,userName,email);
-    saveNewuser(firstName,lastName,userName,email);
+    saveNewuser(firstName,lastName,userName,email,phoneNumber,age);
 }
 
 function saveNewuser(firstName, lastName, userName, email) {
@@ -39,6 +40,8 @@ function saveNewuser(firstName, lastName, userName, email) {
         lastName: lastName,
         userName: userName,
         email: email,
+        phoneNumber: phoneNumber,
+        age : age,
     };
 
 }
