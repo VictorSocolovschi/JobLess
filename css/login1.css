@@ -1,0 +1,16 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #A5F1E9;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+     background: -webkit-linear-gradient(to bottom right, rgba(22, 189, 208, 1), rgb(223, 26, 43));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgb(22, 189, 208), rgb(223, 231, 137))
+    }
+
+
+    .card-body{
+        background: #FFFBEB;
+        border-radius: 25px;
+    }
