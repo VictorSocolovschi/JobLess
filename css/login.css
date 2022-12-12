@@ -1,35 +1,16 @@
-html,
-body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
-}
-
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-}
-
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
-
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #A5F1E9;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+     background: -webkit-linear-gradient(to bottom right, rgba(22, 189, 208, 1), rgb(223, 26, 43));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgb(22, 189, 208), rgb(223, 231, 137))
+    }
 
 
+    .card-body{
+        background: #FFFBEB;
+        border-radius: 25px;
+    }
