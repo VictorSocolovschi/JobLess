@@ -29,12 +29,9 @@
     align-content: center;
 
 }
-.age
-{
-    align-content: right;
-}
 
 .form-outline{
     text-align: right;
-    
+    right: 0;
 }
+
