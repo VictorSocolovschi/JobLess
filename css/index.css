@@ -244,5 +244,25 @@ a:hover{
   margin-left: 0;
 }
 
+a{
+  color: brown important;
+  font-family: halvetika, sans-serif;
+  margin: 10px 30px 30px;
+  text-decoration: none!important;
+  text-align: center;
+}
 
-/* victor */
+
+a:link:hover,a:visited:hover{
+color:#fff;
+text-decoration:none;
+}
+
+.copyright
+{
+  font-size: 0.75rem;
+  padding: 20px 0;
+  color: black;
+  text-align: center;
+
+}
