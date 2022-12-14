@@ -240,6 +240,9 @@ a:hover{
   }
 }
 
+.dropdown-item{
+  margin-left: 0;
+}
 
 
 /* victor */
