@@ -17,17 +17,17 @@
   <section class="vh-100 gradient-custom" style="margin-bottom: 50px;">
     <!-- creat new HRuser -->
     <div class="container p-4">
-      <div class="row justify-content-center align-items-center h-100">
+      <div class="row justify-content-center align-items-center h-100" style="margin-top: 50px;">
         <div class="col-12 col-lg-9 col-xl-7">
-          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-            <div class="card-body p-3 p-md-3">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px; padding-top: 25px;">
+            <div class="card-body pt-3 pb-3">
               
               <center>
               <img class="jobless-img pb-2" src="images\jobless_photo-removebg-preview.png" alt="jobless-photo" width="120" height="120">
               <h1 class="mb-4 pb-4 pb-md-0 mb-md-3">יצירת משתמש - חברת השמה</h1>
               </center>
 
-              <form id="HRuser-form" style="margin-top: 25px;">
+              <form id="HRuser-form" style="margin-top: 50px;">
                  
                 <!--
                 allert if registered succesfully 
@@ -53,6 +53,7 @@
                     </div>
                   </div>
                   <!-- user HR username input  -->
+                  
                   <div class="col-md-6 mb-4">
                     <div class="form-outline"> 
                       <label for="title">:שם משתמש</label>
@@ -120,7 +121,7 @@
                   <!-- user description input  -->
                   <div class="col-md-6 mb-4">
                     <div class="form-outline"> 
-                      <label for="description">:תיאור החברה</label>
+                      <label for="description">:תיאור</label>
                       <textarea
                         id="HRuser-description"
                         rows="3"
@@ -136,7 +137,7 @@
                 <div class="row">
                   <div class="buttons-down"> 
                     <center>
-                      <button class="btn btn-success" id="btn-HRuser-form">שמור</button>
+                      <button class="btn btn-success" id="btn-HRuser-form" style="margin-right: 10px;">שמור</button>
                       <button onclick="location.href = 'index.html';" type="button" class="btn btn-primary">חזרה לדף הבית</button> 
                     </center>
                   </div>
