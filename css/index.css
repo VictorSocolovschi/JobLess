@@ -1,34 +1,45 @@
 body{
-margin-left: 20px ;
-text-align: center;
-font-family:'Merriweather', serif;
-color:#40514E;
+  color: #40514E;
+  /*Dark greeeish color for the body - most of the text*/
+  margin: 0;
+  top: 100px;
+  text-align: center;
+  /*put text in the center !*/
+  font-family: halvetika, sans-serif;
 }
-hr {
-    border: dotted #EAF6F6 6px;
-    border-bottom: none;
-    width: 4%;
-    margin: 100px 300px;
 
-}
-p{
-    line-height: 2;
-    margin: 30px auto 30px ;
+/* fonts */
+
+
+/* hr 
+{
+  border: dotted #EAF6F6 6px;
+  border-bottom: none;
+  width: 4%;
+  margin: 100px 300px;
+
+} */
+
+p
+{
+  line-height: 2;
+  margin: 30px auto 30px ;
 }
 
 h1{
-  font-size: 7rem;
-  margin: center;
-  font-family: 'Montserrat',sans-serif;
+  font-family: Arial;
   color: #66BFBF;
+  margin-top: 10px;
+  text-align: center;
 }
 
 h2{
   font-family: 'Montserrat',sans-serif;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: normal;
   color: #66BFBF;
-  padding-bottom: 10px;
+  padding: 10px;
+  text-align: center;
 }
 
 h3{
@@ -49,41 +60,66 @@ a:hover{
 }
 
 
+/* home page picture and text */
+
 .top-container{
-  background-color: #E4F9F5;
-  position: relative;
-  padding: 100px 500px;
-
-
+ position: relative;
+ text-align: center;
 }
+
+.centered
+{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hasava{
+  width: 100%;
+  align-items: center;
+}
+
+/* 3 properties */
+
+#features{
+  padding: 7% 15%;
+}
+
+.feature-box{
+  text-align: center;
+  padding: 5%;
+}
+
+.icon
+{
+  width: 25%;
+  margin-bottom: 1rem;
+}
+
+/* text style */
+
+#carusela
+{
+  background-color: #5584AC ;
+}
+
 
 .middle-container{
   margin: 100px 0;
-  background-color: green;
-
 }
 
-.bottom-container{
-   background-color:white;
-   text-decoration: underline;
-  
+.bottom-container
+{
+   background-color: #B8FFF9;
+   padding: 50px 0 20px;
+   text-align: center;
 }
 
 .pro{
-  text-decoration: underline;
+   font-size: 38px;
 }
 
-.top-cloud{
-  position: absolute;
-  right: 200px;
-  top: 120px;
-}
-
-.bottom-cloud{
-  position: absolute;
-  left: 250px;
-  bottom: 300px;
-}
 
 .skill-row{
   width: 50%;
@@ -102,6 +138,7 @@ a:hover{
   float: right;
   margin-left: 30px;
 }
+
 .jobless-img{
   width: 4%;
   float:right;
@@ -116,7 +153,6 @@ a:hover{
   width: 30%;
   margin: 40px auto 60px;
 }
-
 
 .copyright{
   color: #EAF6F6;
@@ -196,3 +232,6 @@ a:hover{
   }
 }
 
+
+
+/* victor */
