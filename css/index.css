@@ -59,6 +59,7 @@ a:hover{
 
 .middle-container{
   margin: 100px 0;
+  background-color: green;
 
 }
 
@@ -181,6 +182,7 @@ a:hover{
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.4;
+    
   }
 
   .featurette-heading {
