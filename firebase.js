@@ -1,5 +1,6 @@
 //importing firebase anitialization app and more
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
+import { getAuth , createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js";
 import {
   getFirestore,
   collection,
@@ -11,6 +12,8 @@ import {
   getDoc,
   updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+
+
 
 // web app's Firebase configuration
 const firebaseConfig = {
@@ -27,6 +30,8 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 // Initializing database
 export const db = getFirestore();
+// Intializing auth
+const auth = getAuth(app);
 
 //Save users
 //maybe X3
@@ -43,7 +48,21 @@ export const db = getFirestore();
  */
 
 export const saveUser = (firstname,lastname,email,password,age,location, description) =>
-  addDoc(collection(db, "users" ), { firstname,lastname,email,password,age,location, description});
+{createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, description});
+    console.log("registered succesfully");
+    // ...
+  })
+
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+}
 //Save users
 //maybe X3
 /**
@@ -57,7 +76,20 @@ export const saveUser = (firstname,lastname,email,password,age,location, descrip
  * 
  */
 export const saveHRUser = (companyname,username,email,password,phonenumber, description) =>
-  addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description });
+  {createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description });
+    console.log("registered succesfully");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+}
 //Save users
 //maybe X3
 /**
@@ -71,11 +103,22 @@ export const saveHRUser = (companyname,username,email,password,phonenumber, desc
  * 
  */
 export const saveReqUser = (firstname,lastname,email,password,phonenumber, description) =>
-  addDoc(collection(db, "Req-users" ), { firstname,lastname,email,password,phonenumber, description });
+  {createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    addDoc(collection(db, "Req-users" ), { firstname,lastname,email,password,phonenumber, description });
+    console.log("registered succesfully");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
 
-
-
-
+    // ..
+  });
+}
+  
   // onget users
 export const onGetUsers = (callback) =>
   onSnapshot(collection(db, "users"), callback);
@@ -100,9 +143,9 @@ export const getUser = (id) => getDoc(doc(db, "users", id));
 export const getHRUser = (id) => getDoc(doc(db, "HR-users", id));
 
 export const getReqUser = (id) => getDoc(doc(db, "Req-users", id));
-
-
 //update date
+
+
 export const updateUsers = (id, newFields) =>
   updateDoc(doc(db, "users", id), newFields);
  
@@ -111,39 +154,11 @@ export const updateUsers = (id, newFields) =>
 
   export const updateReqUsers = (id, newFields) =>
   updateDoc(doc(db, "Req-users", id), newFields);
-
-
   //get Users
+
+
 export const getUsers = () => getDocs(collection(db, "users"));
 
 export const getHRUsers = () => getDocs(collection(db, "HR-users"));
 
 export const getReqUsers = () => getDocs(collection(db, "Req-users"));
-
-
-
-// search for ecual data
-/*
-export function searchFirebase(database, searchString) {
-  // Get a reference to the database
-  var dbRef = firebase.database().ref(database);
-
-  // Create an empty array to store the matching data
-  var matchingData =false;
-  // Use the 'orderByValue' method to retrieve all the data in the database
-  // and then use the 'once' method to retrieve the data as a snapshot
-  dbRef.orderByValue().once('value', function(snapshot) { // value
-    // Loop through the snapshot and check each value for a match
-    snapshot.forEach(function(childSnapshot) {
-      var value = childSnapshot.val();
-      if (value == searchString) {
-        // If there is a match, True
-        matchingData = true;
-      }
-    });
-  });
-
-  // Return the array of matching data
-  return matchingData;
-}
-*/

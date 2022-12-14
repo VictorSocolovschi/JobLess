@@ -5,7 +5,6 @@ import {
   getUsers,
   saveUser,
   saveReqUser,
-  //searchFirebase,
 } from "./firebase.js";
 
 const userForm = document.getElementById("user-form");
@@ -28,8 +27,6 @@ userForm.addEventListener("submit", async (e) => {
   const location = userForm["user-location"];
   const description = userForm["user-description"];
 
-  //if(searchFirebase(db,email.value) == true){userForm.reset();};
-
   try {
       await saveUser(firstname.value,lastname.value,email.value,password.value,age.value,location.value, description.value);
 
@@ -41,18 +38,6 @@ userForm.addEventListener("submit", async (e) => {
     console.log(error);
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

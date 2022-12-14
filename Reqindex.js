@@ -4,7 +4,6 @@ import {
     updateReqUsers,
     getReqUsers,
     saveReqUser,
-    //searchFirebase,
   } from "./firebase.js";
   
 
@@ -24,8 +23,6 @@ RequserForm.addEventListener("submit", async (e) => {
     const password = RequserForm["Requser-password"];
     const phonenumber = RequserForm["Requser-phonenumber"];
     const description = RequserForm["Requser-description"];
-  
-    //if(searchFirebase(db,email.value) == true){userForm.reset();};
   
     try {
         await saveReqUser(firstname.value,lastname.value,email.value,password.value,phonenumber.value, description.value);
