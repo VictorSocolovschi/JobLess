@@ -25,6 +25,9 @@
     padding-bottom: 50px;
 }
 
+.buttons-down{
+    left: 50px;
+}
 .form-outline{
     text-align: right;
 }
