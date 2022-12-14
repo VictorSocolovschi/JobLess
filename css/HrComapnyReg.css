@@ -26,8 +26,18 @@
 }
 
 .buttons-down{
-    left: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
+
 .form-outline{
+    text-align: right;
+}
+
+input::placeholder{
+    text-align: right;
+}
+
+textarea::placeholder{
     text-align: right;
 }
