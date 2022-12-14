@@ -4,26 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>יצירת משתמש</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/JobSeekerReg.css">
-
-    <!-- BOOTSWATCH -->
-    
-
   </head>
 
   <body>
   <section class="vh-100 gradient-custom" style="margin-bottom: 50px;">
     <!-- creat new user -->
     <div class="container p-4">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h1 class="h4">יצירת משתמש חדש - מחפש עבודה</h1>
+      <div class="row justify-content-center align-items-center h-100" style="margin-top: 50px;">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px; padding-top: 25px;">
+            <div class="card-body pt-3 pb-3">
 
-              <center><form id="user-form"></center>
+              <center>
+                <img class="jobless-img pb-2" src="images\jobless_photo-removebg-preview.png" alt="jobless-photo" width="120" height="120">
+                <h1 class="mb-4 pb-4 pb-md-0 mb-md-3">יצירת משתמש - מחפש עבודה</h1>
+              </center>
+
+
+
+              <form id="user-form">
                  
                 <!--
                 allert if registered succesfully 
@@ -33,81 +36,138 @@
                 -->
 
                 <!-- user username input  -->
-                <label for="title">שם פרטי:</label>
-                <input
-                  type="text"
-                  id="user-firstname"
-                  class="form-control mb-3"
-                  class="My First Title"
-                  placeholder="שם פרטי"
-                  autofocus
-                />
-                 <!-- user username input  -->
-                 <label for="title">שם משפחה:</label>
-                 <input
-                   type="text"
-                   id="user-lastname"
-                   class="form-control mb-3"
-                   class="My First Title"
-                   placeholder="שם משפחה"
-                   autofocus
-                 />  
-                <!-- user email input  -->
-                <label for="title">כתובת מייל:</label>
-                <input
-                  type="email"
-                  id="user-email"
-                  class="form-control mb-3"
-                  class="My First Title"
-                  placeholder="כתובת מייל"
-                  autofocus
-                />
-                <!-- user password input  -->
-                <label for="title">סיסמא:</label>
-                <input
-                  type="password"
-                  id="user-password"
-                  class="form-control mb-3"
-                  class="My First Title"
-                  placeholder="סיסמא"
-                  autofocus
-                />
-                <!-- user age input  -->
-                <label for="title">גיל:</label>
-                <input
-                  type="text"
-                  id="user-age"
-                  class="form-control mb-3"
-                  class="My First Title"
-                  placeholder="גיל"
-                  autofocus
-                />
-                <!-- user location input  -->
-                <label for="title">איזור מגורים:</label>
-                <input
-                  type="text"
-                  id="user-location"
-                  class="form-control mb-3"
-                  class="My First Title"
-                  placeholder="איזור מגורים"
-                  autofocus
-                />
 
-                <!-- user description input  -->
-                <label for="description">תיאור:</label>
-                <textarea
-                  id="user-description"
-                  rows="3"
-                  class="form-control mb-3"
-                  placeholder="קצת על עצמך"
-                ></textarea>
-                <!-- Save button  -->
-                <button class="btn btn-primary" id="btn-user-form">הרשם</button>
+                <div class="row">
+                  <!-- user firstname input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline"> 
+                      <label for="title">:שם פרטי</label>
+                      <input
+                        type="text"
+                        id="user-firstname"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="שם פרטי"
+                        autofocus
+                      />
+                    </div>
+                  </div>
+                  
+                  <!-- user lastname input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline"> 
+                      <label for="title">שם משפחה:</label>
+                      <input
+                        type="text"
+                        id="user-lastname"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="שם משפחה"
+                        autofocus
+                      />
+                    </div>
+                  </div>
+                
+                </div>
+
+                <div class="row">
+                  <!-- user email input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">               
+                      <label for="title">:כתובת מייל</label>
+                      <input
+                        type="email"
+                        id="user-email"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="כתובת מייל"
+                        autofocus
+                      />
+                    </div>
+                  </div>
+                  <!-- user password input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">   
+                      <label for="title">:סיסמא</label>
+                      <input
+                        type="password"
+                        id="user-password"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="סיסמא"
+                        autofocus
+                      />
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <!-- user age input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline"> 
+                      <label for="title">:גיל</label>
+                      <input
+                        type="text"
+                        id="user-age"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="גיל"
+                        autofocus
+                      />
+                    </div>
+                  </div>
+                  <!-- user location input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline"> 
+                      <label for="title">:איזור מגורים</label>
+                      <input
+                        type="text"
+                        id="user-location"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="איזור מגורים"
+                        autofocus
+                      />
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <!-- user description input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline"> 
+                      <label for="description">:ספר לנו קצת עצמך</label>
+                      <textarea
+                        id="user-description"
+                        rows="3"
+                        class="form-control mb-3"
+                        placeholder="הקלד כאן"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <!-- Save button  -->
+                  <div class="buttens-down" style="padding-top: 20px; padding-bottom: 30px;">
+                    <center>
+                      <button class="btn btn-success" id="btn-user-form" style="margin-right: 5px;">הרשמה</button>
+                      <button onclick="location.href = 'index.html';" type="button" class="btn btn-primary" style="margin-left: 5px;">חזרה לדף הבית</button> 
+                    </center>
+                  </div>
+
+                </div>
+
               </form>
             </div>
           </div>
         </div>
+      </div>
     </div>
+    
   </section>
 
     <!-- connection to js database file -->

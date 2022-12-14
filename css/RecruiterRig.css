@@ -25,10 +25,15 @@
     padding-bottom: 50px;
 }
 
-.buttons-down{
-    align-content: center;
-
-}
 .form-outline{
+    text-align: right;
+}
+
+
+input::placeholder{
+    text-align: right;
+}
+
+textarea::placeholder{
     text-align: right;
 }
