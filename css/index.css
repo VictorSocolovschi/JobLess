@@ -55,6 +55,13 @@ a{
   text-decoration: none;
 }
 
+
+h5{
+  color: #222222;
+  font-size: 5em;
+
+}
+
 a:hover{
   color: #EAF6F6;
 }
@@ -82,6 +89,16 @@ a:hover{
 
 /* 3 properties */
 
+#offerings{
+  text-align: center;
+  background-color: #F5EBE0;
+  color: #ff4c68;
+}
+
+.carousel-item{
+  padding: 7% 15%;
+}
+
 #features{
   padding: 7% 15%;
 }
@@ -99,51 +116,45 @@ a:hover{
 
 /* text style */
 
-#carusela
-{
-  background-color: #5584AC ;
-}
+/* 
 
 
 .middle-container{
   margin: 100px 0;
-}
+} */
 
 .bottom-container
 {
-   background-color: #B8FFF9;
-   padding: 50px 0 20px;
+   background-color: #98B4AA;
+   padding: 100px 0 20px;
    text-align: center;
 }
 
+/* bold for head text */
 .pro{
    font-size: 38px;
 }
 
-
-.skill-row{
+/* ???? */
+/* .skill-row{
   width: 50%;
   margin: 100px auto 100px auto;
   text-align: left;
-}
-
+} */
+/* 
 .design-img{
   width: 25%;
   float: left;
   margin-right: 30px;
-}
+} */
 
-.designer-img{
-  width: 25%;
-  float: right;
-  margin-left: 30px;
-}
 
 .jobless-img{
   width: 4%;
   float:right;
   margin-right: 5px;
 }
+
 .first-P{
   width:30%;
   margin: auto;
@@ -167,10 +178,7 @@ a:hover{
   margin-bottom: 4rem;
 }
 /* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
-}
+
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
