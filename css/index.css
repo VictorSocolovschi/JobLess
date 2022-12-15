@@ -259,3 +259,12 @@ text-decoration:none;
   color: black;
   text-align: center;
 }
+
+.dropdown-item{
+  margin-left: 0px;
+}
+
+.nav-item-dropdown{
+  background-color: #98B4AA;
+}
+
