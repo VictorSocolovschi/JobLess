@@ -264,3 +264,7 @@ text-decoration:none;
   color: black;
   text-align: center;
 }
+
+.dropdown-item{
+  margin-left: 0;
+}
