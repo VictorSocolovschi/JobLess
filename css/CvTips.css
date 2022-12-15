@@ -45,3 +45,10 @@ body {
   background-position: 100% .4em;
   padding-right: 30%;
   }
+
+  .jobless-img{
+    width: 5%;
+    float:right;
+    margin: auto;
+  }
+  
