@@ -19,21 +19,25 @@
     top: 13px;
     }
     .form-check{
-        text-align: left;
+        text-align: right;
     }
 .jobless-img{
-    padding-bottom: 50px;
+    padding-bottom: 20px;
+}
+
+.buttons-down{
+    align-content: center;
+
+}
+.age
+{
+    align-content: right;
 }
 
 .form-outline{
     text-align: right;
 }
 
-
-input::placeholder{
-    text-align: right;
-}
-
-textarea::placeholder{
-    text-align: right;
+.card{
+    background-color:  #FFFBEB;
 }

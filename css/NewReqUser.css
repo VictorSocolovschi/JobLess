@@ -25,18 +25,13 @@
     padding-bottom: 50px;
 }
 
-.buttons-down{
-    padding-bottom: 20px;
-    padding-top: 20px;
-}
-
 .form-outline{
     text-align: right;
 }
 
-input::placeholder{
-    text-align: right;
-}s
+.card{
+    background-color:  #FFFBEB;
+}
 
 textarea::placeholder{
     text-align: right;
