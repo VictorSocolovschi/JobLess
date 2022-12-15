@@ -53,14 +53,16 @@ export const saveUser = (firstname,lastname,email,password,age,location, descrip
     // Signed in 
     const user = userCredential.user;
     addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, description});
-    console.log("registered succesfully");
+    window.alert("משתמש נרשם בהצלחה!");
     // ...
   })
 
   .catch((error) => {
+    window.alert("משתמש לא נרשם בהצלחה, אנא העזר בהערה הבאה ");
     const errorCode = error.code;
+    window.alert(error.code);
     const errorMessage = error.message;
-    // ..
+        // ..
   });
 }
 //Save users
@@ -81,13 +83,16 @@ export const saveHRUser = (companyname,username,email,password,phonenumber, desc
     // Signed in 
     const user = userCredential.user;
     addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description });
-    console.log("registered succesfully");
+    window.alert("משתמש נרשם בהצלחה!");
+    
     // ...
   })
   .catch((error) => {
+    window.alert("משתמש לא נרשם בהצלחה, אנא העזר בהערה הבאה ");
     const errorCode = error.code;
+    window.alert(error.code);
     const errorMessage = error.message;
-    // ..
+        // ..
   });
 }
 //Save users
@@ -108,13 +113,15 @@ export const saveReqUser = (firstname,lastname,email,password,phonenumber, descr
     // Signed in 
     const user = userCredential.user;
     addDoc(collection(db, "Req-users" ), { firstname,lastname,email,password,phonenumber, description });
-    console.log("registered succesfully");
+    window.alert("משתמש נרשם בהצלחה!");
     // ...
   })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
 
+  .catch((error) => {
+    window.alert("משתמש לא נרשם בהצלחה, אנא העזר בהערה הבאה ");
+    const errorCode = error.code;
+    window.alert(error.code);
+    const errorMessage = error.message;
     // ..
   });
 }
