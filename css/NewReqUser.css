@@ -29,9 +29,8 @@
     text-align: right;
 }
 
-
-input::placeholder{
-    text-align: right;
+.card{
+    background-color:  #FFFBEB;
 }
 
 textarea::placeholder{

@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9" />
     <title>יצירת משתמש</title>
     <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/JobSeekerReg.css">
+    <link rel="stylesheet" href="css/NewUser.css">
   </head>
 
   <body>
@@ -21,7 +21,7 @@
 
               <center>
                 <img class="jobless-img pb-2" src="images\jobless_photo-removebg-preview.png" alt="jobless-photo" width="120" height="120">
-                <h1 class="mb-4 pb-4 pb-md-0 mb-md-3">יצירת משתמש - מחפש עבודה</h1>
+                <h1 class="mb-4 pb-4 pb-md-0 mb-md-3" style="padding-bottom: 10px;">יצירת משתמש - מחפש עבודה</h1>
               </center>
 
 
@@ -47,7 +47,7 @@
                         id="user-firstname"
                         class="form-control mb-3"
                         class="My First Title"
-                        placeholder="שם פרטי"
+                        placeholder=""
                         autofocus
                       />
                     </div>
@@ -62,7 +62,7 @@
                         id="user-lastname"
                         class="form-control mb-3"
                         class="My First Title"
-                        placeholder="שם משפחה"
+                        placeholder=""
                         autofocus
                       />
                     </div>
@@ -80,7 +80,7 @@
                         id="user-email"
                         class="form-control mb-3"
                         class="My First Title"
-                        placeholder="כתובת מייל"
+                        placeholder=""
                         autofocus
                       />
                     </div>
@@ -94,7 +94,7 @@
                         id="user-password"
                         class="form-control mb-3"
                         class="My First Title"
-                        placeholder="סיסמא"
+                        placeholder=""
                         autofocus
                       />
                     </div>
@@ -112,7 +112,7 @@
                         id="user-age"
                         class="form-control mb-3"
                         class="My First Title"
-                        placeholder="גיל"
+                        placeholder=""
                         autofocus
                       />
                     </div>
@@ -126,7 +126,7 @@
                         id="user-location"
                         class="form-control mb-3"
                         class="My First Title"
-                        placeholder="איזור מגורים"
+                        placeholder=""
                         autofocus
                       />
                     </div>
@@ -136,17 +136,19 @@
 
                 <div class="row">
                   <!-- user description input  -->
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline"> 
-                      <label for="description">:ספר לנו קצת עצמך</label>
-                      <textarea
-                        id="user-description"
-                        rows="3"
-                        class="form-control mb-3"
-                        placeholder="הקלד כאן"
-                      ></textarea>
+                  <center>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline"> 
+                        <label for="description">:ספר לנו קצת עצמך</label>
+                        <textarea
+                          id="user-description"
+                          rows="3"
+                          class="form-control mb-3"
+                          placeholder=""
+                        ></textarea>
+                      </div>
                     </div>
-                  </div>
+                  </center>
 
                 </div>
 
@@ -154,8 +156,9 @@
                   <!-- Save button  -->
                   <div class="buttens-down" style="padding-top: 20px; padding-bottom: 30px;">
                     <center>
-                      <button class="btn btn-success" id="btn-user-form" style="margin-right: 5px;">הרשמה</button>
-                      <button onclick="location.href = 'index.html';" type="button" class="btn btn-primary" style="margin-left: 5px;">חזרה לדף הבית</button> 
+                      <button class="btn btn-outline-success" id="btn-user-form">הרשמה</button>
+                      <button onclick="location.href = 'index.html';" type="button" class="btn btn-outline-primary">חזרה לדף הבית</button> 
+                      <button onclick="location.href = 'signUpPage.html';" type="button" class="btn btn-outline-danger">חזרה למסך הקודם</button>
                     </center>
                   </div>
 
