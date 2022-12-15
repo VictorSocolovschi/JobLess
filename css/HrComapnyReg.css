@@ -26,22 +26,17 @@
 }
 
 .buttons-down{
-<<<<<<< HEAD
-    left: 50px;
-}
-=======
     padding-bottom: 20px;
     padding-top: 20px;
 }
 
->>>>>>> signUpOptions
 .form-outline{
     text-align: right;
 }
 
 input::placeholder{
     text-align: right;
-}
+}s
 
 textarea::placeholder{
     text-align: right;
