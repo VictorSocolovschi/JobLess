@@ -122,7 +122,7 @@ a:hover{
 
 .bottom-container
 {
-   background-color: #C58940;
+   background-color: #DAE2B6;
    padding: 80px 0 20px;
    text-align: center;
 }
@@ -146,6 +146,11 @@ a:hover{
   float: left;
   margin-right: 30px;
 } */
+
+.container-fluid
+{
+  padding: 0 15%;
+}
 
 
 .jobless-img{
@@ -259,12 +264,3 @@ text-decoration:none;
   color: black;
   text-align: center;
 }
-
-.dropdown-item{
-  margin-left: 0px;
-}
-
-.nav-item-dropdown{
-  background-color: #98B4AA;
-}
-

@@ -29,26 +29,17 @@ body {
     margin-right: 20px;
     text-align: right;
   }*/
-  ul
-  {
-  list-style-type: square;
-  padding: 0;
-  margin: 0;
-  text-align: right;
-  }
-  
-  li
-  {
-  text-align: right ;
-  background-image: url(arrow.gif);
-  background-repeat: no-repeat;
-  background-position: 100% .4em;
-  padding-right: 30%;
-  }
+ 
 
   .jobless-img{
     width: 5%;
     float:right;
     margin: auto;
+    background-image:url("index.html");
   }
   
+  .container-fluid
+  {
+    padding: 0 15%;
+    margin: 0 30%;
+  }
