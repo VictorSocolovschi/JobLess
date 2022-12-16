@@ -18,8 +18,7 @@ HRuserForm.addEventListener("submit", async (e) =>
 {
   
   e.preventDefault();
-  alert("submit form in proccess");
-  
+
   //variabals to store the data.
   const HRuserCompanyname = document.getElementById("HRuserCompanyname").value;
   const HRuserUsername= document.getElementById("HRuserUsername").value;
@@ -31,27 +30,27 @@ HRuserForm.addEventListener("submit", async (e) =>
   //checking if every box filled correct.
   if(!HRuserCompanyname)
   {
-    alert("company name is required");
+    alert("שם חברה לא הוכנס");
   }
   else if(!HRuserUsername)
   {
-    alert("user name is required");
+    alert("שם משתמש לא הוכנס");
   }
   else if(!HRuserEmail)
   {
-    alert("company email is required");
+    alert("כתובת מייל לא הוכנסה");
   }
   else if(!HRuserPassword)
   {
-    alert("password is required");
+    alert("סיסמא לא הוכנסה");
   }
   else if(!HRuserPhonenumber)
   {
-    alert("company Phone number is required");
+    alert("פלאפון חברה לא הוכנס");
   }
   else if(!HRuserDescription)
   {
-    alert("company description is required");
+    alert("תיאור החברה לא הוכנס");
   }
   else{
 

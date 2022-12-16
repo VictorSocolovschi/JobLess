@@ -16,7 +16,8 @@ const userForm = document.getElementById("User-form");
 userForm.addEventListener("submit", async (e) => 
 {
   e.preventDefault();
-  alert("submit form in proccess");
+
+  
   //variabals to store the data.
   const UserFirstName = document.getElementById("UserFirstName").value;
   const UserLastName = document.getElementById("UserLastName").value;
@@ -29,35 +30,35 @@ userForm.addEventListener("submit", async (e) =>
   //checking if every box filled correct.
   if(!UserFirstName)
   {
-    alert("first name is required");
+    alert("שם פרטי לא הוכנס");
   }
   else if(!UserLastName)
   {
-    alert("last name is required");
+    alert("שם משפחה לא הוכנס");
   }
   else if(!UserEmail)
   {
-    alert("email is required");
+    alert("כתובת מייל לא הוכנסה");
   }
   else if(!UserPassword)
   {
-    alert("password is required");
+    alert("סיסמא לא הוכנסה");
   }
   else if(!UserAge)
   {
-    alert("age is required");
+    alert("גיל לא הוכנס");
   }
   else if(!UserLocation)
   {
-    alert("location is required");
+    alert("איזור מגורים לא הוכנס");
   }
   else if(!UserDescription)
   {
-    alert("description is required");
+    alert("תיאור לא הוכנס");
   }
   else if(!UserPhoneNumber)
   {
-    alert("phone number is required");
+    alert("מספר פלאפון לא הוכנס");
   }
   else{
 

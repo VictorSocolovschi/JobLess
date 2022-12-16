@@ -17,7 +17,6 @@ const ReqUserForm = document.getElementById("ReqUser-form");
 ReqUserForm.addEventListener("submit", async (e) => 
 {
   e.preventDefault();
-  alert("submit form in proccess");
 
   //variabals to store the data.
   const ReqUserFirstName = document.getElementById("ReqUserFirstName").value;
@@ -30,27 +29,27 @@ ReqUserForm.addEventListener("submit", async (e) =>
   //checking if every box filled correct.
   if(!ReqUserFirstName)
   {
-    alert("first name is required");
+    alert("שם פרטי לא הוכנס");
   }
   else if(!ReqUserLastName)
   {
-    alert("last name is required");
+    alert("שם משפחה לא הוכנס");
   }
   else if(!ReqUserEmail)
   {
-    alert("email is required");
+    alert("כתובת מייל לא הוכנסה");
   }
   else if(!ReqUserPassword)
   {
-    alert("password is required");
+    alert("סיסמא לא הוכנסה");
   }
   else if(!ReqUserPhoneNumber)
   {
-    alert("Phone number is required");
+    alert("מספר פלאפון לא הוכנס");
   }
   else if(!ReqUserDescription)
   {
-    alert("company description is required");
+    alert("תיאור החברה לא הוכנס");
   }
   else{
 
