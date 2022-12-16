@@ -28,35 +28,23 @@ ReqUserForm.addEventListener("submit", async (e) =>
 
   //checking if every box filled correct.
   if(!ReqUserFirstName)
-  {
-    alert("שם פרטי לא הוכנס");
-  }
+  {  alert("שם פרטי לא הוכנס"); }
   else if(!ReqUserLastName)
-  {
-    alert("שם משפחה לא הוכנס");
-  }
+  { alert("שם משפחה לא הוכנס"); }
   else if(!ReqUserEmail)
-  {
-    alert("כתובת מייל לא הוכנסה");
-  }
+  {  alert("כתובת מייל לא הוכנסה"); }
   else if(!ReqUserPassword)
-  {
-    alert("סיסמא לא הוכנסה");
-  }
+  {  alert("סיסמא לא הוכנסה"); }
   else if(!ReqUserPhoneNumber)
-  {
-    alert("מספר פלאפון לא הוכנס");
-  }
+  { alert("מספר פלאפון לא הוכנס"); }
   else if(!ReqUserDescription)
+  {  alert("תיאור החברה לא הוכנס") }
+  else
   {
-    alert("תיאור החברה לא הוכנס");
-  }
-  else{
-
+    
     // if data filled proprotly it will send by this function to the data base.
     sendData(ReqUserFirstName,ReqUserLastName,ReqUserEmail,ReqUserPassword,ReqUserPhoneNumber,ReqUserDescription);
   }
-  
 });
 
 

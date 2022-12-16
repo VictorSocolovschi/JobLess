@@ -29,29 +29,17 @@ HRuserForm.addEventListener("submit", async (e) =>
 
   //checking if every box filled correct.
   if(!HRuserCompanyname)
-  {
-    alert("שם חברה לא הוכנס");
-  }
+  { alert("שם חברה לא הוכנס"); }
   else if(!HRuserUsername)
-  {
-    alert("שם משתמש לא הוכנס");
-  }
+  {  alert("שם משתמש לא הוכנס"); }
   else if(!HRuserEmail)
-  {
-    alert("כתובת מייל לא הוכנסה");
-  }
+  {  alert("כתובת מייל לא הוכנסה");}
   else if(!HRuserPassword)
-  {
-    alert("סיסמא לא הוכנסה");
-  }
+  {  alert("סיסמא לא הוכנסה");}
   else if(!HRuserPhonenumber)
-  {
-    alert("פלאפון חברה לא הוכנס");
-  }
+  {  alert("פלאפון חברה לא הוכנס");}
   else if(!HRuserDescription)
-  {
-    alert("תיאור החברה לא הוכנס");
-  }
+  {  alert("תיאור החברה לא הוכנס");}
   else{
 
     // if data filled proprotly it will send by this function to the data base.

@@ -29,37 +29,21 @@ userForm.addEventListener("submit", async (e) =>
   const UserPhoneNumber = document.getElementById("UserPhoneNumber").value;
   //checking if every box filled correct.
   if(!UserFirstName)
-  {
-    alert("שם פרטי לא הוכנס");
-  }
+  {  alert("שם פרטי לא הוכנס");}
   else if(!UserLastName)
-  {
-    alert("שם משפחה לא הוכנס");
-  }
+  {  alert("שם משפחה לא הוכנס"); }
   else if(!UserEmail)
-  {
-    alert("כתובת מייל לא הוכנסה");
-  }
+  {   alert("כתובת מייל לא הוכנסה"); }
   else if(!UserPassword)
-  {
-    alert("סיסמא לא הוכנסה");
-  }
+  {   alert("סיסמא לא הוכנסה");}
   else if(!UserAge)
-  {
-    alert("גיל לא הוכנס");
-  }
+  {   alert("גיל לא הוכנס"); }
   else if(!UserLocation)
-  {
-    alert("איזור מגורים לא הוכנס");
-  }
+  { alert("איזור מגורים לא הוכנס"); }
   else if(!UserDescription)
-  {
-    alert("תיאור לא הוכנס");
-  }
+  {  alert("תיאור לא הוכנס"); }
   else if(!UserPhoneNumber)
-  {
-    alert("מספר פלאפון לא הוכנס");
-  }
+  {  alert("מספר פלאפון לא הוכנס"); }
   else{
 
     // if data filled proprotly it will send by this function to the data base.
