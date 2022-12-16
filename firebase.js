@@ -33,17 +33,18 @@ const auth = getAuth(app);
  * @param {string} email the email of the user
  * @param {string} password userpassword
  * @param {string} age userage
+ * @param {string} phonenumber userage
  * @param {string} location user location
  * @param {string} description user description
  * 
  */
 
-export const saveUser = (firstname,lastname,email,password,age,location,telephone, description) =>
+export const saveUser = (firstname,lastname,email,password,age,location, phonenumber, description) =>
 {createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, description});
+    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, phonenumber, description});
     window.alert("משתמש נרשם בהצלחה!");
     // ...
   })

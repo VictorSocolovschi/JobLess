@@ -41,11 +41,11 @@ HRuserForm.addEventListener("submit", async (e) =>
   else if(!HRuserDescription)
   {  alert("תיאור החברה לא הוכנס");}
   else{
-
     // if data filled proprotly it will send by this function to the data base.
     sendData(HRuserCompanyname,HRuserUsername,HRuserEmail,HRuserPassword,HRuserPhonenumber,HRuserDescription);
   }
 });
+
 
  function sendData(HRuserCompanyname,HRuserUsername,HRuserEmail,HRuserPassword,HRuserPhonenumber,HRuserDescription)
   {
@@ -59,7 +59,7 @@ HRuserForm.addEventListener("submit", async (e) =>
               HRuserPhonenumber, 
               HRuserDescription
               );
-
+              
           HRuserForm.reset();
           //if Authentication failed it will not register.
           } catch (error) {
