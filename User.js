@@ -4,43 +4,121 @@ import {
   updateUsers,
   getUsers,
   saveUser,
-  saveReqUser,
-} from "./firebase.js";
 
-const userForm = document.getElementById("user-form");
+} from "./firebase.js";
 
 let editStatus = false;
 let id = "";
 
+//from where to read data.
+const userForm = document.getElementById("User-form");
 
-//save new users by forms
-userForm.addEventListener("submit", async (e) => {
+userForm.addEventListener("submit", async (e) => 
+{
   e.preventDefault();
-
-  //collect data from userform
-  //    (varname)             (input id)
-  const firstname = userForm["user-firstname"];
-  const lastname = userForm["user-lastname"];
-  const email = userForm["user-email"];
-  const password = userForm["user-password"];
-  const age = userForm["user-age"];
-  const location = userForm["user-location"];
-  const description = userForm["user-description"];
-
-  try {
-      await saveUser(firstname.value,lastname.value,email.value,password.value,age.value,location.value, description.value);
-
-    //userForm.querySelector("alert") = "block";
-    userForm.reset();
-    title.focus();
-    
-  } catch (error) {
-    console.log(error);
+  alert("submit form in proccess");
+  //variabals to store the data.
+  const UserFirstName = document.getElementById("UserFirstName").value;
+  const UserLastName = document.getElementById("UserLastName").value;
+  const UserEmail = document.getElementById("UserEmail").value;
+  const UserPassword = document.getElementById("UserPassword").value;
+  const UserAge = document.getElementById("UserAge").value;
+  const UserLocation = document.getElementById("UserLocation").value;
+  const UserDescription = document.getElementById("UserDescription").value;
+  const UserPhoneNumber = document.getElementById("UserPhoneNumber").value;
+  //checking if every box filled correct.
+  if(!UserFirstName)
+  {
+    alert("first name is required");
   }
+  else if(!UserLastName)
+  {
+    alert("last name is required");
+  }
+  else if(!UserEmail)
+  {
+    alert("email is required");
+  }
+  else if(!UserPassword)
+  {
+    alert("password is required");
+  }
+  else if(!UserAge)
+  {
+    alert("age is required");
+  }
+  else if(!UserLocation)
+  {
+    alert("location is required");
+  }
+  else if(!UserDescription)
+  {
+    alert("description is required");
+  }
+  else if(!UserPhoneNumber)
+  {
+    alert("phone number is required");
+  }
+  else{
+
+    // if data filled proprotly it will send by this function to the data base.
+    sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber);
+  }
+
 });
 
+function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber)
+  {
+    //data will be checked for Authentication with fire base.
+          try {
+               saveUser(
+                UserFirstName,
+                UserLastName,
+                UserEmail,
+                UserPassword,
+                UserAge,
+                UserLocation,
+                UserDescription,
+                UserPhoneNumber
+              );
+    
+          userForm.reset();
+          
+          //if Authentication failed it will not register.
+          } catch (error) {
+            console.log(error);
+          }
+
+    }
 
 
+
+
+
+
+
+//scrap
+
+// //collect data from userform
+//   //    (varname)             (input id)
+//   const firstname = userForm["user-firstname"];
+//   const lastname = userForm["user-lastname"];
+//   const email = userForm["user-email"];
+//   const password = userForm["user-password"];
+//   const age = userForm["user-age"];
+//   const location = userForm["user-location"];
+//   const description = userForm["user-description"];
+
+//   try {
+//       await saveUser(firstname.value,lastname.value,email.value,password.value,age.value,location.value, description.value);
+
+//     //userForm.querySelector("alert") = "block";
+//     userForm.reset();
+//     title.focus();
+    
+//   } catch (error) {
+//     console.log(error);
+//   }
 
 
 

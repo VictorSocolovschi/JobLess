@@ -47,7 +47,7 @@ const auth = getAuth(app);
  * 
  */
 
-export const saveUser = (firstname,lastname,email,password,age,location, description) =>
+export const saveUser = (firstname,lastname,email,password,age,location,telephone, description) =>
 {createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
