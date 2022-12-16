@@ -1,7 +1,7 @@
 //importing firebase anitialization app and more
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
 //auth imports
-import { getAuth , createUserWithEmailAndPassword,signInWithEmailAndPassword , onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js";
+import { getAuth , createUserWithEmailAndPassword,signInWithEmailAndPassword , onAuthStateChanged , signOut } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js";
 //firebase function imports
 import {getFirestore,collection,getDocs,onSnapshot,addDoc,deleteDoc, doc,getDoc,updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
@@ -125,6 +125,7 @@ export const loginfunc = (email,password) =>
     const user = userCredential.user;
     window.alert("משתמש התחבר בהצלחה!");
     location.href = 'index.html';
+
     // ...
   })
   .catch((error) => {
@@ -135,13 +136,13 @@ export const loginfunc = (email,password) =>
   });
 }
 
-
 //Auth login 
-export const singedinfunc = () =>
+export const signedinfunc = () =>
 {onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
-    window.alert("משתמש מחובר");
+    console.log(user);
+    window.alert("משתמש מחובר"); 
     // ...
   } else {
     // User is signed out
@@ -151,6 +152,11 @@ export const singedinfunc = () =>
 });
 }
 
+//Auth singout
+export const signoutfunc = () => 
+{
+  signOut(auth);
+}
 
 // onget users
 export const onGetUsers = (callback) =>

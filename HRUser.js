@@ -16,7 +16,7 @@ const HRuserForm = document.getElementById("HRUser-form");
 //function to collect data from user form.
 HRuserForm.addEventListener("submit", async (e) => 
 {
-  
+
   e.preventDefault();
 
   //variabals to store the data.
@@ -47,7 +47,6 @@ HRuserForm.addEventListener("submit", async (e) =>
   }
 });
 
-
  function sendData(HRuserCompanyname,HRuserUsername,HRuserEmail,HRuserPassword,HRuserPhonenumber,HRuserDescription)
   {
     //data will be checked for Authentication with fire base.
@@ -61,14 +60,10 @@ HRuserForm.addEventListener("submit", async (e) =>
               HRuserDescription
               );
 
-      
-          
           HRuserForm.reset();
-          
           //if Authentication failed it will not register.
           } catch (error) {
             console.log(error);
           }
-
     }
 

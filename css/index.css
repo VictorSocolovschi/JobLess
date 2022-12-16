@@ -125,7 +125,15 @@ a:hover{
    background-color: #DAE2B6;
    padding: 80px 0 20px;
    text-align: center;
+
 }
+
+
+.button-hidden
+{
+display: none;
+}
+
 
 /* bold for head text */
 

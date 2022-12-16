@@ -5,8 +5,6 @@ import {
 } from "./firebase.js";
 
 
-
-
 const LoginForm = document.getElementById("Login-form");
 
 LoginForm.addEventListener("submit", async (e) => 
@@ -19,6 +17,5 @@ LoginForm.addEventListener("submit", async (e) =>
     //call login function
     loginfunc(email,password);
     LoginForm.reset();
-
-
+    
 });
