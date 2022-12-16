@@ -5,7 +5,6 @@ import {
     //getlogged
 } from "./firebase.js";
 
-
 //userindicator();
 //check if user is signed in 
 signedinfunc();
@@ -16,4 +15,5 @@ const LObutton = document.getElementById("logout-button");
 LObutton.addEventListener("click", async (e) => {
 e.preventDefault(); 
 signoutfunc();
+
 });

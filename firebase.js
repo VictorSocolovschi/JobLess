@@ -145,8 +145,7 @@ export const signedinfunc = () =>
     window.alert("משתמש מחובר"); 
     // ...
   } else {
-    // User is signed out
-    window.alert("משתמש לא מחובר");
+    navbar(); 
     // ...
   }
 });
@@ -157,6 +156,14 @@ export const signoutfunc = () =>
 {
   signOut(auth);
 }
+function navbar() 
+{
+    var element = document.getElementById("logout-button");
+    element.classList.add("button-hidden");
+}
+
+
+
 
 // onget users
 export const onGetUsers = (callback) =>
