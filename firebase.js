@@ -1,19 +1,10 @@
 //importing firebase anitialization app and more
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
-import { getAuth , createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  onSnapshot,
-  addDoc,
-  deleteDoc,
-  doc,
-  getDoc,
-  updateDoc,
+//auth imports
+import { getAuth , createUserWithEmailAndPassword,signInWithEmailAndPassword , onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js";
+//firebase function imports
+import {getFirestore,collection,getDocs,onSnapshot,addDoc,deleteDoc, doc,getDoc,updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
-
-
 
 // web app's Firebase configuration
 const firebaseConfig = {
@@ -125,8 +116,43 @@ export const saveReqUser = (firstname,lastname,email,password,phonenumber, descr
     // ..
   });
 }
-  
-  // onget users
+
+//Auth login function 
+export const loginfunc = (email,password) =>
+{signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    window.alert("משתמש התחבר בהצלחה!");
+    location.href = 'index.html';
+    // ...
+  })
+  .catch((error) => {
+    window.alert("התחברות נכשלה, אנא העזר בהערה הבאה.");
+    const errorCode = error.code;
+    window.alert(error.code);
+    const errorMessage = error.message;
+  });
+}
+
+
+//Auth login 
+export const singedinfunc = () =>
+{onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    window.alert("משתמש מחובר");
+    // ...
+  } else {
+    // User is signed out
+    window.alert("משתמש לא מחובר");
+    // ...
+  }
+});
+}
+
+
+// onget users
 export const onGetUsers = (callback) =>
   onSnapshot(collection(db, "users"), callback);
 
