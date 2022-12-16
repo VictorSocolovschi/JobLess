@@ -14,7 +14,6 @@ var age = "agetest";
 var location = "locationtest";
 var description = "descriptiontest";
 
-
 test('properly save user information.',() => //newuser
 {  
     saveUser = (firstname,lastname,email,password,age,location, phonenumber, description) =>{
@@ -29,7 +28,6 @@ test('properly save user information.',() => //newuser
     }
 });
 
-
 test('properly save user information.',() => //newhruser
 {   
     saveHRUser = (companyname,username,email,password,phonenumber, description) =>{
@@ -42,7 +40,6 @@ test('properly save user information.',() => //newhruser
    }
 });
 
-
 test('properly save user information.',() => //newREQuser
 {  
     saveReqUser = (firstname,lastname,email,password,phonenumber, description) =>{
@@ -54,3 +51,13 @@ test('properly save user information.',() => //newREQuser
     expect(description).toBe("descriptiontest");
     }
 });
+
+
+test('properly save user information.',() => //Loginfunction
+{  
+    loginfunc = (email,password ) =>{
+    expect(email).toBe("emailtest");
+    expect(password).toBe("passwordtest");
+    }
+});
+
