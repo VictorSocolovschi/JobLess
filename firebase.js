@@ -142,7 +142,7 @@ export const signedinfunc = () =>
   if (user) {
     const uid = user.uid;
     console.log(user);
-    window.alert("משתמש מחובר"); 
+    Loggedinnavbar()  
     // ...
   } else {
     navbar(); 
@@ -155,11 +155,24 @@ export const signedinfunc = () =>
 export const signoutfunc = () => 
 {
   signOut(auth);
+  location.href = 'index.html';
+
 }
 function navbar() 
 {
-    var element = document.getElementById("logout-button");
-    element.classList.add("button-hidden");
+    var LgO = document.getElementById("logout-button");
+    LgO.classList.add("button-hidden");
+}
+
+function Loggedinnavbar() 
+{
+    var LgIn = document.getElementById("register");
+    var LgIn2 = document.getElementById("login-button");
+
+    LgIn.classList.add("button-hidden");
+
+    LgIn2.classList.add("button-hidden");
+
 }
 
 
