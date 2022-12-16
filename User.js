@@ -76,12 +76,6 @@ function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,User
 
     }
 
-
-
-
-
-
-
 //scrap
 
 // //collect data from userform

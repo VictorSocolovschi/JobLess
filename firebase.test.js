@@ -1,3 +1,8 @@
+
+
+
+//main firebase unit testing - all new user functions
+
 var firstname = "firstnametest";
 var lastname = "lastnametest";
 var companyname = "companynametest";
@@ -12,7 +17,6 @@ var description = "descriptiontest";
 
 test('properly save user information.',() => //newuser
 {  
-    //insert function here
     saveUser = (firstname,lastname,email,password,age,location, phonenumber, description) =>{
     expect(firstname).toBe("firstnametest");
     expect(lastname).toBe("lastnametest");
@@ -28,8 +32,7 @@ test('properly save user information.',() => //newuser
 
 test('properly save user information.',() => //newhruser
 {   
-   //insert function here
-   saveHRUser = (companyname,username,email,password,phonenumber, description) =>{
+    saveHRUser = (companyname,username,email,password,phonenumber, description) =>{
     expect(companyname).toBe("companynametest");
     expect(username).toBe("usernametest");
     expect(email).toBe("emailtest");
@@ -42,7 +45,6 @@ test('properly save user information.',() => //newhruser
 
 test('properly save user information.',() => //newREQuser
 {  
-    //insert function here
     saveReqUser = (firstname,lastname,email,password,phonenumber, description) =>{
     expect(firstname).toBe("firstnametest");
     expect(lastname).toBe("lastnametest");
