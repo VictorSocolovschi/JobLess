@@ -24,11 +24,18 @@ import {
   
       querySnapshot.forEach((doc) => {
         const job = doc.data();
-  
+
         jobsContainer.innerHTML += `
         <div class="card card-body mt-2 border-primary">
       <h3 class="h5">${job.title}</h3>
+      <label for="description">תיאור התפקיד:</label>
       <p>${job.description}</p>
+      <label for="description">מיקום:</label>
+      <p>${job.location}</p>  
+      <label for="description">היקף המשרה:</label>
+      <p>${job.scope}</p> 
+      <label for="description"> דרישות:</label>
+      <p>${job.standarts}</p>  
       <div>
         <button class="btn btn-primary btn-delete" data-id="${doc.id}">
           🗑 מחק
@@ -59,7 +66,10 @@ import {
             const job = doc.data();
             myJobsForm["job-title"].value = job.title;
             myJobsForm["job-description"].value = job.description;
-  
+            myJobsForm["job-location"].value = job.location;
+            myJobsForm["job-scope"].value = job.scope;
+            myJobsForm["job-standarts"].value = job.standarts;
+
             editStatus = true;
             id = doc.id;
             myJobsForm["btn-job-form"].innerText = "עדכן";
@@ -76,16 +86,21 @@ import {
   
     const title = myJobsForm["job-title"];
     const description = myJobsForm["job-description"];
-  
+    const location = myJobsForm["job-location"];
+    const scope = myJobsForm["job-scope"];
+    const standarts = myJobsForm["job-standarts"];
     try {
       if (!editStatus) {
-        await saveJob(title.value, description.value);
+        await saveJob(title.value, description.value,location.value, scope.value,standarts.value);
       } else {
         await updateJob(id, {
           title: title.value,
           description: description.value,
+          location: location.value,
+          scope: scope.value,
+          standarts: standarts.value,
         });
-  
+   
         editStatus = false;
         id = "";
         myJobsForm["btn-job-form"].innerText = "שמור";

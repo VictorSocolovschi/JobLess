@@ -176,8 +176,6 @@ function Loggedinnavbar()
 }
 
 
-
-
 // onget users
 export const onGetUsers = (callback) =>
   onSnapshot(collection(db, "users"), callback);
@@ -233,9 +231,13 @@ export const getReqUsers = () => getDocs(collection(db, "Req-users"));
  * Save a New Task in Firestore
  * @param {string} title the title of the Task
  * @param {string} description the description of the Task
+ * @param {string} location
+ * @param {string} scope
+ * @param {string} standarts
+ * 
  */
-export const saveJob = (title, description) =>
-  addDoc(collection(db, "Jobs"), { title, description });
+export const saveJob = (title, description,location,scope,standarts) =>
+  addDoc(collection(db, "Jobs"), { title, description,location,scope,standarts });
 
 export const onGetJobs = (callback) =>
   onSnapshot(collection(db, "Jobs"), callback);

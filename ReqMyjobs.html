@@ -23,7 +23,7 @@
           <div class="card">
             <div class="card-body">
               <h1 class="h4">פרסם משרה חדשה</h1>
-
+                 <!-- שם חברה - תפקיד -->
               <form id="myjobs-form">
                 <label for="title">שם החברה:</label>
                 <input
@@ -34,16 +34,39 @@
                   placeholder="שם החברה"
                   autofocus
                 />
-
-                <label for="description">תיאור המשרה:</label>
+                 <!-- תיאור תפקיד -->  
+                <label for="description">תיאור התפקיד:</label>
                 <textarea
                   id="job-description"
                   rows="3"
                   class="form-control mb-3"
                   placeholder="תיאור התפקיד"
                 ></textarea>
+                <!--  דרום/מרכז/צפון   מיקום-->
+                <label for="description">מיקום:</label>
+                <textarea
+                  id="job-location"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder=" דרום/מרכז/צפון: מיקום"
+                ></textarea>    
+                <!-- היקף המשרה  -->  
+                <label for="description">היקף המשרה:</label>
+                <textarea
+                  id="job-scope"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder="משרה חלקית/מלאה ופרטים נוספים"
+                ></textarea>
+                <!-- דרישות התפקיד  -->  
+                <label for="description"> דרישות:</label>
+                <textarea
+                  id="job-standarts"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder="דרישות התפקיד"
+                ></textarea>
 
-                
                 <button class="btn btn-primary" id="btn-job-form">פרסם משרה</button>
               </form>
             </div>
