@@ -25,7 +25,6 @@ export const db = getFirestore();
 const auth = getAuth(app);
 
 //Save users
-//maybe X3
 /**
  * Save a New user in Firestore
  * @param {string} firstname the user firstname
@@ -222,3 +221,34 @@ export const getUsers = () => getDocs(collection(db, "users"));
 export const getHRUsers = () => getDocs(collection(db, "HR-users"));
 
 export const getReqUsers = () => getDocs(collection(db, "Req-users"));
+
+
+
+
+
+
+//for jobs
+/**
+/**
+ * Save a New Task in Firestore
+ * @param {string} title the title of the Task
+ * @param {string} description the description of the Task
+ */
+export const saveJob = (title, description) =>
+  addDoc(collection(db, "Jobs"), { title, description });
+
+export const onGetJobs = (callback) =>
+  onSnapshot(collection(db, "Jobs"), callback);
+
+/**
+ *
+ * @param {string} id Task ID
+ */
+export const deleteJob = (id) => deleteDoc(doc(db, "Jobs", id));
+
+export const getJob = (id) => getDoc(doc(db, "Jobs", id));
+
+export const updateJob = (id, newFields) =>
+  updateDoc(doc(db, "Jobs", id), newFields);
+
+export const getJobs = () => getDocs(collection(db, "Jobs"));
