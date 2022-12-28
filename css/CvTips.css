@@ -32,14 +32,21 @@ body {
  
 
   .jobless-img{
-    width: 5%;
+    width: 4%;
     float:right;
     margin: auto;
-    background-image:url("index.html");
+    
   }
   
-  .container-fluid
-  {
-    padding: 0 15%;
-    margin: 0 30%;
-  }
+
+.container-fluid
+{
+  padding: 0 15% 0 auto;
+}
+
+
+
+a{
+  margin: 10px 10px;
+}
+  
