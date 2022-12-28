@@ -29,13 +29,13 @@ import {
         jobsContainer.innerHTML += `
     <div class="card card-body mt-2 border-primary">
       <h3 class="h5">${job.title}</h3>
-      <label for="description">תיאור התפקיד:</label>
+      <label for="description">: תיאור התפקיד</label>
       <p>${job.description}</p>
-      <label for="description">מיקום:</label>
+      <label for="description">: מיקום</label>
       <p>${job.location}</p>  
-      <label for="description">היקף המשרה:</label>
+      <label for="description">: היקף המשרה</label>
       <p>${job.scope}</p> 
-      <label for="description"> דרישות:</label>
+      <label for="description">: דרישות</label>
       <p>${job.standarts}</p>  
     </div>`;
 
