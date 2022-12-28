@@ -16,6 +16,5 @@ LoginForm.addEventListener("submit", async (e) =>
 
     //call login function
     loginfunc(email,password);
-    LoginForm.reset();
     
 });

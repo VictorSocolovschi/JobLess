@@ -17,15 +17,17 @@ import {
     // querySnapshot.forEach((doc) => {
     //   console.log(doc.data());
     // });
+    
+    
   
     onGetJobs((querySnapshot) => {
       jobsContainer.innerHTML = "";
-  
+
       querySnapshot.forEach((doc) => {
         const job = doc.data();
-
+       
         jobsContainer.innerHTML += `
-        <div class="card card-body mt-2 border-primary">
+    <div class="card card-body mt-2 border-primary">
       <h3 class="h5">${job.title}</h3>
       <label for="description">תיאור התפקיד:</label>
       <p>${job.description}</p>
@@ -36,9 +38,8 @@ import {
       <label for="description"> דרישות:</label>
       <p>${job.standarts}</p>  
     </div>`;
-      });
-  
 
+      });
     });
   });
   

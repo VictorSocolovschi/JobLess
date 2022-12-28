@@ -5,26 +5,25 @@ import {
     getJob,
     updateJob,
     getJobs,
+    myJobauth,
+    loggedinmail
   } from "./firebase.js";
+
+  myJobauth();
  
   const myJobsForm = document.getElementById("myjobs-form");
   const jobsContainer = document.getElementById("jobs-container");
-  
+
   let editStatus = false;
   let id = "";
   
   window.addEventListener("DOMContentLoaded", async (e) => {
-    // const querySnapshot = await getjobs();
-    // querySnapshot.forEach((doc) => {
-    //   console.log(doc.data());
-    // });
-  
     onGetJobs((querySnapshot) => {
       jobsContainer.innerHTML = "";
-  
+      
       querySnapshot.forEach((doc) => {
         const job = doc.data();
-
+        if(job.pubmail == loggedinmail){  
         jobsContainer.innerHTML += `
         <div class="card card-body mt-2 border-primary">
       <h3 class="h5">${job.title}</h3>
@@ -45,6 +44,7 @@ import {
         </button>
       </div>
     </div>`;
+  }
       });
   
       const btnsDelete = jobsContainer.querySelectorAll(".btn-delete");
@@ -83,7 +83,8 @@ import {
   
   myJobsForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-  
+    //const publisher = user email
+    const pubmail = loggedinmail;
     const title = myJobsForm["job-title"];
     const description = myJobsForm["job-description"];
     const location = myJobsForm["job-location"];
@@ -91,9 +92,10 @@ import {
     const standarts = myJobsForm["job-standarts"];
     try {
       if (!editStatus) {
-        await saveJob(title.value, description.value,location.value, scope.value,standarts.value);
+        await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value);
       } else {
         await updateJob(id, {
+          pubmail:pubmail,
           title: title.value,
           description: description.value,
           location: location.value,
@@ -105,7 +107,6 @@ import {
         id = "";
         myJobsForm["btn-job-form"].innerText = "שמור";
       }
-  
       myJobsForm.reset();
       title.focus();
     } catch (error) {
