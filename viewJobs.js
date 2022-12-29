@@ -36,7 +36,7 @@ import {
       <label for="description">: היקף המשרה</label>
       <p>${job.scope}</p> 
       <label for="description">: דרישות</label>
-      <p>${job.standarts}</p>  
+      <p>${job.standarts}</p> 
     </div>`;
 
       });
