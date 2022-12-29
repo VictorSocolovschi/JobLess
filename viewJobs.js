@@ -37,7 +37,7 @@ import {
       <label for="description" class="job-label"><strong>: דרישות</strong></label>
       <p class="job-requirements">${job.standarts}</p> 
       <br>
-      <a href="https://www.example.com"><button>צור קשר</button></a>
+      <a href="https://www.example.com"><button-contact>צור קשר</button></a>
 
     </div>`;
 

@@ -11,6 +11,13 @@ a{
   text-align: center;
 }
 
+#myjobs-button {
+  float: right !important;
+  margin-right: 20px !important;
+}
+
+
+
 .skill-row 
 {
 width: 50%;
@@ -77,7 +84,7 @@ h2
   text-align: center;
 }
 
-button {
+button-contact {
   position: absolute;
   left: 50%;
   bottom: 20px;
@@ -94,7 +101,7 @@ button {
   transform: translate(-50%, 0);
 }
 
-button:hover {
+button-contact:hover {
   background: #97DECE;
   text-decoration: none;
 }
