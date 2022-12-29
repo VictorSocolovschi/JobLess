@@ -66,3 +66,35 @@ padding: 0 15% 0 auto;
   margin: 10px;
   text-align: right;
 }
+
+.card-deck{
+  background: #97DECE;
+  padding: 10px 20px;
+}
+
+h2
+{
+  text-align: center;
+}
+
+button {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  -webkit-border-radius: 23;
+  -moz-border-radius: 23;
+  border-radius: 23px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background: #497694;
+  padding: 9px 20px 10px 20px;
+  border: solid #eddfed 2px;
+  text-decoration: none;
+  transform: translate(-50%, 0);
+}
+
+button:hover {
+  background: #97DECE;
+  text-decoration: none;
+}
