@@ -84,6 +84,11 @@ h2
   text-align: center;
 }
 
+h2.h5 {
+  text-decoration: underline;
+}
+
+
 button-contact {
   position: absolute;
   left: 50%;
