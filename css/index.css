@@ -318,3 +318,8 @@ button {
 a.carousel-control-prev-icon{
   color: #0d6efd;
 }
+
+ul.dropdown-menu.show{
+  --bs-dropdown-link-hover-bg: #0dcaf0;
+
+}
