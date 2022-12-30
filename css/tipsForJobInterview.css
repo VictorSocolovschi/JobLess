@@ -1,9 +1,20 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #A5F1E9;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+     background: -webkit-linear-gradient(to bottom right, rgba(22, 189, 208, 1), rgb(223, 26, 43));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgb(22, 189, 208), rgb(223, 231, 137))
+}
+
 
 h2{  
 color: #66BFBF;
 font-family: 'Montserrat', sans-serif;
 font-size: 2.5rem;
-font-weight: bolder;
+font-weight: normal;
 padding: 10px;
 /*add more space between h2 and the text below*/
 }
@@ -41,6 +52,7 @@ p
 {
     line-height: 3; /*line hight will be 2 all across this table*/
     font-size: 1.1em;
+    text-align: right;
 }
 
 a{
@@ -50,7 +62,7 @@ a{
 .top-container
 {
     position: relative;
-    background-color: #FFF8F3;
+    background-color: #F8F4EA;
     padding: 50px 0 20px;
     text-align: center;
 }
