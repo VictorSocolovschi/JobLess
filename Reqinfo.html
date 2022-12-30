@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9" />
+    <title>איזור אישי</title>
+    <link rel="Website icon" type="img" href="images/jobless_photo-removebg-preview.png">
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/NewUser.css">
+     <!-- connection to js database file -->
+     <script src="./Reqinfo.js" type="module"></script>
+  </head>
+
+  <body>
+  <section class="vh-100 gradient-custom" style="margin-bottom: 50px;">
+    <!-- creat new user -->
+    <div class="container p-4">
+      <div class="row justify-content-center align-items-center h-100" style="margin-top: 50px;">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px; padding-top: 25px;">
+            <div class="card-body pt-3 pb-3">
+
+              <center>
+                <img class="jobless-img pb-2" src="images\jobless_photo-removebg-preview.png" alt="jobless-photo" width="120" height="120">
+                <h1 class="mb-4 pb-4 pb-md-0 mb-md-3" style="padding-bottom: 10px;">איזור אישי</h1>
+              </center>
+
+              <form id="Req-info-form" style="margin-top: 2rem;">
+                
+                <!--
+                allert if registered succesfully 
+                
+                <div class = "alert" >register success</div>
+                
+                -->
+
+                <!-- user username input  -->
+
+                <div class="row">
+                  <!-- user firstname input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline"> 
+                      <label for="title">:שם פרטי</label>
+                      <input
+                        type="text"
+                        id="Reqfirstname-info"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="שם פרטי"
+                        autofocus
+                      />
+                    </div>
+                  </div>
+                  
+                  <!-- user lastname input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline"> 
+                      <label for="title">:שם משפחה</label>
+                      <input
+                        type="text"
+                        id="Reqlastname-info"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="שם משפחה"
+                        autofocus
+                      />
+                    </div>
+                  </div>
+                
+                </div>
+
+                <div class="row">
+                  <!-- user email input  
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">               
+                      <label for="title">:כתובת מייל</label>
+                      <input
+                        type="email"
+                        id="UserEmail-info"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="מייל"
+                        autofocus
+                      />
+                    </div>
+                  </div>-->
+                  <!-- user password input  
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">   
+                      <label for="title">:סיסמא</label>
+                      <input
+                        type="password"
+                        id="UserPassword-info"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="סיסמא"
+                        autofocus
+                      />
+                    </div>
+                  </div>-->
+
+                </div>
+
+                <div class="row">
+                  <!-- user age input  -->
+                  </div>
+                  <!-- user location input  -->
+                
+
+                </div>
+
+                <div class="row">
+                  <!-- Company phone input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline"> 
+                      <label for="title">:פלאפון</label>
+                      <input
+                        type="text"
+                        id="Reqphone-info"
+                        class="form-control mb-3"
+                        class="My First Title"
+                        placeholder="פלאפון"
+                        autofocus
+                      />
+                    </div>
+                  </div>
+                  <!-- req description input  -->
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline"> 
+                      <label for="description">:תיאור החברה</label>
+                      <textarea
+                        id="Reqdescription-info"
+                        class="form-control mb-3"
+                        placeholder="תיאור החברה"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="row">
+                  <!-- Save button  -->
+                  <div class="buttens-down" style="padding-top: 20px; padding-bottom: 30px;">
+                    <center>
+                      <button class="btn btn-primary" id="btn-reqinfo-form"> </button>
+                      <button onclick="location.href = 'index.html';" type="button" class="btn btn-outline-primary">חזרה לדף הבית</button> 
+                    </center>
+                  </div>
+                  <div class="col-md-6" id="Reqinfo-container"></div>
+
+                </div>
+                
+                
+              </form>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </section>
+
+  </body>
+</html>

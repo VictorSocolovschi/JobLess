@@ -218,9 +218,7 @@ function navbar()
 
 function Loggedinnavbar() 
 {
-    
     userkind ();
-
     var LgIn = document.getElementById("register");
     var LgIn2 = document.getElementById("login-button");
     LgIn.classList.add("button-hidden");
@@ -265,9 +263,9 @@ export const updateUsers = (id, newFields) =>
 
   export const updateReqUsers = (id, newFields) =>
   updateDoc(doc(db, "Req-users", id), newFields);
+
+
   //get Users
-
-
 export const getUsers = () => getDocs(collection(db, "users"));
 
 export const getHRUsers = () => getDocs(collection(db, "HR-users"));
