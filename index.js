@@ -2,11 +2,13 @@
 import { 
     signedinfunc,
     signoutfunc,
+    loggedinmail
     //getlogged
 } from "./firebase.js";
 
 //userindicator();
 //check if user is signed in 
+
 signedinfunc();
 
 //logout button id

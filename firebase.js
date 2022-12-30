@@ -124,6 +124,7 @@ export const loginfunc = (email,password) =>
     // Signed in 
     const user = userCredential.user;
     window.alert("משתמש התחבר בהצלחה!");
+
     location.href = 'index.html';
 
     // ...
@@ -135,21 +136,69 @@ export const loginfunc = (email,password) =>
     const errorMessage = error.message;
   });
 }
-
+export var loggedinmail="0";
 //Auth login 
 export const signedinfunc = () =>
 {onAuthStateChanged(auth, (user) => {
   if (user) {
-    const uid = user.uid;
-    console.log(user);
+    //const uid = user.uid;
+    loggedinmail = user.email;
+    console.log("logged in");
     Loggedinnavbar()  
     // ...
   } else {
+    console.log("logged out");
     navbar(); 
     // ...
   }
 });
 }
+
+export const myJobauth = () =>
+{onAuthStateChanged(auth, (user) => {
+  if (user) {
+    //const uid = user.uid;
+    loggedinmail = user.email;
+    console.log("logged in");
+
+  } else {
+    console.log("logged out");
+  }
+});
+}
+
+
+function userkind ()
+{
+onGetUsers((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    const user = doc.data();
+    if(user.email == loggedinmail)
+    { console.log("user");
+    var mjb= document.getElementById("myjobs-button");
+    mjb.classList.add("button-hidden");
+   }
+  });
+});
+onGetHRUsers((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    const user = doc.data();
+    if(user.email == loggedinmail)
+    { console.log("HRuser"); }
+    
+  });
+});
+
+onGetReqUsers((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    const user = doc.data();
+    if(user.email == loggedinmail)
+    { console.log("Requser"); }
+  });
+});
+};
+
+
 
 //Auth singout
 export const signoutfunc = () => 
@@ -158,20 +207,23 @@ export const signoutfunc = () =>
   location.href = 'index.html';
 
 }
+
 function navbar() 
 {
     var LgO = document.getElementById("logout-button");
     LgO.classList.add("button-hidden");
+    var mjb= document.getElementById("myjobs-button");
+    mjb.classList.add("button-hidden");
 }
 
 function Loggedinnavbar() 
 {
+    userkind ();
     var LgIn = document.getElementById("register");
     var LgIn2 = document.getElementById("login-button");
-
     LgIn.classList.add("button-hidden");
-
     LgIn2.classList.add("button-hidden");
+    
 
 }
 
@@ -211,9 +263,9 @@ export const updateUsers = (id, newFields) =>
 
   export const updateReqUsers = (id, newFields) =>
   updateDoc(doc(db, "Req-users", id), newFields);
+
+
   //get Users
-
-
 export const getUsers = () => getDocs(collection(db, "users"));
 
 export const getHRUsers = () => getDocs(collection(db, "HR-users"));
@@ -229,6 +281,7 @@ export const getReqUsers = () => getDocs(collection(db, "Req-users"));
 /**
 /**
  * Save a New Task in Firestore
+ * @param {string} pubmail the publishing email
  * @param {string} title the title of the Task
  * @param {string} description the description of the Task
  * @param {string} location
@@ -236,8 +289,8 @@ export const getReqUsers = () => getDocs(collection(db, "Req-users"));
  * @param {string} standarts
  * 
  */
-export const saveJob = (title, description,location,scope,standarts) =>
-  addDoc(collection(db, "Jobs"), { title, description,location,scope,standarts });
+export const saveJob = (pubmail,title, description,location,scope,standarts) =>
+  addDoc(collection(db, "Jobs"), {pubmail, title, description,location,scope,standarts });
 
 export const onGetJobs = (callback) =>
   onSnapshot(collection(db, "Jobs"), callback);
