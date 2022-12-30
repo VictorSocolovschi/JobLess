@@ -170,6 +170,7 @@ export const myJobauth = () =>
 
 function userkind ()
 {
+//all functions for regular users that is logged in
 onGetUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
@@ -177,23 +178,34 @@ onGetUsers((querySnapshot) => {
     { console.log("user");
     var mjb= document.getElementById("myjobs-button");
     mjb.classList.add("button-hidden");
+    var helloname = document.getElementById("showname");
+    helloname.innerHTML += " שלום " + user.firstname + " " + user.lastname;
+
    }
   });
 });
+//all functions for hr users that is logged in
 onGetHRUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
     if(user.email == loggedinmail)
-    { console.log("HRuser"); }
+    { console.log("HRuser");
+    var helloname = document.getElementById("showname");
+    helloname.innerHTML += " שלום " + user.companyname;
+   }
     
   });
 });
-
+//all functions for req users that is logged in
 onGetReqUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
     if(user.email == loggedinmail)
-    { console.log("Requser"); }
+    { console.log("Requser"); 
+  
+    var helloname = document.getElementById("showname");
+    helloname.innerHTML += " שלום " + user.firstname;
+  }
   });
 });
 };

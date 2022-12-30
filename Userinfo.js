@@ -11,7 +11,7 @@ import {
   const dataContainer = document.getElementById("info-container");
   
 
-  myJobauth();
+  myJobauth();//itentify user lokked in 
 
   var nochangeemail = "0";
   var nochangepass = "0";
