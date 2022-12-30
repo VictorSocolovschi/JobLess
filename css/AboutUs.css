@@ -98,3 +98,8 @@ margin: 40px auto;
     float:right;
     margin: auto;
   }
+
+  .dropdown-item{
+    margin-left: 0;
+  }
+  

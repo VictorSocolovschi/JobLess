@@ -103,3 +103,7 @@ padding: 0 15% 0 auto;
 body{
   background-color:#F8F4EA ;
 }
+
+.dropdown-item{
+  margin-left: 0;
+}

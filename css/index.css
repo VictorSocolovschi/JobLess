@@ -39,7 +39,7 @@ h2{
   font-family: 'Montserrat',sans-serif;
   font-size: 3.5rem;
   font-weight:bolder;
-  color: #66BFBF;
+  color: #497694;
   padding: 10px ;
   text-align: center;
 }
@@ -179,7 +179,9 @@ display: none !important;
   color: #EAF6F6;
   padding: 20px 0;
 }
-
+.feature-box{
+  background-color: #d6dce5d1;
+}
 /* .navbar-toggler-icon{
   font: Sacramento;
 }
@@ -305,7 +307,7 @@ button-contact:hover {
 
 #offerings {
   height: 500px;
-  background-color: #FFF8F3;
+  background-color: #efae80;
 }
 
 /* 
@@ -313,3 +315,6 @@ button {
   font-size: 120px;
   color: yellow;
 } */
+a.carousel-control-prev-icon{
+  color: #0d6efd;
+}

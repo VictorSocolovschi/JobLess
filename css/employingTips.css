@@ -103,3 +103,7 @@ padding: 0 15% 0 auto;
   float:right;
   margin: auto;
 }
+
+.dropdown-item{
+  margin-left: 0;
+}
