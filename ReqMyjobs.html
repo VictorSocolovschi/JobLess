@@ -14,18 +14,29 @@
      <script src="./js/ReqMyjobs.js" type="module"></script>
   </head>
 
-  <body class="bg-dark">
+  <body class="bg-white">
     <section class="vh-100 gradient-custom" style="margin-bottom: 50px;">
-    <!-- ADD JOB -->
     <div class="container p-4">
       <div class="row">
+
+        <!-- jobs List -->
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <h1 class="h4">פרסם משרה חדשה</h1>
+              <h1 class="h4">המשרות שלי</h1>
+              <div class="col-md-6" id="jobs-container"></div>
+            </div>
+          </div>
+        </div>
+
+         <!-- ADD JOB -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="h4">פרסום משרה חדשה</h1>
                  <!-- שם חברה - תפקיד -->
               <form id="myjobs-form">
-                <label for="title">שם החברה:</label>
+                <label for="title">: שם החברה</label>
                 <input
                   type="text"
                   id="job-title"
@@ -35,7 +46,7 @@
                   autofocus
                 />
                  <!-- תיאור תפקיד -->  
-                <label for="description">תיאור התפקיד:</label>
+                <label for="description">: תיאור המשרה</label>
                 <textarea
                   id="job-description"
                   rows="3"
@@ -43,7 +54,7 @@
                   placeholder="תיאור התפקיד"
                 ></textarea>
                 <!--  דרום/מרכז/צפון   מיקום-->
-                <label for="description">מיקום:</label>
+                <label for="description">: מיקום המשרה</label>
                 <textarea
                   id="job-location"
                   rows="3"
@@ -51,7 +62,7 @@
                   placeholder=" דרום/מרכז/צפון: מיקום"
                 ></textarea>    
                 <!-- היקף המשרה  -->  
-                <label for="description">היקף המשרה:</label>
+                <label for="description">: היקף המשרה</label>
                 <textarea
                   id="job-scope"
                   rows="3"
@@ -59,27 +70,21 @@
                   placeholder="משרה חלקית/מלאה ופרטים נוספים"
                 ></textarea>
                 <!-- דרישות התפקיד  -->  
-                <label for="description"> דרישות:</label>
+                <label for="description"> : דרישות המשרה</label>
                 <textarea
                   id="job-standarts"
                   rows="3"
                   class="form-control mb-3"
                   placeholder="דרישות התפקיד"
                 ></textarea>
+                <center>
+                  <button class="btn btn-success" id="btn-job-form">פרסום משרה</button>
+                  <button onclick="location.href = 'index.html';" type="button" class="btn btn-primary">חזרה לדף הבית</button> 
 
-                <button class="btn btn-primary" id="btn-job-form">פרסם משרה</button>
+                </center>
               </form>
             </div>
           </div>
-        </div>
-        <!-- jobs List -->
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h1 class="h4">המשרות שלי</h1>
-        <div class="col-md-6" id="jobs-container"></div>
-            </div>
-         </div>
         </div>
       </div>
     </div>

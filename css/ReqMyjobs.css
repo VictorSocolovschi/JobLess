@@ -43,3 +43,13 @@ body {
     padding: 0 15%;
     margin: 0 30%;
   }
+
+input{
+    text-align: right;
+}
+textarea{
+  text-align: right;
+}
+form{
+  text-align: right;
+}

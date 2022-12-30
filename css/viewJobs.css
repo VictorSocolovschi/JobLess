@@ -109,3 +109,15 @@ button-contact:hover {
   background: #97DECE;
   text-decoration: none;
 }
+
+.dropdown-item{
+  margin-left: 0;
+}
+
+
+.bottom-container
+{
+   padding: 80px 0 20px;
+   text-align: center;
+
+}
