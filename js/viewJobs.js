@@ -26,7 +26,7 @@ import {
       querySnapshot.forEach((doc) => {
         const job = doc.data();
         jobsContainer.innerHTML += `
-    <div class="card card-body mt-2 border-primary">
+    <div class="card card-body mt-2 border-light" style="width: 18rem;">
       <h2 class="h5">${job.title}</h2>
       <label for="description" class="job-label"><strong>: תיאור התפקיד</strong></label>
       <p class="job-description">${job.description}</p>
