@@ -88,7 +88,7 @@ a:hover{
 #offerings{
   
   text-align: center;
-  background-color: #F5EBE0;
+  /* background-color: #F5EBE0; */
   color: #97DECE;
 }
 
@@ -122,7 +122,7 @@ a:hover{
 
 .bottom-container
 {
-   background-color: #DAE2B6;
+   background-color: #FAF7F0;
    padding: 80px 0 20px;
    text-align: center;
 
@@ -179,9 +179,8 @@ display: none !important;
   color: #EAF6F6;
   padding: 20px 0;
 }
-.feature-box{
-  background-color: #d6dce5d1;
-}
+
+
 /* .navbar-toggler-icon{
   font: Sacramento;
 }
@@ -266,7 +265,7 @@ a{
 
 
 a:link:hover,a:visited:hover{
-color:#fff;
+color:black;
 text-decoration:none;
 }
 
