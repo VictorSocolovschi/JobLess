@@ -265,7 +265,7 @@ a{
 
 
 a:link:hover,a:visited:hover{
-color:black;
+color:rgb(47, 184, 127);
 text-decoration:none;
 }
 
@@ -319,6 +319,6 @@ a.carousel-control-prev-icon{
 }
 
 ul.dropdown-menu.show{
-  --bs-dropdown-link-hover-bg: #2234d2;
+  --bs-dropdown-link-hover-bg: #ffffff;
 
 }
