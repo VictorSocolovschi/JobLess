@@ -148,10 +148,6 @@ onGetUsers((querySnapshot) => {
     mjb.classList.add("button-hidden");
     var psbu= document.getElementById("navbuttons");
     psbu.innerHTML +=` <button onclick="location.href = 'userPersonal.html';" id="Userinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
-
-    //var helloname = document.getElementById("showname");
-    //helloname.innerHTML += " שלום " + user.firstname + " " + user.lastname;
-
    }
   });
 });
@@ -164,9 +160,8 @@ onGetHRUsers((querySnapshot) => {
     { console.log("HRuser");
     var psbu= document.getElementById("navbuttons");
     psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
-    psbu.innerHTML +=`<button onclick="location.href = 'HRinfo.html';" id="HRinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
-    //var helloname = document.getElementById("showname");
-    //helloname.innerHTML += " שלום " + user.companyname;
+    psbu.innerHTML +=`<button onclick="location.href = 'HRpersonal.html';" id="HRinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
+    
    }
     
   });
@@ -179,9 +174,8 @@ onGetReqUsers((querySnapshot) => {
     { console.log("Requser"); 
     var psbu= document.getElementById("navbuttons");
     psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
-    psbu.innerHTML +=`<button onclick="location.href = 'Reqinfo.html';" id="Reqinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
-    //var helloname = document.getElementById("showname");
-    //helloname.innerHTML += " שלום " + user.firstname;
+    psbu.innerHTML +=`<button onclick="location.href = 'Reqpersonal.html';" id="Reqinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
+  
   }
   });
 });
