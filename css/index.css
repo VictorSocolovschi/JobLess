@@ -20,6 +20,10 @@ body{
 
 } */
 
+a.dropdown-item{
+  text-align: right;
+}
+
 p
 {
   line-height: 2;
