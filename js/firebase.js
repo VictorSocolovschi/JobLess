@@ -144,8 +144,8 @@ onGetUsers((querySnapshot) => {
     if(user.email == loggedinmail)
     { console.log("user");
 
-    var mjb= document.getElementById("myjobs-button");
-    mjb.classList.add("button-hidden");
+    // var mjb= document.getElementById("myjobs-button");
+    // mjb.classList.add("button-hidden");
     var psbu= document.getElementById("navbuttons");
     psbu.innerHTML +=` <button onclick="location.href = 'userPersonal.html';" id="Userinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
    }
@@ -159,7 +159,7 @@ onGetHRUsers((querySnapshot) => {
     if(user.email == loggedinmail)
     { console.log("HRuser");
     var psbu= document.getElementById("navbuttons");
-    psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
+    // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
     psbu.innerHTML +=`<button onclick="location.href = 'HRpersonal.html';" id="HRinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
     
    }
@@ -173,7 +173,7 @@ onGetReqUsers((querySnapshot) => {
     if(user.email == loggedinmail)
     { console.log("Requser"); 
     var psbu= document.getElementById("navbuttons");
-    psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
+    // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
     psbu.innerHTML +=`<button onclick="location.href = 'Reqpersonal.html';" id="Reqinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
   
   }
