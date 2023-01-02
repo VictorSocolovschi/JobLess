@@ -103,4 +103,15 @@ margin: 40px auto;
     margin-left: 0;
   }
   
+  a:link:hover,a:visited:hover{
+    color:rgb(47, 184, 127);
+    text-decoration:none;
+    }
+  ul.dropdown-menu.show{
+    --bs-dropdown-link-hover-bg: #ffffff;
+  
+  }
+  a.dropdown-item{
+    text-align: right;
+  }
   

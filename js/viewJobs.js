@@ -28,32 +28,36 @@ import {
     <div class="card card-body mt-2 border-light" style="max-width: 450px;
       max-height: 300px; overflow: scroll; position: relative;">
       
-      <h2 class="h5">${job.title}</h2>
-
-      <label for="description" class="job-label">
-      <strong>: תיאור התפקיד</strong></label>
+      <center><h2 class="h5">${job.title}</h2></center>
       
-      <p class="job-description">${job.description}</p>
+      <div>
 
-      <label for="description" class="job-label">
-      <strong>: מיקום</strong></label>
+        <label for="description" class="job-label">
+        <strong>: תיאור התפקיד</strong></label>
+        
+        <p class="job-description">${job.description}</p>
 
-      <p class="job-location">${job.location}</p> 
-      
-      <label for="description" class="job-label">
-      <strong>: היקף המשרה</strong></label>
+        <label for="description" class="job-label">
+        <strong>: מיקום</strong></label>
 
-      <p class="job-scope">${job.scope}</p>  
+        <p class="job-location">${job.location}</p> 
+        
+        <label for="description" class="job-label">
+        <strong>: היקף המשרה</strong></label>
 
-      <label for="description" class="job-label">
-      <strong>: דרישות</strong></label>
+        <p class="job-scope">${job.scope}</p>  
 
-      <p class="job-requirements">${job.standarts}</p> 
-      
-      <br>
+        <label for="description" class="job-label">
+        <strong>: דרישות</strong></label>
 
-      <a href="mailto:${job.pubmail}"><button-contact>צור קשר</button></a>
-      
+        <p class="job-requirements">${job.standarts}</p> 
+      </div>
+      <div>
+        <center>
+          <buttun class="btn btn-outline-success" href="mailto:${job.pubmail}">צור קשר</butten>
+        </center>
+      </div>
+        
     </div>
     `;
 
