@@ -178,7 +178,11 @@ onGetUsers((querySnapshot) => {
     { console.log("user");
     var mjb= document.getElementById("myjobs-button");
     mjb.classList.add("button-hidden");
-    document.getElementById("myinfo-button").innerHTML += onclick="location.href = 'Userinfo.html';";
+    document.getElementById("Userinfo-button").innerHTML;
+    var LgO = document.getElementById("Reqinfo-button");
+    LgO.classList.add("button-hidden");
+    var Lg1 = document.getElementById("HRinfo-button");
+    Lg1.classList.add("button-hidden");
     //var helloname = document.getElementById("showname");
     //helloname.innerHTML += " שלום " + user.firstname + " " + user.lastname;
 
@@ -191,7 +195,11 @@ onGetHRUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("HRuser");
-    document.getElementById("myinfo-button").innerHTML += onclick="location.href = 'HRinfo.html';";
+    document.getElementById("HRinfo-button").innerHTML;
+    var LgO = document.getElementById("Userinfo-button");
+    LgO.classList.add("button-hidden");
+    var Lg1 = document.getElementById("Reqinfo-button");
+    Lg1.classList.add("button-hidden");
     //var helloname = document.getElementById("showname");
     //helloname.innerHTML += " שלום " + user.companyname;
    }
@@ -204,7 +212,11 @@ onGetReqUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("Requser"); 
-    document.getElementById("myinfo-button").innerHTML += onclick="location.href = 'Reqinfo.html';";
+    document.getElementById("Reqinfo-button").innerHTML ;
+    var LgO = document.getElementById("Userinfo-button");
+    LgO.classList.add("button-hidden");
+    var Lg1 = document.getElementById("HRinfo-button");
+    Lg1.classList.add("button-hidden");
     //var helloname = document.getElementById("showname");
     //helloname.innerHTML += " שלום " + user.firstname;
   }
@@ -228,7 +240,11 @@ function navbar()
     LgO.classList.add("button-hidden");
     var mjb= document.getElementById("myjobs-button");
     mjb.classList.add("button-hidden");
-    var infbtn =document.getElementById("myinfo-button");
+    var infbtn =document.getElementById("Userinfo-button");
+    infbtn.classList.add("button-hidden");
+    var infbtn =document.getElementById("HRinfo-button");
+    infbtn.classList.add("button-hidden");
+    var infbtn =document.getElementById("Reqinfo-button");
     infbtn.classList.add("button-hidden");
 }
 
