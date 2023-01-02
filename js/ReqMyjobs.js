@@ -25,7 +25,7 @@ import {
         const job = doc.data();
         if(job.pubmail == loggedinmail){  
         jobsContainer.innerHTML += `
-      <div class="card card-body mt-2 border-defult" style="text-align:right">
+    <div class="card card-body mt-2 border-defult" style="text-align:right">
         <h3 class="h5">${job.title}</h3>
         <label for="description">: תיאור התפקיד</label>
         <p>${job.description}</p>
@@ -35,14 +35,17 @@ import {
         <p>${job.scope}</p> 
         <label for="description"> : דרישות</label>
         <p>${job.standarts}</p>  
-      <div>
-        <button class="btn btn-danger btn-delete" data-id="${doc.id}">
-          🗑 מחק
-        </button>
-        <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
-           ערוך
-        </button>
-      </div>
+        <div>
+          <button class="btn btn-danger btn-delete" data-id="${doc.id}">
+            🗑 מחק
+          </button>
+          <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
+            ערוך
+          </button>
+          <button class="btn btn-success btn-edit" data-id="${doc.id}">
+            קדם משרה
+          </button>
+        </div>
     </div>`;
   }
       });

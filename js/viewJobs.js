@@ -18,8 +18,6 @@ import {
     //   console.log(doc.data());
     // });
     
-    
-  
     onGetJobs((querySnapshot) => {
       jobsContainer.innerHTML = "";
 

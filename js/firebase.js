@@ -189,6 +189,7 @@ onGetUsers((querySnapshot) => {
 onGetHRUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
+    const userName = user.firstname;
     if(user.email == loggedinmail)
     { console.log("HRuser");
     document.getElementById("myinfo-button").innerHTML += onclick="location.href = 'HRinfo.html';";
@@ -243,7 +244,6 @@ function Loggedinnavbar()
 
 }
 
-
 // onget users
 export const onGetUsers = (callback) =>
   onSnapshot(collection(db, "users"), callback);
@@ -251,16 +251,11 @@ export const onGetUsers = (callback) =>
 export const onGetHRUsers = (callback) =>
   onSnapshot(collection(db, "HR-users"), callback);
 
-  export const onGetReqUsers = (callback) =>
+export const onGetReqUsers = (callback) =>
   onSnapshot(collection(db, "Req-users"), callback);
 
 
-/**
- *
- * @param {string} id User ID
- */
 export const deleteUser = (id) => deleteDoc(doc(db, "users", id));
-
 
 //get useR by ID
 export const getUser = (id) => getDoc(doc(db, "users", id));
@@ -288,6 +283,11 @@ export const getHRUsers = () => getDocs(collection(db, "HR-users"));
 
 export const getReqUsers = () => getDocs(collection(db, "Req-users"));
 
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
 
 
