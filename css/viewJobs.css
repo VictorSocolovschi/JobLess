@@ -91,7 +91,7 @@ h2.h5 {
 button-contact {
   position: absolute;
   left: 50%;
-  bottom: 20px;
+  bottom: 0;
   -webkit-border-radius: 23;
   -moz-border-radius: 23;
   border-radius: 23px;
@@ -109,6 +109,8 @@ button-contact:hover {
   background: #97DECE;
   text-decoration: none;
 }
+
+
 
 .dropdown-item{
   margin-left: 0;
