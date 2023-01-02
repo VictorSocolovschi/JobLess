@@ -23,34 +23,37 @@ import {
       max-height: 300px; overflow: scroll; position: relative;">
       
      <center><h3>${user.firstname +" "+ user.lastname}</h3></center>
+        <div>
+            <label for="description" class="job-label">
+            <strong>: תיאור עובד</strong>
+            </label>
+            
+            <p class="job-description">${user.description}</p>
+            
+            <label for="description" class="job-label">
+            <strong>: גיל העובד</strong>
+            </label>
+            
+            <p class="job-location">${user.age}</p> 
+            
+            <label for="description" class="job-label">
+            <strong>: מיקום העובד</strong>
+            </label>
 
-      <label for="description" class="job-label">
-      <strong>: תיאור עובד</strong>
-      </label>
-      
-      <p class="job-description">${user.description}</p>
-    
-      <label for="description" class="job-label">
-      <strong>: גיל העובד</strong>
-      </label>
-    
-      <p class="job-location">${user.age}</p> 
-      
-      <label for="description" class="job-label">
-      <strong>: מיקום העובד</strong>
-      </label>
+            <p class="job-location">${user.location}</p> 
+            
+            <label for="description" class="job-label">
+            <strong>: טלפון ליצירת קשר</strong>
+            </label>
 
-      <p class="job-location">${user.location}</p> 
-      
-      <label for="description" class="job-label">
-      <strong>: טלפון ליצירת קשר</strong>
-      </label>
-
-      <p class="job-scope">${user.phonenumber}</p>  
-      
-      <br>
-
-      <a href="mailto:${user.email}"><button-contact>צור קשר</button></a>
+            <p class="job-scope">${user.phonenumber}</p>  
+            
+        </div>
+        <div>
+            <center>
+            <buttun class="btn btn-outline-success" href="mailto:${user.email}">צור קשר</butten>
+            </center>
+        </div>
       
     </div>
     `;
