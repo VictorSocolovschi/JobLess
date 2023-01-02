@@ -5,7 +5,7 @@ import {
     myJobauth,
     loggedinmail
 
-  } from "../firebase.js";
+  } from "./firebase.js";
   
   const HRinfoForm = document.getElementById("HRinfo-form");
   const HRdataContainer = document.getElementById("HRinfo-container");
