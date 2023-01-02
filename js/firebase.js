@@ -126,6 +126,7 @@ export const myJobauth = () =>
     //const uid = user.uid;
     loggedinmail = user.email;
     console.log("logged in");
+    console.log(loggedinmail);
 
   } else {
     console.log("logged out");
@@ -142,15 +143,12 @@ onGetUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("user");
+
     var mjb= document.getElementById("myjobs-button");
     mjb.classList.add("button-hidden");
-    document.getElementById("Userinfo-button").innerHTML;
-    var LgO = document.getElementById("Reqinfo-button");
-    LgO.classList.add("button-hidden");
-    var Lg1 = document.getElementById("HRinfo-button");
-    Lg1.classList.add("button-hidden");
-    var Lg2 = document.getElementById("Candidates");
-    Lg2.classList.add("button-hidden");
+    var psbu= document.getElementById("navbuttons");
+    psbu.innerHTML +=` <button onclick="location.href = 'userPersonal.html';" id="Userinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
+
     //var helloname = document.getElementById("showname");
     //helloname.innerHTML += " שלום " + user.firstname + " " + user.lastname;
 
@@ -164,11 +162,9 @@ onGetHRUsers((querySnapshot) => {
     const userName = user.firstname;
     if(user.email == loggedinmail)
     { console.log("HRuser");
-    document.getElementById("HRinfo-button").innerHTML;
-    var LgO = document.getElementById("Userinfo-button");
-    LgO.classList.add("button-hidden");
-    var Lg1 = document.getElementById("Reqinfo-button");
-    Lg1.classList.add("button-hidden");
+    var psbu= document.getElementById("navbuttons");
+    psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
+    psbu.innerHTML +=`<button onclick="location.href = 'HRinfo.html';" id="HRinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
     //var helloname = document.getElementById("showname");
     //helloname.innerHTML += " שלום " + user.companyname;
    }
@@ -181,19 +177,15 @@ onGetReqUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("Requser"); 
-    document.getElementById("Reqinfo-button").innerHTML ;
-    var LgO = document.getElementById("Userinfo-button");
-    LgO.classList.add("button-hidden");
-    var Lg1 = document.getElementById("HRinfo-button");
-    Lg1.classList.add("button-hidden");
+    var psbu= document.getElementById("navbuttons");
+    psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
+    psbu.innerHTML +=`<button onclick="location.href = 'Reqinfo.html';" id="Reqinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
     //var helloname = document.getElementById("showname");
     //helloname.innerHTML += " שלום " + user.firstname;
   }
   });
 });
 };
-
-
 
 //Auth singout
 export const signoutfunc = () => 
@@ -205,27 +197,19 @@ export const signoutfunc = () =>
 
 function navbar() 
 {
+  var psbu= document.getElementById("navbuttons");
+  psbu.innerHTML +=`
+<button onclick="location.href = 'signUpPage.html';" id="register" type="button" class="btn btn-success reg-btn" >הרשמה</button>
+<button onclick="location.href = 'login.html';" id="login-button" type="button"  class="btn btn-primary reg-btn" style="margin-left: 20px;">משתמש קיים</button>`;
     var LgO = document.getElementById("logout-button");
     LgO.classList.add("button-hidden");
-    var mjb= document.getElementById("myjobs-button");
-    mjb.classList.add("button-hidden");
-    var infbtn =document.getElementById("Userinfo-button");
-    infbtn.classList.add("button-hidden");
-    var infbtn =document.getElementById("HRinfo-button");
-    infbtn.classList.add("button-hidden");
-    var infbtn =document.getElementById("Reqinfo-button");
-    infbtn.classList.add("button-hidden");
+    
 }
 
 function Loggedinnavbar() 
 {
     userkind ();
-    var LgIn = document.getElementById("register");
-    var LgIn2 = document.getElementById("login-button");
-    LgIn.classList.add("button-hidden");
-    LgIn2.classList.add("button-hidden");
     
-
 }
 
 // onget users

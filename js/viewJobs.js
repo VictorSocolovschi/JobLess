@@ -54,10 +54,10 @@ import {
       </div>
       <div>
         <center>
-          <a class="btn btn-outline-dark" href="mailto:${job.pubmail}">צור קשר</a>
+          <a class="btn btn-outline-success" href="mailto:${job.pubmail}">צור קשר</a>
         </center>
       </div>
-
+        
     </div>
     `;
 
