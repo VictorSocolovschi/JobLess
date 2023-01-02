@@ -1,0 +1,50 @@
+.card-registration .select-input.form-control[readonly]:not([disabled]) 
+{
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow 
+{
+    top: 13px;
+}
+
+.form-check
+{
+    text-align: right;
+}
+
+.jobless-img
+{
+ padding-bottom: 20px;
+}
+
+.buttons-down
+{
+    align-content: center;
+}
+
+.age
+{
+    align-content: right;
+}
+
+.form-outline
+{
+    text-align: right;
+}
+
+.card
+{
+    background-color: #fff;
+}
+
+input{
+    text-align: right;
+
+}
+
+
+
