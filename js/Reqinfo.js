@@ -5,7 +5,7 @@ import {
     ,myJobauth
     ,loggedinmail
 
-  } from "../firebase.js";
+  } from "./firebase.js";
   
   const ReqinfoForm = document.getElementById("Req-info-form");
   const ReqdataContainer = document.getElementById("Reqinfo-container");

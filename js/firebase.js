@@ -178,8 +178,9 @@ onGetUsers((querySnapshot) => {
     { console.log("user");
     var mjb= document.getElementById("myjobs-button");
     mjb.classList.add("button-hidden");
-    var helloname = document.getElementById("showname");
-    helloname.innerHTML += " שלום " + user.firstname + " " + user.lastname;
+    document.getElementById("myinfo-button").innerHTML += onclick="location.href = 'Userinfo.html';";
+    //var helloname = document.getElementById("showname");
+    //helloname.innerHTML += " שלום " + user.firstname + " " + user.lastname;
 
    }
   });
@@ -190,8 +191,9 @@ onGetHRUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("HRuser");
-    var helloname = document.getElementById("showname");
-    helloname.innerHTML += " שלום " + user.companyname;
+    document.getElementById("myinfo-button").innerHTML += onclick="location.href = 'HRinfo.html';";
+    //var helloname = document.getElementById("showname");
+    //helloname.innerHTML += " שלום " + user.companyname;
    }
     
   });
@@ -202,9 +204,9 @@ onGetReqUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("Requser"); 
-  
-    var helloname = document.getElementById("showname");
-    helloname.innerHTML += " שלום " + user.firstname;
+    document.getElementById("myinfo-button").innerHTML += onclick="location.href = 'Reqinfo.html';";
+    //var helloname = document.getElementById("showname");
+    //helloname.innerHTML += " שלום " + user.firstname;
   }
   });
 });
@@ -226,6 +228,8 @@ function navbar()
     LgO.classList.add("button-hidden");
     var mjb= document.getElementById("myjobs-button");
     mjb.classList.add("button-hidden");
+    var infbtn =document.getElementById("myinfo-button");
+    infbtn.classList.add("button-hidden");
 }
 
 function Loggedinnavbar() 
