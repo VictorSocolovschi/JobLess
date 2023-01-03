@@ -327,23 +327,29 @@ export const getJobs = () => getDocs(collection(db, "Jobs"));
 
 
 
-// for posts
+// ================ for posts - do not delete ================
 
-export const saveposts = (pubmail,title, description,location,scope,standarts) =>
-  addDoc(collection(db, "posts"), {pubmail, title, description,location,scope,standarts });
 
-export const onGetposts = (callback) =>
-  onSnapshot(collection(db, "posts"), callback);
+// export const saveposts = (pubmail,title, description,location,scope,standarts) =>
+//   addDoc(collection(db, "posts"), {pubmail, title, description,location,scope,standarts });
 
-/**
- *
- * @param {string} id Task ID
- */
-export const deleteposts = (id) => deleteDoc(doc(db, "posts", id));
+// export const onGetposts = (callback) =>
+//   onSnapshot(collection(db, "posts"), callback);
 
-export const getposts = (id) => getDoc(doc(db, "posts", id));
+// /**
+//  *
+//  * @param {string} id Task ID
+//  */
+// export const deleteposts = (id) => deleteDoc(doc(db, "posts", id));
 
-export const updateposts = (id, newFields) =>
-  updateDoc(doc(db, "posts", id), newFields);
+// export const getposts = (id) => getDoc(doc(db, "posts", id));
 
-export const getposts = () => getDocs(collection(db, "posts"));
+// export const updateposts = (id, newFields) =>
+//   updateDoc(doc(db, "posts", id), newFields);
+
+// export const getposts = () => getDocs(collection(db, "posts"));
+
+
+
+// ================ for posts - do not delete ================
+
