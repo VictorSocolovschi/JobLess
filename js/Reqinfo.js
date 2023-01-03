@@ -88,7 +88,7 @@ ReqinfoForm.addEventListener("submit", async (e) => {
         });
    
         editStatus = false;
-        id = "";
+        id = "";js/Reqinfo.js
         ReqinfoForm["btn-reqinfo-form"].innerText = "";
       }
       ReqinfoForm.reset();

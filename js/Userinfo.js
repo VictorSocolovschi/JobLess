@@ -43,15 +43,18 @@ import {
             const data = doc.data();
             infoForm["UserFirstName-info"].value = data.firstname;
             infoForm["UserLastName-info"].value = data.lastname;
-            //infoForm["UserEmail-info"].value = data.email;
+            infoForm["UserEmail-info"].value = data.email;
             //infoForm["UserPassword-info"].value = data.password;
-            nochangeemail = data.email;
+            // nochangeemail = data.email;
             nochangepass = data.password;
 
-            infoForm["UserAge-info"].value = data.age;
+            infoForm["UserJob-info"].value = data.job;
+            infoForm["UserJobPrecentage-info"].value = data.jobprecentage;
             infoForm["UserLocation-info"].value = data.location;
-            infoForm["UserDescription-info"].value = data.description;
             infoForm["UserPhoneNumber-info"].value = data.phonenumber;
+            infoForm["UserExperience-info"].value = data.experience;
+            infoForm["userGeneral-info"].value = data.general;
+
 
             editStatus = true;
             id = doc.id;

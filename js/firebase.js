@@ -323,3 +323,27 @@ export const updateJob = (id, newFields) =>
   updateDoc(doc(db, "Jobs", id), newFields);
 
 export const getJobs = () => getDocs(collection(db, "Jobs"));
+
+
+
+
+// for posts
+
+export const saveposts = (pubmail,title, description,location,scope,standarts) =>
+  addDoc(collection(db, "posts"), {pubmail, title, description,location,scope,standarts });
+
+export const onGetposts = (callback) =>
+  onSnapshot(collection(db, "posts"), callback);
+
+/**
+ *
+ * @param {string} id Task ID
+ */
+export const deleteposts = (id) => deleteDoc(doc(db, "posts", id));
+
+export const getposts = (id) => getDoc(doc(db, "posts", id));
+
+export const updateposts = (id, newFields) =>
+  updateDoc(doc(db, "posts", id), newFields);
+
+export const getposts = () => getDocs(collection(db, "posts"));
