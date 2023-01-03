@@ -51,7 +51,7 @@ import {
         </div>
         <div>
             <center>
-            <buttun class="btn btn-outline-success" href="mailto:${user.email}">צור קשר</butten>
+             <a class="btn btn-outline-dark" href="mailto:${user.email}">צור קשר</a>
             </center>
         </div>
       

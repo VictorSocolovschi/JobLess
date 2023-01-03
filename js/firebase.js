@@ -24,19 +24,7 @@ export const db = getFirestore();
 // Intializing auth
 const auth = getAuth(app);
 
-//Save users
-/**
- * Save a New user in Firestore
- * @param {string} firstname the user firstname
- * @param {string} lastname the user lastname
- * @param {string} email the email of the user
- * @param {string} password userpassword
- * @param {string} age userage
- * @param {string} phonenumber userage
- * @param {string} location user location
- * @param {string} description user description
- * 
- */
+
 
 export const saveUser = (firstname,lastname,email,password,age,location, phonenumber, description) =>
 {createUserWithEmailAndPassword(auth, email, password)
@@ -56,18 +44,7 @@ export const saveUser = (firstname,lastname,email,password,age,location, phonenu
         // ..
   });
 }
-//Save users
-//maybe X3
-/**
- * Save a New user in Firestore
- * @param {string} companyname the username
- * @param {string} username the email of the user
- * @param {string} email the email of the user
- * @param {string} password userpassword
- * @param {string} phonenumber phonenumber
- * @param {string} description user description
- * 
- */
+
 export const saveHRUser = (companyname,username,email,password,phonenumber, description) =>
   {createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -86,18 +63,7 @@ export const saveHRUser = (companyname,username,email,password,phonenumber, desc
         // ..
   });
 }
-//Save users
-//maybe X3
-/**
- * Save a New user in Firestore
- * @param {string} firstname the user firstname
- * @param {string} lastname the user lastname
- * @param {string} email the email of the user
- * @param {string} password userpassword
- * @param {string} phonenumber userpassword
- * @param {string} description user description
- * 
- */
+
 export const saveReqUser = (firstname,lastname,email,password,phonenumber, description) =>
   {createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -160,6 +126,7 @@ export const myJobauth = () =>
     //const uid = user.uid;
     loggedinmail = user.email;
     console.log("logged in");
+    console.log(loggedinmail);
 
   } else {
     console.log("logged out");
@@ -176,16 +143,11 @@ onGetUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("user");
-    var mjb= document.getElementById("myjobs-button");
-    mjb.classList.add("button-hidden");
-    document.getElementById("Userinfo-button").innerHTML;
-    var LgO = document.getElementById("Reqinfo-button");
-    LgO.classList.add("button-hidden");
-    var Lg1 = document.getElementById("HRinfo-button");
-    Lg1.classList.add("button-hidden");
-    //var helloname = document.getElementById("showname");
-    //helloname.innerHTML += " שלום " + user.firstname + " " + user.lastname;
 
+    // var mjb= document.getElementById("myjobs-button");
+    // mjb.classList.add("button-hidden");
+    var psbu= document.getElementById("navbuttons");
+    psbu.innerHTML +=` <button onclick="location.href = 'userPersonal.html';" id="Userinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
    }
   });
 });
@@ -196,13 +158,10 @@ onGetHRUsers((querySnapshot) => {
     const userName = user.firstname;
     if(user.email == loggedinmail)
     { console.log("HRuser");
-    document.getElementById("HRinfo-button").innerHTML;
-    var LgO = document.getElementById("Userinfo-button");
-    LgO.classList.add("button-hidden");
-    var Lg1 = document.getElementById("Reqinfo-button");
-    Lg1.classList.add("button-hidden");
-    //var helloname = document.getElementById("showname");
-    //helloname.innerHTML += " שלום " + user.companyname;
+    var psbu= document.getElementById("navbuttons");
+    // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
+    psbu.innerHTML +=`<button onclick="location.href = 'HRpersonal.html';" id="HRinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
+    
    }
     
   });
@@ -213,19 +172,14 @@ onGetReqUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("Requser"); 
-    document.getElementById("Reqinfo-button").innerHTML ;
-    var LgO = document.getElementById("Userinfo-button");
-    LgO.classList.add("button-hidden");
-    var Lg1 = document.getElementById("HRinfo-button");
-    Lg1.classList.add("button-hidden");
-    //var helloname = document.getElementById("showname");
-    //helloname.innerHTML += " שלום " + user.firstname;
+    var psbu= document.getElementById("navbuttons");
+    // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
+    psbu.innerHTML +=`<button onclick="location.href = 'Reqpersonal.html';" id="Reqinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
+  
   }
   });
 });
 };
-
-
 
 //Auth singout
 export const signoutfunc = () => 
@@ -237,27 +191,19 @@ export const signoutfunc = () =>
 
 function navbar() 
 {
+  var psbu= document.getElementById("navbuttons");
+  psbu.innerHTML +=`
+<button onclick="location.href = 'signUpPage.html';" id="register" type="button" class="btn btn-success reg-btn" >הרשמה</button>
+<button onclick="location.href = 'login.html';" id="login-button" type="button"  class="btn btn-primary reg-btn" style="margin-left: 20px;">משתמש קיים</button>`;
     var LgO = document.getElementById("logout-button");
     LgO.classList.add("button-hidden");
-    var mjb= document.getElementById("myjobs-button");
-    mjb.classList.add("button-hidden");
-    var infbtn =document.getElementById("Userinfo-button");
-    infbtn.classList.add("button-hidden");
-    var infbtn =document.getElementById("HRinfo-button");
-    infbtn.classList.add("button-hidden");
-    var infbtn =document.getElementById("Reqinfo-button");
-    infbtn.classList.add("button-hidden");
+    
 }
 
 function Loggedinnavbar() 
 {
     userkind ();
-    var LgIn = document.getElementById("register");
-    var LgIn2 = document.getElementById("login-button");
-    LgIn.classList.add("button-hidden");
-    LgIn2.classList.add("button-hidden");
     
-
 }
 
 // onget users
@@ -339,3 +285,35 @@ export const updateJob = (id, newFields) =>
   updateDoc(doc(db, "Jobs", id), newFields);
 
 export const getJobs = () => getDocs(collection(db, "Jobs"));
+
+
+// document.querySelector('form').addEventListener('submit', function(e) {
+//   e.preventDefault();
+//   var file = document.querySelector('fileInput').files[0];
+// });
+
+// var storageRef = firebase.storage().ref();
+// var pdfRef = storageRef.child('pdfs' + file.name);
+// pdfRef.put(file).then(function(snapshot) {
+// console.log('Uploaded a pdf file!');
+// });
+
+// var db = firebase.firestore();
+// db.collection(db,"pdfs").add({
+// name: file.name,
+// createdAt: firebase.firestore.FieldValue.serverTimestamp()
+// }).then(function(docRef) {
+// console.log('Document written with ID: ', docRef.id);
+// });
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <form className='form'>
+//         <input type='file' />
+//         <button type='submit'>Upload</button>
+//       </form>
+//     </div> 
+//   );
+// }
+// export default App;
