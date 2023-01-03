@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>מחפש עבודה - איזור אישי</title>
-    <script src="./js/index.js" type="module"></script>
+    <script src="./js/userPersonal.js" type="module"></script>
     <link rel="Website icon" type="img" href="images/jobless_photo-removebg-preview.png">
     <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -53,8 +53,8 @@
         <a class="btn btn-lg btn-outline-success" onclick="location.href = 'viewJobs.html';" style="width: 80%; margin-top: 2rem;">חיפוש משרה</a>
         
         <form action="" style="margin-top: 3rem;">
-            <input type="file" id="fileinput" accept=".pdf">
-            <button type="submit" >העלאת קובץ</button>
+            <input type="file" id="pdfFileInput">
+            <button onclick="uploadPDF()">Upload PDF</button>
         </form>
         
          

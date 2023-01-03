@@ -144,8 +144,8 @@ onGetUsers((querySnapshot) => {
     if(user.email == loggedinmail)
     { console.log("user");
 
-    var mjb= document.getElementById("myjobs-button");
-    mjb.classList.add("button-hidden");
+    // var mjb= document.getElementById("myjobs-button");
+    // mjb.classList.add("button-hidden");
     var psbu= document.getElementById("navbuttons");
     psbu.innerHTML +=` <button onclick="location.href = 'userPersonal.html';" id="Userinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
    }
@@ -158,7 +158,7 @@ onGetHRUsers((querySnapshot) => {
     if(user.email == loggedinmail)
     { console.log("HRuser");
     var psbu= document.getElementById("navbuttons");
-    psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
+    // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
     psbu.innerHTML +=`<button onclick="location.href = 'HRpersonal.html';" id="HRinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
     
    }
@@ -172,7 +172,7 @@ onGetReqUsers((querySnapshot) => {
     if(user.email == loggedinmail)
     { console.log("Requser"); 
     var psbu= document.getElementById("navbuttons");
-    psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
+    // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
     psbu.innerHTML +=`<button onclick="location.href = 'Reqpersonal.html';" id="Reqinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
   
   }
@@ -281,33 +281,18 @@ export const updateJob = (id, newFields) =>
 export const getJobs = () => getDocs(collection(db, "Jobs"));
 
 
-// document.querySelector('form').addEventListener('submit', function(e) {
-//   e.preventDefault();
-//   var file = document.querySelector('fileInput').files[0];
-// });
+export function uploadPDF() {
+  // Get a file reference to the PDF file
+  var file = document.getElementById("pdfFileInput");
 
-// var storageRef = firebase.storage().ref();
-// var pdfRef = storageRef.child('pdfs' + file.name);
-// pdfRef.put(file).then(function(snapshot) {
-// console.log('Uploaded a pdf file!');
-// });
+  // Create a storage reference from our storage service
+  var storageRef = addDoc(doc(db,"pdfs",id));
 
-// var db = firebase.firestore();
-// db.collection(db,"pdfs").add({
-// name: file.name,
-// createdAt: firebase.firestore.FieldValue.serverTimestamp()
-// }).then(function(docRef) {
-// console.log('Document written with ID: ', docRef.id);
-// });
+  // Create a reference to the PDF file in your storage bucket
+  var pdfRef = storageRef.child("pdfs/" + file.name);
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <form className='form'>
-//         <input type='file' />
-//         <button type='submit'>Upload</button>
-//       </form>
-//     </div> 
-//   );
-// }
-// export default App;
+  // Upload the file to the PDFs folder in your storage bucket
+  pdfRef.put(file).then(function(snapshot) {
+    console.log("PDF uploaded successfully");
+  });
+};

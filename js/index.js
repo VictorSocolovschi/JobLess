@@ -2,7 +2,7 @@
 import { 
     signedinfunc,
     signoutfunc,
-    loggedinmail
+    loggedinmail,
     //getlogged
 } from "./firebase.js";
 
@@ -19,4 +19,7 @@ e.preventDefault();
 signoutfunc();
 
 });
+
+
+
 
