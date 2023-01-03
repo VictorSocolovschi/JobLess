@@ -110,7 +110,7 @@ export const signedinfunc = () =>
     //const uid = user.uid;
     loggedinmail = user.email;
     console.log("logged in");
-    Loggedinnavbar()  
+    userkind();  
     // ...
   } else {
     console.log("logged out");
@@ -155,7 +155,6 @@ onGetUsers((querySnapshot) => {
 onGetHRUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
-    const userName = user.firstname;
     if(user.email == loggedinmail)
     { console.log("HRuser");
     var psbu= document.getElementById("navbuttons");
@@ -200,11 +199,6 @@ function navbar()
     
 }
 
-function Loggedinnavbar() 
-{
-    userkind ();
-    
-}
 
 // onget users
 export const onGetUsers = (callback) =>
