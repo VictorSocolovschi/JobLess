@@ -300,5 +300,8 @@ export function uploadPDF() {
   // Upload the file to the PDFs folder in your storage bucket
   pdfRef.put(file).then(function(snapshot) {
     console.log("PDF uploaded successfully");
+
+
   });
 };
+
