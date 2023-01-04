@@ -15,7 +15,7 @@ import {
 
   var nochangeemail = "0";
   var nochangepass = "0";
-
+  var usermyage = "0";
   let editStatus = false;
   let id = "";
   
@@ -39,13 +39,16 @@ import {
       btnsEdit.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
           try {
+            // when clicking edit, takes from firebase the info and shows if for edit option
+
             const doc = await getUser(e.target.dataset.id);
             const data = doc.data();
             infoForm["UserFirstName-info"].value = data.firstname;
             infoForm["UserLastName-info"].value = data.lastname;
-            infoForm["UserEmail-info"].value = data.email;
+            infoForm["Usernewemail-info"].value = data.newemail;
             //infoForm["UserPassword-info"].value = data.password;
-            // nochangeemail = data.email;
+            nochangeemail = data.email;
+            usermyage = data.age;
             nochangepass = data.password;
 
             infoForm["UserJob-info"].value = data.job;
@@ -53,7 +56,7 @@ import {
             infoForm["UserLocation-info"].value = data.location;
             infoForm["UserPhoneNumber-info"].value = data.phonenumber;
             infoForm["UserExperience-info"].value = data.experience;
-            infoForm["userGeneral-info"].value = data.general;
+            infoForm["UserGeneral-info"].value = data.general;
 
 
             editStatus = true;
@@ -69,16 +72,28 @@ import {
 
   
 infoForm.addEventListener("submit", async (e) => {
+    // each string is a data and it catches that string from html box
+
     e.preventDefault();
     //const publisher = user email
     const UserFirstName = document.getElementById("UserFirstName-info").value;
     const UserLastName = document.getElementById("UserLastName-info").value;
     //const UserEmail = document.getElementById("UserEmail-info").value;
     //const UserPassword = document.getElementById("UserPassword-info").value;
-    const UserAge = document.getElementById("UserAge-info").value;
+    // const UserAge = document.getElementById("UserAge-info").value;
     const UserLocation = document.getElementById("UserLocation-info").value;
-    const UserDescription = document.getElementById("UserDescription-info").value;
+    // const UserDescription = document.getElementById("UserDescription-info").value;
     const UserPhoneNumber = document.getElementById("UserPhoneNumber-info").value;
+
+    
+
+
+    const UserExperience = document.getElementById("UserExperience-info").value;
+    const UserGeneral = document.getElementById("UserGeneral-info").value;
+    const UserJob = document.getElementById("UserJob-info").value;
+    const UserJobPrecentage = document.getElementById("UserJobPrecentage-info").value;
+    const Usernewemail = document.getElementById("Usernewemail-info").value;
+
     
     try {
       if (!editStatus) {
@@ -88,11 +103,18 @@ infoForm.addEventListener("submit", async (e) => {
           firstname: UserFirstName,
             lastname: UserLastName,
             email: nochangeemail,
+            newemail: Usernewemail,
             password: nochangepass,
-            age: UserAge,
+            age: usermyage,
             location: UserLocation,
-            description: UserDescription,
             phonenumber: UserPhoneNumber,
+            
+            // user firebase data 
+            experience: UserExperience,
+            general: UserGeneral,
+            job: UserJob,
+            jobprecentage: UserJobPrecentage,
+
            
         });
    
