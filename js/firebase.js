@@ -299,18 +299,3 @@ export function uploadFile() {
     storageRef.put(file);
   });
 }
-// export function uploadPDF() {
-//   // Get a file reference to the PDF file
-//   var file = document.getElementById("pdfFileInput");
-
-//   // Create a storage reference from our storage service
-//   var storageRef = addDoc(doc(db,"pdfs"));
-
-//   // Create a reference to the PDF file in your storage bucket
-//   var pdfRef = storageRef.child("pdfs/" + file.name);
-
-//   // Upload the file to the PDFs folder in your storage bucket
-//   pdfRef.put(file).then(function(snapshot) {
-//     console.log("PDF uploaded successfully");
-//   });
-// };
