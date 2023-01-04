@@ -3,8 +3,9 @@ import {
     signedinfunc,
     signoutfunc,
     loggedinmail,
-    uploadPDF,
+    // uploadPDF,
     myJobauth,
+    uploadFile,
     //getlogged
 } from "./firebase.js";
 
@@ -21,4 +22,5 @@ signoutfunc();
 
 });
 
-uploadPDF();
+uploadFile();
+// uploadPDF();
