@@ -26,7 +26,7 @@ import {
         const data = doc.data();
         if(data.email == loggedinmail){  
         dataContainer.innerHTML += `
-      <h3 class="h5"> שלום ${data.firstname}</h3>
+      <h3 class="h5"> ברוך הבא ${data.firstname}</h3>
       <div>
       <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
       🖉  ערוך פרטים אישיים

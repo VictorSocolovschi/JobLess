@@ -27,6 +27,17 @@ userForm.addEventListener("submit", async (e) =>
   const UserLocation = document.getElementById("UserLocation").value;
   const UserDescription = document.getElementById("UserDescription").value;
   const UserPhoneNumber = document.getElementById("UserPhoneNumber").value;
+
+
+  const UserExperience = document.getElementById("UserExperience-info").value;
+  const UserGeneral = document.getElementById("UserGeneral-info").value;
+  const UserJob = document.getElementById("UserJob-info").value;
+  const UserJobPrecentage = document.getElementById("UserJobPrecentage-info").value;
+
+  // const Usernewemail = document.getElementById("Usernewemail-info").value; do not touch - for back up email
+
+
+
   //checking if every box filled correct.
   if(!UserFirstName)
   {  alert("שם פרטי לא הוכנס");}
@@ -44,6 +55,15 @@ userForm.addEventListener("submit", async (e) =>
   {  alert("תיאור לא הוכנס"); }
   else if(!UserPhoneNumber)
   {  alert("מספר פלאפון לא הוכנס"); }
+  // new edit
+  else if(!UserExperience)
+  {  alert("ניסיון לא הוכנס"); }
+  else if(!UserGeneral)
+  {  alert("ניסיון כללי לא הוכנס"); }
+  else if(!UserJob)
+  {  alert("משרה רצויה לא צוינה"); }
+  else if(!UserJobPrecentage)
+  {  alert("אחוז משרה לא צוין"); }
   else{
 
     // if data filled proprotly it will send by this function to the data base.
@@ -52,7 +72,7 @@ userForm.addEventListener("submit", async (e) =>
 
 });
 
-function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber)
+function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber,UserExperience,UserGeneral,UserJob,UserJobPrecentage)
   {
     //data will be checked for Authentication with fire base.
           try {
@@ -64,7 +84,12 @@ function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,User
                 UserAge,
                 UserLocation,
                 UserDescription,
-                UserPhoneNumber
+                UserPhoneNumber,
+                // new edit
+                UserExperience,
+                UserGeneral,
+                UserJob,
+                UserJobPrecentage
               );
     
           userForm.reset();
