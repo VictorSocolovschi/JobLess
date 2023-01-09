@@ -90,7 +90,6 @@ infoForm.addEventListener("submit", async (e) => {
             location: UserLocation,
             description: UserDescription,
             phonenumber: UserPhoneNumber,
-           
         });
    
         editStatus = false;

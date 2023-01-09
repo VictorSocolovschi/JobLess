@@ -5,7 +5,8 @@ import { getAuth , createUserWithEmailAndPassword,signInWithEmailAndPassword , o
 //firebase function imports
 import {getFirestore,collection,getDocs,onSnapshot,addDoc,deleteDoc, doc,getDoc,updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
-
+export var loggedinmail="0";
+export var userdoc="0";
 // web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAAUOFyRYgjfa7zVvL4ihGkk5r-ULoTAms",
@@ -102,7 +103,7 @@ export const loginfunc = (email,password) =>
     const errorMessage = error.message;
   });
 }
-export var loggedinmail="0";
+
 //Auth login 
 export const signedinfunc = () =>
 {onAuthStateChanged(auth, (user) => {
@@ -128,6 +129,14 @@ export const myJobauth = () =>
     console.log("logged in");
     console.log(loggedinmail);
 
+    onGetUsers((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const user = doc.data();
+        if(user.email == loggedinmail)
+        { console.log("user");
+        userdoc = doc.id;
+      }})});
+
   } else {
     console.log("logged out");
   }
@@ -143,6 +152,7 @@ onGetUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("user");
+    userdoc = doc.id; 
     var un= document.getElementById("usernavbar");
     un.innerHTML +=`<li class="nav-item">
     <a class="nav-link active" href="viewJobs.html">משרות</a>
@@ -162,7 +172,8 @@ onGetHRUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
     if(user.email == loggedinmail)
-    { console.log("HRuser");
+    { userdoc = doc.id;
+      console.log("HRuser");
     
     var un= document.getElementById("usernavbar");
     un.innerHTML +=` <li class="nav-item">
@@ -184,7 +195,9 @@ onGetReqUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
     if(user.email == loggedinmail)
-    { console.log("Requser"); 
+    { 
+      userdoc = doc.id;
+      console.log("Requser"); 
     var un= document.getElementById("usernavbar");
     un.innerHTML +=` <li class="nav-item">
     <a class="nav-link active" href="jobSeekers.html" id="Candidates">מועמדים</a>
@@ -311,24 +324,31 @@ export function addfile(){
   document.getElementById('file').addEventListener('change', (event) => {
       const file = event.target.files[0];
       const storageRef = firebase.storage().ref('pdfs/' + loggedinmail);
-  
+
       storageRef.put(file).on('state_changed', (snapshot) => {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log(progress);
           const progressBar = document.getElementById('progress_bar');
           progressBar.value = progress;
       });
-  
-      storageRef.getDownloadURL().then(function(url){
-          const image = document.getElementById('image');
-          console.log(url);
-          image.src = url
-      });
-
-      var uploaded= document.getElementById("userpersonal");
-      uploaded.innerHTML +=`<center> 
-      <a>  קובץ הועלה בהצלחה</a>
-    </center> `;
+  urltodata(storageRef);
+      
   });
-  
-};
+ 
+};  
+
+function urltodata(storageRef)
+{
+  storageRef.getDownloadURL().then(function(url) {
+    // The download URL for the PDF file is contained in the `url` variable
+    var uploaded= document.getElementById("userpersonal");
+  uploaded.innerHTML +=`<center> 
+  <a>  קובץ הועלה בהצלחה</a>
+</center> `;
+ updateUsers(userdoc, {pdfurl: url});
+  }).catch(function(error) {
+    // Handle any errors
+    console.error(error);
+  });
+
+}
