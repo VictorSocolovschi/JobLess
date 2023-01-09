@@ -25,7 +25,7 @@ import {
     const UserPassword = document.getElementById("UserPassword").value;
     const UserAge = document.getElementById("UserAge").value;
     const UserLocation = document.getElementById("UserLocation").value;
-    const UserDescription = document.getElementById("UserDescription").value;
+  
     const UserPhoneNumber = document.getElementById("UserPhoneNumber").value;
     const UserWantedJob = document.getElementById("UserWantedJob").value;
     const UserExp = document.getElementById("UserExp").value;
@@ -45,8 +45,6 @@ import {
     {   alert("גיל לא הוכנס"); }
     else if(!UserLocation)
     { alert("איזור מגורים לא הוכנס"); }
-    else if(!UserDescription)
-    {  alert("תיאור לא הוכנס"); }
     else if(!UserPhoneNumber)
     {  alert("מספר פלאפון לא הוכנס"); }
     else if(!UserWantedJob)
@@ -59,12 +57,12 @@ import {
     else{
   
       // if data filled proprotly it will send by this function to the data base.
-      sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp);
+      sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp);
     }
   
   });
   
-  function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp)
+  function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp)
     {
       //data will be checked for Authentication with fire base.
             try {
@@ -75,7 +73,6 @@ import {
                   UserPassword,
                   UserAge,
                   UserLocation,
-                  UserDescription,
                   UserPhoneNumber,
                   UserWantedJob,
                   UserExp,

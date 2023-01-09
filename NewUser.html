@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.9" />
-    <title>יצירת משתמש</title>
+    <title>פרסום מודעה</title>
     <link rel="Website icon" type="img" href="images/jobless_photo-removebg-preview.png">
     <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/NewUser.css">
+    <link rel="stylesheet" href="css/NewHRUser.css">
      <!-- connection to js database file -->
-     <script src="./js/User.js" type="module"></script>
+     <script src="js/NewUserTest.js" type="module"></script>
   </head>
 
   <body>
@@ -37,140 +37,168 @@
 
               <form id="User-form" style="margin-top: 2rem;">
                  
-                <!--
-                allert if registered succesfully 
-                
-                <div class = "alert" >register success</div>
-                
-                -->
 
-                <!-- user username input  -->
+                <!-- first row!! -->
+                 <!-- first row!! -->
+
 
                 <div class="row">
-                  <!-- user firstname input  -->
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline"> 
-                      <label for="title">:שם פרטי</label>
-                      <input
-                        type="text"
-                        id="UserFirstName"
-                        class="form-control mb-3"
-                        class="My First Title"
-                        placeholder="שם פרטי"
-                        autofocus
-                      />
-                    </div>
-                  </div>
-                  
-                  <!-- user lastname input  -->
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline"> 
-                      <label for="title">:שם משפחה</label>
-                      <input
-                        type="text"
-                        id="UserLastName"
-                        class="form-control mb-3"
-                        class="My First Title"
-                        placeholder="שם משפחה"
-                        autofocus
-                      />
-                    </div>
-                  </div>
-                
-                </div>
 
-                <div class="row">
-                  <!-- user email input  -->
-                  <div class="col-md-6 mb-4">
+                  <!-- email input  -->
+                  <div class="col-md-4 mb-4">
                     <div class="form-outline">               
-                      <label for="title">:כתובת מייל</label>
-                      <input
-                        type="email"
-                        id="UserEmail"
-                        class="form-control mb-3"
-                        class="My First Title"
-                        placeholder="מייל"
-                        autofocus
-                      />
+                        <label for="title">:כתובת מייל</label>
+                        <input
+                          type="email"
+                          id="UserEmail"
+                          class="form-control mb-3"
+                          class="My First Title"
+                          placeholder="מייל ליצירת קשר"
+                          autofocus
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <!-- user password input  -->
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">   
-                      <label for="title">:סיסמא</label>
-                      <input
-                        type="password"
-                        id="UserPassword"
-                        class="form-control mb-3"
-                        class="My First Title"
-                        placeholder="סיסמא"
-                        autofocus
-                      />
+                  
+                  <!-- password input -->
+                  <div class="col-md-4 mb-4">
+                    <div class="form-outline">               
+                        <label for="title">:סיסמא</label>
+                        <input
+                          type="password"
+                          id="UserPassword"
+                          class="form-control mb-3"
+                          class="My First Title"
+                          placeholder="סיסמא"  
+                          autofocus
+                        />
+                      </div>
                     </div>
+
+                     <!-- password input -->
+                  <div class="col-md-4 mb-4">
+                    <div class="form-outline">               
+                        <label for="title">:גיל</label>
+                        <input
+                          type="text"
+                          id="UserAge"
+                          class="form-control mb-3"
+                          class="My First Title"
+                          placeholder="גיל"  
+                          autofocus
+                        />
+                      </div>
+                    </div>
+                  <!-- lastname input  -->
+                  <div class="col-md-4 mb-4">
+                    <div class="form-outline"> 
+                        <label for="title">:שם משפחה</label>
+                        <input
+                          type="text"
+                          id="UserLastName"
+                          class="form-control mb-3"
+                          class="My First Title"
+                          placeholder="שם משפחה"
+                          autofocus
+                        />
+                      </div>
                   </div>
 
+                   <!-- firstname input  -->
+                  <div class="col-md-4 mb-4">
+                    <div class="form-outline"> 
+                        <label for="title">:שם פרטי</label>
+                        <input
+                          type="text"
+                          id="UserFirstName"
+                          class="form-control mb-3"
+                          class="My First Title"
+                          placeholder="שם פרטי"
+                          autofocus
+                        />
+                      </div>
+                  </div>
                 </div>
 
+
+                 <!-- second row!! -->
+                 <!-- second row!! -->
+
+                 
+                 <!-- wishful posting imput -->
                 <div class="row">
-                  <!-- user age input  -->
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline"> 
-                      <label for="title">:גיל</label>
-                      <input
-                        type="text"
-                        id="UserAge"
-                        class="form-control mb-3"
-                        class="My First Title"
-                        placeholder="גיל"
-                        autofocus
-                      />
-                    </div>
-                  </div>
-                  <!-- user location input  -->
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline"> 
-                      <label for="title">:איזור מגורים</label>
-                      <input
-                        type="text"
-                        id="UserLocation"
-                        class="form-control mb-3"
-                        class="My First Title"
-                        placeholder="מגורים"
-                        autofocus
-                      />
-                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="form-outline"> 
+                            <label for="title">:משרה רצויה</label>
+                            <input
+                            type="text"
+                            id="UserWantedJob"
+                            class="form-control mb-3"
+                            class="My First Title"
+                            placeholder="?במה תרצה לעבוד"
+                            autofocus
+                            />
+                        </div>
                   </div>
 
+                  <!-- residential area input  -->
+                  <div class="col-md-4 mb-4">
+                    <div class="form-outline"> 
+                        <label for="title">:איזור מגורים</label>
+                        <input
+                          type="text"
+                          id="UserLocation"
+                          class="form-control mb-3"
+                          class="My First Title"
+                          placeholder="מגורים"
+                          autofocus
+                        />
+                      </div>
+                  </div>
+
+                  <!-- phone number input  -->
+                  <div class="col-md-4 mb-4">
+                    <div class="form-outline"> 
+                        <label for="title">:פלאפון</label>
+                        <input
+                          type="text"
+                          id="UserPhoneNumber"
+                          class="form-control mb-3"
+                          class="My First Title"
+                          placeholder="פלאפון"
+                          autofocus
+                        />
+                      </div>
+                  </div>
                 </div>
 
-                <div class="row">
-                  <!-- Company phone input  -->
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline"> 
-                      <label for="title">:פלאפון</label>
-                      <input
-                        type="text"
-                        id="UserPhoneNumber"
-                        class="form-control mb-3"
-                        class="My First Title"
-                        placeholder="פלאפון"
-                        autofocus
-                      />
-                    </div>
-                  </div>
-                  <!-- user description input  -->
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline"> 
-                      <label for="description">:תיאור</label>
-                      <textarea
-                        id="UserDescription"
-                        rows="3"
-                        class="form-control mb-3"
-                        placeholder="תיאור החברה"
-                      ></textarea>
-                    </div>
-                  </div>
 
+
+                 <!-- third row!! -->
+                 <!-- third row!! -->
+
+                 <div class="row">
+                    <!-- Company phone input  -->
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline"> 
+                          <label for="description">:ניסיון בתחום</label>
+                          <textarea
+                            id="UserExp"
+                            rows="3"
+                            class="form-control mb-3"
+                          ></textarea>
+                        </div>
+                    </div>
+                    <!-- user description input  -->
+                   <div class="col-md-6 mb-4">
+                      <div class="form-outline"> 
+                        <label for="description">:ניסיון כללי</label>
+                        <textarea
+                          id="UserGeneralExp"
+                          rows="3"
+                          class="form-control mb-3"
+                        ></textarea>
+                      </div>
+                  </div>
                 </div>
 
 

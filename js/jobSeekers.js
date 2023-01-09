@@ -24,18 +24,7 @@ import {
       
      <center><h3>${user.firstname +" "+ user.lastname}</h3></center>
         <div>
-            <label for="description" class="job-label">
-            <strong>: תיאור עובד</strong>
-            </label>
-            
-            <p class="job-description">${user.description}</p>
-            
-            <label for="description" class="job-label">
-            <strong>: גיל העובד</strong>
-            </label>
-            
-            <p class="job-location">${user.age}</p> 
-            
+   
             <label for="description" class="job-label">
             <strong>: מיקום העובד</strong>
             </label>
@@ -46,10 +35,26 @@ import {
             <strong>: טלפון ליצירת קשר</strong>
             </label>
 
-            <p class="job-scope">${user.phonenumber}</p>  
+            <p class="job-scope">${user.phonenumber}</p> 
 
-            
-            
+            <label for="description" class="job-label">
+            <strong>:מחפש לעבוד ב</strong>
+            </label>
+
+            <p class="job-scope">${user.UserWantedJob}</p> 
+
+            <label for="description" class="job-label">
+            <strong>:ניסיון העובד</strong>
+            </label>
+
+            <p class="job-scope">${user.UserExp}</p> 
+
+            <label for="description" class="job-label">
+            <strong>:ניסיון כללי של העובד</strong>
+            </label>
+
+            <p class="job-scope">${user.UserGeneralExp}</p> 
+
         </div>
         <div>
             <center>
