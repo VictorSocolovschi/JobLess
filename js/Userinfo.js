@@ -41,17 +41,19 @@ import {
           try {
             const doc = await getUser(e.target.dataset.id);
             const data = doc.data();
-            infoForm["UserFirstName-info"].value = data.firstname;
-            infoForm["UserLastName-info"].value = data.lastname;
+            infoForm["UserFirstName"].value = data.firstname;
+            infoForm["UserLastName"].value = data.lastname;
             //infoForm["UserEmail-info"].value = data.email;
             //infoForm["UserPassword-info"].value = data.password;
             nochangeemail = data.email;
             nochangepass = data.password;
 
-            infoForm["UserAge-info"].value = data.age;
-            infoForm["UserLocation-info"].value = data.location;
-            infoForm["UserDescription-info"].value = data.description;
-            infoForm["UserPhoneNumber-info"].value = data.phonenumber;
+            infoForm["UserAge"].value = data.age;
+            infoForm["UserLocation"].value = data.location;
+            infoForm["UserWantedJob"].value = data.UserWantedJob;
+            infoForm["UserPhoneNumber"].value = data.phonenumber;
+            infoForm["UserExp"].value = data.UserExp;
+            infoForm["UserGeneralExp"].value = data.UserGeneralExp;
 
             editStatus = true;
             id = doc.id;
@@ -68,14 +70,16 @@ import {
 infoForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     //const publisher = user email
-    const UserFirstName = document.getElementById("UserFirstName-info").value;
-    const UserLastName = document.getElementById("UserLastName-info").value;
+    const UserFirstName = document.getElementById("UserFirstName").value;
+    const UserLastName = document.getElementById("UserLastName").value;
     //const UserEmail = document.getElementById("UserEmail-info").value;
     //const UserPassword = document.getElementById("UserPassword-info").value;
-    const UserAge = document.getElementById("UserAge-info").value;
-    const UserLocation = document.getElementById("UserLocation-info").value;
-    const UserDescription = document.getElementById("UserDescription-info").value;
-    const UserPhoneNumber = document.getElementById("UserPhoneNumber-info").value;
+    const UserAge = document.getElementById("UserAge").value;
+    const UserLocation = document.getElementById("UserLocation").value;
+    const UserPhoneNumber = document.getElementById("UserPhoneNumber").value;
+    const UserExp = document.getElementById("UserExp").value;
+    const UserWantedJob = document.getElementById("UserWantedJob").value;
+    const UserGeneralExp = document.getElementById("UserGeneralExp").value;
     
     try {
       if (!editStatus) {
@@ -88,8 +92,13 @@ infoForm.addEventListener("submit", async (e) => {
             password: nochangepass,
             age: UserAge,
             location: UserLocation,
-            description: UserDescription,
             phonenumber: UserPhoneNumber,
+            UserGeneralExp:UserGeneralExp,
+            UserWantedJob:UserWantedJob,
+            UserExp:UserExp,
+
+
+
            
         });
    
