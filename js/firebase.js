@@ -281,18 +281,15 @@ export const updateJob = (id, newFields) =>
 export const getJobs = () => getDocs(collection(db, "Jobs"));
 
 
-export function uploadPDF() {
-  // Get a file reference to the PDF file
-  var file = document.getElementById("pdfFileInput");
 
-  // Create a storage reference from our storage service
-  var storageRef = addDoc(doc(db,"pdfs",id));
+//trynig to upload pdf to the storage in our firebase.
 
-  // Create a reference to the PDF file in your storage bucket
-  var pdfRef = storageRef.child("pdfs/" + file.name);
 
-  // Upload the file to the PDFs folder in your storage bucket
-  pdfRef.put(file).then(function(snapshot) {
-    console.log("PDF uploaded successfully");
+
+export function uploadFile() {
+  document.getElementById('file').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const storageRef = addDoc('pdf/' + file.name);
+    storageRef.put(file);
   });
-};
+}
