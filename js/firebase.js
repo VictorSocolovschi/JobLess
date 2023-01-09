@@ -26,12 +26,12 @@ const auth = getAuth(app);
 
 
 
-export const saveUser = (firstname,lastname,email,password,age,location, phonenumber, description) =>
+export const saveUser = (firstname,lastname,email,password,age,location, phonenumber, description,UserWantedJob,UserExp,UserGeneralExp) =>
 {createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, phonenumber, description});
+    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, phonenumber, description,UserWantedJob,UserExp,UserGeneralExp});
     window.alert("משתמש נרשם בהצלחה!");
     // ...
   })

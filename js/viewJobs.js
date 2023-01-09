@@ -25,8 +25,8 @@ import {
         const job = doc.data();
         jobsContainer.innerHTML += `
     
-    <div class="card card-body mt-2 border-light" style="max-width: 450px;
-      max-height: 300px; overflow-y:auto;  position: relative;">
+    <div class="card card-body mt-2 border-dark" style="max-width: 450px;
+      max-height: 300px; overflow-y:auto;  position: relative; padding-left: 50px;">
       
       <center><h2 class="h5">${job.title}</h2></center>
       

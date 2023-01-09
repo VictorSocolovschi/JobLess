@@ -20,7 +20,7 @@ import {
         usersContainer.innerHTML += `
     
     <div class="card card-body mt-2 border-light" style="max-width: 450px;
-      max-height: 300px; overflow-y:auto; position: relative;">
+      max-height: 300px; overflow-y:auto; position: relative; padding-left=50px;">
       
      <center><h3>${user.firstname +" "+ user.lastname}</h3></center>
         <div>
@@ -47,11 +47,14 @@ import {
             </label>
 
             <p class="job-scope">${user.phonenumber}</p>  
+
+            
             
         </div>
         <div>
             <center>
              <a class="btn btn-outline-dark" href="mailto:${user.email}">צור קשר</a>
+             <a class="btn btn-outline-dark" herf="${user.pdfurl}">צפייה בקורות חיים</a>
             </center>
         </div>
       

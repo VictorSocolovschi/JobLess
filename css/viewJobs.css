@@ -81,7 +81,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .card-deck{
-  background: #97DECE;
+  background: #b8cdae;
   padding: 10px 20px;
 }
 
@@ -94,23 +94,6 @@ h2.h5 {
   text-decoration: underline;
 }
 
-/* 
-button-contact {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  -webkit-border-radius: 23;
-  -moz-border-radius: 23;
-  border-radius: 23px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 16px;
-  background: #497694;
-  padding: 9px 20px 10px 20px;
-  border: solid #eddfed 2px;
-  text-decoration: none;
-  transform: translate(-50%, 0);
-}
 
 button-contact:hover {
   background: #97DECE;
@@ -143,6 +126,20 @@ a.dropdown-item{
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: transparent;
+  /* background-color: transparent; */
+  background: black;
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: black;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: transparent; */
+  background: white;
   border-radius: 50%;
 }
