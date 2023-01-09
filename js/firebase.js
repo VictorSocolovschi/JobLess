@@ -143,7 +143,13 @@ onGetUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("user");
-
+    var un= document.getElementById("usernavbar");
+    un.innerHTML +=`<li class="nav-item">
+    <a class="nav-link active" href="viewJobs.html">משרות</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">קורסים</a>     
+  <li class="nav-item"> `;
     // var mjb= document.getElementById("myjobs-button");
     // mjb.classList.add("button-hidden");
     var psbu= document.getElementById("navbuttons");
@@ -157,6 +163,14 @@ onGetHRUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("HRuser");
+    
+    var un= document.getElementById("usernavbar");
+    un.innerHTML +=` <li class="nav-item">
+    <a class="nav-link active" href="jobSeekers.html" id="Candidates">מועמדים</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="viewJobs.html">משרות</a>
+  </li> `;
     var psbu= document.getElementById("navbuttons");
     // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
     psbu.innerHTML +=`<button onclick="location.href = 'HRpersonal.html';" id="HRinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
@@ -171,6 +185,13 @@ onGetReqUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("Requser"); 
+    var un= document.getElementById("usernavbar");
+    un.innerHTML +=` <li class="nav-item">
+    <a class="nav-link active" href="jobSeekers.html" id="Candidates">מועמדים</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="viewJobs.html">משרות</a>
+  </li> `;
     var psbu= document.getElementById("navbuttons");
     // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
     psbu.innerHTML +=`<button onclick="location.href = 'Reqpersonal.html';" id="Reqinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
