@@ -22,11 +22,9 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon">JobLess</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="mailto:JobLessInfo@gmail.com">צור קשר</a>
-            </li>
+        <div class="collapse navbar-collapse" id="navbuttons">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0" id="usernavbar">
+           
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >JobLess For You</a>
                 <ul class="dropdown-menu">
@@ -35,11 +33,14 @@
                   <li><a class="dropdown-item" href="employingTips.html">טיפים להעסקה נכונה</a></li>
                   <li><a class="dropdown-item" href="carrierTips.html">כיצד לבחור קריירה</a></li>
                 </ul>
+                
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="mailto:JobLessInfo@gmail.com">צור קשר</a>
               </li>
           </ul>
           
           <button onclick="location.href = 'index.html';" type="button" class="btn btn-success">חזרה לדף הבית</button>
-          <button id="logout-button" class="btn btn-danger out-btn" style="margin-left: 20px;">LogOut</button>
 
         </div>
       </div>
@@ -55,10 +56,11 @@
         <a class="btn btn-lg btn-outline-success" onclick="location.href = 'viewJobs.html';" style="width: 80%; margin-top: 2rem;">חיפוש משרה</a>
         
         <div style="margin-top: 2rem;"> 
-          <input  type="file" id="file" style="width: 12rem;">
+          <a>  לחץ כאן להעלות קובץ של קורות חיים</a>
+          <input id="file" class="favorite styled" type="file" value="קורות חיים">
           <progress id="progress_bar" value="0" max="100"></progress>
           <img src="" alt="" id="image">
-          <script src="js/upload.js" type="text/javascript"></script>
+          <script src="js/userPersonal.js" type="text/javascript"></script>
         </div> 
        
       </div>

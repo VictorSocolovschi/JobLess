@@ -305,12 +305,26 @@ export const getJobs = () => getDocs(collection(db, "Jobs"));
 
 //trynig to upload pdf to the storage in our firebase.
 
+export function addfile(){
+  firebase.initializeApp(firebaseConfig);
 
-
-export function uploadFile() {
   document.getElementById('file').addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    const storageRef = addDoc('pdf/' + file.name);
-    storageRef.put(file);
+      const file = event.target.files[0];
+      const storageRef = firebase.storage().ref('pdfs/' + file.name);
+  
+      storageRef.put(file).on('state_changed', (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log(progress);
+          const progressBar = document.getElementById('progress_bar');
+          progressBar.value = progress;
+      });
+  
+      storageRef.getDownloadURL().then(function(url){
+          const image = document.getElementById('image');
+          console.log(url);
+          image.src = url
+      });
   });
-}
+  
+  
+};

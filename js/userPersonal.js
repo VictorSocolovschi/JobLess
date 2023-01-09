@@ -1,26 +1,11 @@
-//home page js file
-import { 
+
+import{ 
     signedinfunc,
-    signoutfunc,
-    loggedinmail,
-    // uploadPDF,
-    myJobauth,
-    uploadFile,
-    //getlogged
-} from "./firebase.js";
+    addfile
+  } from "./firebase.js";
 
-//userindicator();
-//check if user is signed in 
-myJobauth();
-
+addfile();
+signedinfunc();
 //logout button id
 const LObutton = document.getElementById("logout-button");
 //on click logout button
-LObutton.addEventListener("click", async (e) => {
-e.preventDefault(); 
-signoutfunc();
-
-});
-
-uploadFile();
-// uploadPDF();
