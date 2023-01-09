@@ -110,7 +110,7 @@ export const signedinfunc = () =>
     //const uid = user.uid;
     loggedinmail = user.email;
     console.log("logged in");
-    Loggedinnavbar()  
+    userkind();  
     // ...
   } else {
     console.log("logged out");
@@ -155,7 +155,6 @@ onGetUsers((querySnapshot) => {
 onGetHRUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
-    const userName = user.firstname;
     if(user.email == loggedinmail)
     { console.log("HRuser");
     var psbu= document.getElementById("navbuttons");
@@ -200,11 +199,6 @@ function navbar()
     
 }
 
-function Loggedinnavbar() 
-{
-    userkind ();
-    
-}
 
 // onget users
 export const onGetUsers = (callback) =>
@@ -299,18 +293,3 @@ export function uploadFile() {
     storageRef.put(file);
   });
 }
-// export function uploadPDF() {
-//   // Get a file reference to the PDF file
-//   var file = document.getElementById("pdfFileInput");
-
-//   // Create a storage reference from our storage service
-//   var storageRef = addDoc(doc(db,"pdfs"));
-
-//   // Create a reference to the PDF file in your storage bucket
-//   var pdfRef = storageRef.child("pdfs/" + file.name);
-
-//   // Upload the file to the PDFs folder in your storage bucket
-//   pdfRef.put(file).then(function(snapshot) {
-//     console.log("PDF uploaded successfully");
-//   });
-// };

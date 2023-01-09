@@ -26,7 +26,7 @@ import {
         jobsContainer.innerHTML += `
     
     <div class="card card-body mt-2 border-light" style="max-width: 450px;
-      max-height: 300px; overflow: scroll; position: relative;">
+      max-height: 300px; overflow-y:auto;  position: relative;">
       
       <center><h2 class="h5">${job.title}</h2></center>
       
