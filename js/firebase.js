@@ -310,7 +310,7 @@ export function addfile(){
 
   document.getElementById('file').addEventListener('change', (event) => {
       const file = event.target.files[0];
-      const storageRef = firebase.storage().ref('pdfs/' + file.name);
+      const storageRef = firebase.storage().ref('pdfs/' + loggedinmail);
   
       storageRef.put(file).on('state_changed', (snapshot) => {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -324,7 +324,11 @@ export function addfile(){
           console.log(url);
           image.src = url
       });
+
+      var uploaded= document.getElementById("userpersonal");
+      uploaded.innerHTML +=`<center> 
+      <a>  קובץ הועלה בהצלחה</a>
+    </center> `;
   });
-  
   
 };
