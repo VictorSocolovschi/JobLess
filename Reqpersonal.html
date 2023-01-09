@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html">
+  <head>
+    <meta charset="utf-8">
+    <title>מגייס פרטי - עדכון פרטים</title>
+    <script src="./js/index.js" type="module"></script>
+    <link rel="Website icon" type="img" href="images/jobless_photo-removebg-preview.png">
+    <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/cvtips.css">
+  </head>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-auto bg-dark" style="text-emphasis:inherit">
+      <div class="container-fluid">
+
+        <img class="jobless-img" src="images\jobless_photo-removebg-preview.png" alt="jobless-photo" width="50" height="60">
+        <a class="navbar-brand"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">JobLess</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="mailto:JobLessInfo@gmail.com">צור קשר</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >JobLess For You</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="cvtips.html">טיפים לבניית קורות חיים</a></li>
+                  <li><a class="dropdown-item" href="tipsForJobInterview.html">הכנה לראיון עבודה</a></li>
+                  <li><a class="dropdown-item" href="employingTips.html">טיפים להעסקה נכונה</a></li>
+                  <li><a class="dropdown-item" href="carrierTips.html">כיצד לבחור קריירה</a></li>
+                </ul>
+              </li>
+          </ul>
+          
+          <button onclick="location.href = 'index.html';" type="button" class="btn btn-success">חזרה לדף הבית</button>
+          <button id="logout-button" class="btn btn-danger out-btn" style="margin-left: 20px;">LogOut</button>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+
+  <body>
+    <div class="top-container" style="margin-top: 4rem;">
+      <div id="reqpersonal">
+        
+        <a class="btn btn-lg btn-outline-success" onclick="location.href = 'Reqinfo.html';" id="Userinfo-button" type="button" style="width: 80%;">עדכון פרטי משתמש</a>
+        <a class="btn btn-lg btn-outline-success" onclick="location.href = 'jobSeekers.html';" style="width: 80%; margin-top: 2rem;">חיפוש מועמדים </a>
+        <a class="btn btn-lg btn-outline-success" onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" style="width: 80%; margin-top: 2rem;" >המשרות שלי</a>
+
+        
+        <form action="" style="margin-top: 3rem;">
+            <input type="file" id="fileinput" accept=".pdf">
+            <button type="submit" >העלאת קובץ</button>
+        </form>
+        
+         
+       
+      </div>
+    </div>
+    
+  </body>
+</html>

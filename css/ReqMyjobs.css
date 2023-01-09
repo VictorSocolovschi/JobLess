@@ -1,0 +1,67 @@
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #A5F1E9;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+   background: -webkit-linear-gradient(to bottom right, rgba(22, 189, 208, 1), rgb(223, 26, 43));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to bottom right, rgb(22, 189, 208), rgb(223, 231, 137))
+  }
+
+
+  .card-body{
+      background: #FFFBEB;
+      border-radius: 25px;
+  }
+  
+body {
+    font-family: sans-serif;
+    
+    
+  }
+  h1 {
+    text-align: center;
+  }
+ /* ul {
+    list-style-type: square;
+    
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: right;
+  }*/
+ 
+
+  .jobless-img{
+    width: 5%;
+    float:right;
+    margin: auto;
+    background-image:url("index.html");
+  }
+  
+  .container-fluid
+  {
+    padding: 0 15%;
+    margin: 0 30%;
+  }
+
+input{
+    text-align: right;
+}
+textarea{
+  text-align: right;
+}
+form{
+  text-align: right;
+}
+a:link:hover,a:visited:hover{
+  color:rgb(47, 184, 127);
+  text-decoration:none;
+  }
+ul.dropdown-menu.show{
+  --bs-dropdown-link-hover-bg: #ffffff;
+
+}
+a.dropdown-item{
+  text-align: right;
+}

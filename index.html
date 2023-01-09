@@ -2,136 +2,143 @@
 
 
 <html>
+  <script src="./js/index.js" type="module"></script>
   <head>
     <meta charset="utf-8">
     <title>JobLess</title>
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="Website icon" type="img" href="images/jobless_photo-removebg-preview.png">
     <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@200&family=Sacramento&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
- </head>
+
+  </head>
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-auto bg-dark" style="text-emphasis:inherit">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-auto bg-dark" style="text-emphasis:inherit">
         <div class="container-fluid">
-            <img class="jobless-img" src="images\jobless_photo-removebg-preview.png" alt="jobless-photo" width="50" height="60">
-          <a class="navbar-brand">JobLess</a>
+
+          <img class="jobless-img" src="images\jobless_photo-removebg-preview.png" alt="jobless-photo" width="50" height="60">
+          <a class="navbar-brand"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">JobLess</span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="mailto:guyhaliva123@gmail.com">צור קשר</a>
+                <a class="nav-link active" href="jobSeekers.html" id="Candidates">מועמדים</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">משרות</a>
+                <a class="nav-link active" href="viewJobs.html">משרות</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">קורסים</a>
+                <a class="nav-link active" href="#">קורסים</a>     
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="mailto:JobLessInfo@gmail.com">צור קשר</a>
               </li>
               <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            JobLess For You
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="CvTips1.html">טיפים לבניית קורות חיים</a></li>
-            <li><a class="dropdown-item" href="#">הכנה לראיון עבודה</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">כיצד לבחור קריירה</a></li>
-          </ul>
-        </li>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >JobLess For You</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="cvtips.html">טיפים לבניית קורות חיים</a></li>
+                  <li><a class="dropdown-item" href="tipsForJobInterview.html">הכנה לראיון עבודה</a></li>
+                  <li><a class="dropdown-item" href="employingTips.html">טיפים להעסקה נכונה</a></li>
+                  <li><a class="dropdown-item" href="carrierTips.html">כיצד לבחור קריירה</a></li>
+                </ul>
+              </li>
             </ul>
-            <form class="d-flex" role="search">
-              <button onclick="location.href = 'signUpPage.html';" id="register" type="button" class="btn btn-primary" >הרשמה</button>
-              <button onclick="location.href = 'login.html';" type="button" class="btn btn-success" style="margin-left: 20px;">משתמש קיים</button>
+            
+            <form id = "navbuttons" class="d-flex" role="search">
 
-            </form>
+              <button id="logout-button" class="btn btn-danger out-btn" style="margin-left: 20px;">התנתק</button>
+            </form> 
           </div>
         </div>
       </nav>
     </header>
 
+    <!-- top container -->
+    
     <div class="top-container">
-      <img class="top-cloud" src="images/cloud.png" alt="cloud-image">
-      <h1 style="margin-bottom: 40px;">Welcome To JobLess.</h1>
-      <h3>JobLess means <span class="pro">More</span> than just find you a Job its about making your life better.</h3>
-      <img class="bottom-cloud" src="images/cloud.png" alt="cloud-image">
-      <img src="images/mountain.png" alt="mountain-image">
+      <div class="centered">
+        <h1>JobLess ברוכים הבאים ל </h1>
+        <h2>המסלול שלך <span class="pro">לעולם ההייטק </span> מתחיל כאן</h2>
+      </div>
+      <img class="hasava" src="images/hasava.jpg" alt="hasava-image">
     </div>
 
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <!-- middle -->
+    <section id="features">
+      <div class="row">
+        <div class="feature-box col-lg-4">
+          <img class="icon "src="images/checked.png" alt="">
+          <h3>קל לשימוש</h3>
+          <p>בחרנו בעיצוב נוח ויעיל בכדי לחסוך לך זמן</p>
+        </div>
+  
+        <div class="feature-box col-lg-4">
+          <img class="icon "src="images/target.png" alt="">
+          <h3>מוכוון מטרה</h3>
+          <p>הצעות עבודה מותאמות לצרכים שלך</p>
+        </div>
+  
+        <div class="feature-box col-lg-4">
+          <img class="icon "src="images/heart.png" alt="">
+          <h3>ליווי אישי</h3>
+          <p>הצוות שלנו זמין לכל שאלה </p>
+        </div>
       </div>
+    </section>
+
+  <section id="offerings">
+
+    <div id="offerings-carousel" class="carousel slide" data-ride="false">
       <div class="carousel-inner">
 
         <div class="carousel-item active">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-          <div class="container">
-            <div class="carousel-caption text-start" padding="200px auto;">
-              <h1>תמיד חלמת על עבודה בהייטק ?  </h1>
-              <p>הירשם עוד היום לקורסים הכי חמים בתעשייה , כאלה שיהפכו אותך לאטרקטיבי וישפרו את סיכוייך להיכנס להייטק </p>
-              <p><a class="btn btn-lg btn-outline-primary" href="https://www.futurelearn.com/info/blog/courses-for-tech-beginners">Sign up today</a></p>
-            </div>
-          </div>
-
-       </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>מתקשה בראיונות עבודה ? </h1>
-              <p>מיטב הטיפים שיעזרו לך להשתפר בראיונות עבודה מצוות המומחים שלנו!</p>
-              <p><a class="btn btn-lg btn-outline-primary" href="https://www.drushim.co.il/article/44/">Learn more</a></p>
-            </div>
-          </div>
+          <h2> למידה עצמית מהבית</h2>
+          <p> מעוניין ללמוד מהבית? אתר הקורסים הגדול בלחיצת כפתור - התחל היום</p>
+          <a href="https://www.udemy.com/"><button-contact>לחץ כאן</button></a>
         </div>
 
         <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-          <div class="container">
-            <div class="carousel-caption text-end">
-              <h1>? חושב שיש לך את מה שצריך </h1>
-              <p>קדימה למה אתה מחכה ? כנס לדף המשרות ומצא את עבודות החלומות שלך עוד היום ! </p>
-              <p><a class="btn btn-lg btn-outline-primary" href="#">Browse gallery</a></p>
-            </div>
-          </div>
+          <h2>מדריך לראיונות עבודה </h2>
+          <p>מיטב הטיפים שיעזרו לך להשתפר בראיון העבודה הבא שלך </p>
+          <a href="cvtips.html"><button-contact>לחץ כאן</button></a>
         </div>
-      </div>
-      
-      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
 
-    <div class="bottom-container">
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="">Active</a>
-      </li>
-      <li class="nav-item-active">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item-active">
-        <a class="nav-link disabled">Disabled</a>
-      </li>
-      <li class="nav-item-active">
-          <a class="nav-link" href="#">Back to top</a>
-      </li>
-    </ul>
+        <div class="carousel-item">
+          <h2>קורסים למתחילים</h2>
+            <p>הירשם עוד היום לקורסים שיהפכו אותך לאטרקטיבי וישפרו את סיכוייך להיכנס לעולם ההייטק</p>
+            <a href="https://www.futurelearn.com/info/blog/courses-for-tech-beginners"><button-contact>לחץ כאן</button></a>
+        </div>
+
+        <a class="carousel-control-prev" href="#offerings-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+          </a>
+        <a class="carousel-control-next" href="#offerings-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+          </a>
+
+           <button class="carousel-control-prev" type="button" data-bs-target="#offerings-carousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+           </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#offerings-carousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+           </button>
+  </section>
+  
+  <div class="bottom-container">
+    <!-- <a class="noDecoration" href="#"></a> -->
+    <a class="footer-link" href="AboutUs.html">about us</a>
+    <a class="footer-link" href="#">Back to top</a>
+    <p class="copyright"> © 2023 JobLess</p>
   </div>
+ 
   </body>
 </html>
