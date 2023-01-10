@@ -27,12 +27,12 @@ export const db = getFirestore();
 const auth = getAuth(app);
 
 
-export const saveUser = (firstname,lastname,email,password,age,location, phonenumber, description, pdfurl) =>
-{createUserWithEmailAndPassword(auth, email, password)
+export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl) =>
+{createUserWithEmailAndPassword(auth, email, Password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, phonenumber, description});
+    addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,});
     window.alert("משתמש נרשם בהצלחה!");
     // ...
   })

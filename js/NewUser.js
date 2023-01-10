@@ -4,6 +4,7 @@ import {
     updateUsers,
     getUsers,
     saveUser,
+    convertToLowercase,
   
   } from "./firebase.js";
   
@@ -21,7 +22,7 @@ import {
     //variabals to store the data.
     const UserFirstName = document.getElementById("UserFirstName").value;
     const UserLastName = document.getElementById("UserLastName").value;
-    const UserEmail = document.getElementById("UserEmail").value;
+    const UserEmail =  convertToLowercase(document.getElementById("UserEmail").value);
     const UserPassword = document.getElementById("UserPassword").value;
     const UserAge = document.getElementById("UserAge").value;
     const UserLocation = document.getElementById("UserLocation").value;
@@ -30,6 +31,7 @@ import {
     const UserWantedJob = document.getElementById("UserWantedJob").value;
     const UserExp = document.getElementById("UserExp").value;
     const UserGeneralExp = document.getElementById("UserGeneralExp").value;
+    var pdfurl= "0";
 
 
     //checking if every box filled correct.
@@ -57,12 +59,12 @@ import {
     else{
   
       // if data filled proprotly it will send by this function to the data base.
-      sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp);
+      sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl);
     }
   
   });
   
-  function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp)
+  function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl)
     {
       //data will be checked for Authentication with fire base.
             try {
@@ -76,7 +78,9 @@ import {
                   UserPhoneNumber,
                   UserWantedJob,
                   UserExp,
-                  UserGeneralExp
+                  UserGeneralExp,
+                  pdfurl,
+
                 );
       
             userForm.reset();
