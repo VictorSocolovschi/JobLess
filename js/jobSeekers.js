@@ -18,50 +18,70 @@ import {
         usersContainer.innerHTML += `
     
     <div class="card card-body mt-2 border-light" style="max-width: 450px;
-      max-height: 300px; overflow-y:auto; position: relative; padding-left=50px;">
+      max-height: 300px; overflow-y:auto; position: relative;">
       
-     <center><h3>${user.firstname +" "+ user.lastname}</h3></center>
+     <center><h3>${user.WantedJob}</h3></center>
         <div>
-   
-            <label for="description" class="job-label">
-            <strong>: מיקום העובד</strong>
-            </label>
 
-            <p class="job-location">${user.location}</p> 
+          <div class="row mt-2 mb-2">
+
+            <div class="col">
+              <label for="description" class="job-label">
+              <strong>ניסיון בתחום </strong>
+              </label>
+              <p class="job-scope">${user.Exp}</p> 
+            </div>
             
-            <label for="description" class="job-label">
-            <strong>: טלפון ליצירת קשר</strong>
-            </label>
+            <div class="col">
+              <label for="description" class="job-label">
+              <strong>ניסיון כללי </strong>
+              </label>
+              <p class="job-scope">${user.GeneralExp}</p> 
+            </div>
 
-            <p class="job-scope">${user.phonenumber}</p> 
+          </div>
 
-            <label for="description" class="job-label">
-            <strong>:מחפש לעבוד ב</strong>
-            </label>
+          <div class="row mt-2 mb-2">
 
-            <p class="job-scope">${user.UserWantedJob}</p> 
+            <div class="col">
+              <label for="description" class="job-label">
+              <strong> טלפון ליצירת קשר</strong>
+              </label>
+              <p class="job-scope">${user.PhoneNumber}</p> 
+            </div>
 
-            <label for="description" class="job-label">
-            <strong>:ניסיון העובד</strong>
-            </label>
+            <div class="col">
+              <label for="description" class="job-label">
+              <strong>שם העובד </strong>
+              </label>
+              <p class="job-location">${user.FirstName + " " + user.LastName}</p> 
+            </div>
 
-            <p class="job-scope">${user.UserExp}</p> 
+          </div>
 
-            <label for="description" class="job-label">
-            <strong>:ניסיון כללי של העובד</strong>
-            </label>
+          <div class="row mt-2 mb-2">
 
-            <p class="job-scope">${user.UserGeneralExp}</p> 
+            <div class="col">
+              <label for="description" class="job-label">
+              <strong> גיל </strong>
+              </label>
+              <p class="job-scope">${user.Age}</p> 
+            </div>
 
+            <div class="col">
+              <label for="description" class="job-label">
+              <strong>מיקום העובד</strong>
+              </label>
+              <p class="job-location">${user.Location}</p> 
+            </div>
+
+          </div>
+          
         </div>
         <div>
             <center>
              <a class="btn btn-outline-dark" href="mailto:${user.email}">צור קשר</a>
-<<<<<<< HEAD
              <a class="btn btn-outline-dark" herf="${user.pdfurl}">צפייה בקורות חיים</a>
-=======
-             <a class="btn btn-outline-dark" href="${user.pdfurl}">קורות חיים</a>
->>>>>>> orel
             </center>
         </div>
       
@@ -71,36 +91,68 @@ import {
         else{
           usersContainer.innerHTML += `
     
-          <div class="card card-body mt-2 border-light" style="max-width: 450px;
+        <div class="card card-body mt-2 border-light" style="max-width: 450px;
             max-height: 300px; overflow-y:auto; position: relative;">
-            
-           <center><h3>${user.firstname +" "+ user.lastname}</h3></center>
-              <div>
-                  <label for="description" class="job-label">
-                  <strong>: תיאור עובד</strong>
-                  </label>
-                  
-                  <p class="job-description">${user.description}</p>
-                  
-                  <label for="description" class="job-label">
-                  <strong>: גיל העובד</strong>
-                  </label>
-                  
-                  <p class="job-location">${user.age}</p> 
-                  
-                  <label for="description" class="job-label">
-                  <strong>: מיקום העובד</strong>
-                  </label>
       
-                  <p class="job-location">${user.location}</p> 
-                  
+              <center><h3>${user.WantedJob}</h3></center>
+          <div>
+
+              <div class="row mt-2 mb-2">
+
+                <div class="col">
                   <label for="description" class="job-label">
-                  <strong>: טלפון ליצירת קשר</strong>
+                  <strong>ניסיון בתחום </strong>
                   </label>
-      
-                  <p class="job-scope">${user.phonenumber}</p>  
-                  
+                  <p class="job-scope">${user.Exp}</p> 
+                </div>
+              
+                <div class="col">
+                  <label for="description" class="job-label">
+                  <strong>ניסיון כללי </strong>
+                  </label>
+                  <p class="job-scope">${user.GeneralExp}</p> 
+                </div>
+
               </div>
+
+              <div class="row mt-2 mb-2">
+
+                <div class="col">
+                  <label for="description" class="job-label">
+                  <strong> טלפון ליצירת קשר</strong>
+                  </label>
+                  <p class="job-scope">${user.PhoneNumber}</p> 
+                </div>
+
+                <div class="col">
+                  <label for="description" class="job-label">
+                  <strong>שם העובד </strong>
+                  </label>
+                  <p class="job-location">${user.FirstName + " " + user.LastName}</p> 
+                </div>
+              </div>
+
+              <div class="row mt-2 mb-2">
+
+                <div class="col">
+                  <label for="description" class="job-label">
+                  <strong> גיל </strong>
+                  </label>
+                  <p class="job-scope">${user.Age}</p> 
+                </div>
+
+                <div class="col">
+                  <label for="description" class="job-label">
+                  <strong>מיקום העובד</strong>
+                  </label>
+                  <p class="job-location">${user.Location}</p> 
+                </div>
+
+              </div>
+
+            </div>
+          
+           
               <div>
                   <center>
                    <a class="btn btn-outline-dark" href="mailto:${user.email}">צור קשר</a>
