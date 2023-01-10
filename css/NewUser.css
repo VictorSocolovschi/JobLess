@@ -18,10 +18,6 @@
     align-content: center;
 
 }
-.age
-{
-    align-content: right;
-}
 
 .form-outline{
     text-align: right;
@@ -30,14 +26,3 @@
 .card{
     background-color:  #ffffff;
 }
-
-input{
-    text-align: right;
-}
-
-textarea{
-    text-align: right;
-}
-
-
-
