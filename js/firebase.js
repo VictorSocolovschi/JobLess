@@ -91,7 +91,6 @@ export const loginfunc = (email,password) =>
     // Signed in 
     const user = userCredential.user;
     window.alert("משתמש התחבר בהצלחה!");
-
     location.href = 'index.html';
 
     // ...
@@ -110,6 +109,7 @@ export const signedinfunc = () =>
   if (user) {
     //const uid = user.uid;
     loggedinmail = user.email;
+    
     console.log("logged in");
     userkind();  
     // ...
@@ -128,6 +128,15 @@ export const myJobauth = () =>
     loggedinmail = user.email;
     console.log("logged in");
     
+    onGetUsers((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const user = doc.data();
+        if(user.email == loggedinmail)
+        { console.log("user");
+        userdoc = doc.id; 
+      
+      }})});
+
   } else {
     console.log("logged out");
   }
@@ -312,9 +321,7 @@ export const getJobs = () => getDocs(collection(db, "Jobs"));
 //trynig to upload pdf to the storage in our firebase.
 
 export function addfile(){
-
   firebase.initializeApp(firebaseConfig);
-
   document.getElementById('file').addEventListener('change', (event) => {
       const file = event.target.files[0];
       const file2 = new File([], "empty");
