@@ -4,6 +4,7 @@ import {
   updateUsers,
   getUsers,
   saveUser,
+  convertToLowercase
   
 } from "./firebase.js";
 
@@ -21,12 +22,13 @@ userForm.addEventListener("submit", async (e) =>
   //variabals to store the data.
   const UserFirstName = document.getElementById("UserFirstName").value;
   const UserLastName = document.getElementById("UserLastName").value;
-  const UserEmail = document.getElementById("UserEmail").value;
+  const UserEmail = convertToLowercase(document.getElementById("UserEmail").value);
   const UserPassword = document.getElementById("UserPassword").value;
   const UserAge = document.getElementById("UserAge").value;
   const UserLocation = document.getElementById("UserLocation").value;
   const UserDescription = document.getElementById("UserDescription").value;
   const UserPhoneNumber = document.getElementById("UserPhoneNumber").value;
+  var pdfurl= "0";
   //checking if every box filled correct.
   if(!UserFirstName)
   {  alert("שם פרטי לא הוכנס");}
@@ -47,12 +49,12 @@ userForm.addEventListener("submit", async (e) =>
   else{
 
     // if data filled proprotly it will send by this function to the data base.
-    sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber);
+    sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber,pdfurl);
   }
 
 });
 
-function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber)
+function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserDescription,UserPhoneNumber,pdfurl)
   {
     //data will be checked for Authentication with fire base.
           try {
@@ -64,7 +66,9 @@ function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,User
                 UserAge,
                 UserLocation,
                 UserDescription,
-                UserPhoneNumber
+                UserPhoneNumber,
+                pdfurl
+
               );
     
           userForm.reset();

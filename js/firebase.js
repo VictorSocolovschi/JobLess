@@ -7,6 +7,7 @@ import {getFirestore,collection,getDocs,onSnapshot,addDoc,deleteDoc, doc,getDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 export var loggedinmail="0";
 export var userdoc="0";
+
 // web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAAUOFyRYgjfa7zVvL4ihGkk5r-ULoTAms",
@@ -26,13 +27,12 @@ export const db = getFirestore();
 const auth = getAuth(app);
 
 
-
-export const saveUser = (firstname,lastname,email,password,age,location, phonenumber, description) =>
+export const saveUser = (firstname,lastname,email,password,age,location, phonenumber, description, pdfurl) =>
 {createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, phonenumber, description});
+    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, phonenumber, description, pdfurl});
     window.alert("משתמש נרשם בהצלחה!");
     // ...
   })
@@ -51,7 +51,7 @@ export const saveHRUser = (companyname,username,email,password,phonenumber, desc
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description });
+    addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description});
     window.alert("משתמש נרשם בהצלחה!");
     
     // ...
@@ -127,16 +127,7 @@ export const myJobauth = () =>
     //const uid = user.uid;
     loggedinmail = user.email;
     console.log("logged in");
-    console.log(loggedinmail);
-
-    onGetUsers((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        const user = doc.data();
-        if(user.email == loggedinmail)
-        { console.log("user");
-        userdoc = doc.id;
-      }})});
-
+    
   } else {
     console.log("logged out");
   }
@@ -280,7 +271,9 @@ function topFunction() {
 }
 
 
-
+export function convertToLowercase(str) {
+  return str.toLowerCase();
+}
 
 
 //for jobs
@@ -319,12 +312,15 @@ export const getJobs = () => getDocs(collection(db, "Jobs"));
 //trynig to upload pdf to the storage in our firebase.
 
 export function addfile(){
+
   firebase.initializeApp(firebaseConfig);
 
   document.getElementById('file').addEventListener('change', (event) => {
       const file = event.target.files[0];
+      const file2 = new File([], "empty");
       const storageRef = firebase.storage().ref('pdfs/' + loggedinmail);
-
+      storageRef.put(file2);
+      urltodata(storageRef);
       storageRef.put(file).on('state_changed', (snapshot) => {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log(progress);
@@ -332,7 +328,10 @@ export function addfile(){
           progressBar.value = progress;
       });
   urltodata(storageRef);
-      
+  var uploaded= document.getElementById("userpersonal");
+  uploaded.innerHTML +=`<center> 
+  <a>  קובץ הועלה בהצלחה</a>
+</center> `;
   });
  
 };  
@@ -341,10 +340,6 @@ function urltodata(storageRef)
 {
   storageRef.getDownloadURL().then(function(url) {
     // The download URL for the PDF file is contained in the `url` variable
-    var uploaded= document.getElementById("userpersonal");
-  uploaded.innerHTML +=`<center> 
-  <a>  קובץ הועלה בהצלחה</a>
-</center> `;
  updateUsers(userdoc, {pdfurl: url});
   }).catch(function(error) {
     // Handle any errors

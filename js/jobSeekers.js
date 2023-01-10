@@ -14,7 +14,7 @@ import {
         const user = doc.data();
 
 
-        if(user.pdfurl){
+        if(user.pdfurl!= "0"){
         usersContainer.innerHTML += `
     
     <div class="card card-body mt-2 border-light" style="max-width: 450px;

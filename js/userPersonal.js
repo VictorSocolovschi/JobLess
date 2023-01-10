@@ -1,9 +1,7 @@
-
 import{ 
-    signedinfunc,myJobauth,
+  myJobauth,
     addfile
   } from "./firebase.js";
 
-  myJobauth();
-
- addfile();
+myJobauth();
+addfile();
