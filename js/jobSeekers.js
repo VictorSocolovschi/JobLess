@@ -13,8 +13,8 @@ import {
       querySnapshot.forEach((doc) => {
         const user = doc.data();
 
-
-        if(user.pdfurl!= "0"){
+        console.log(user.pdfurl);
+      if(user.pdfurl!= "0"){
         usersContainer.innerHTML += `
     
     <div class="card card-body mt-2 border-light" style="max-width: 450px;
@@ -81,7 +81,8 @@ import {
         <div>
             <center>
              <a class="btn btn-outline-dark" href="mailto:${user.email}">צור קשר</a>
-             <a class="btn btn-outline-dark" herf="${user.pdfurl}">צפייה בקורות חיים</a>
+
+             <a class="btn btn-outline-dark" href="${user.pdfurl}">צפייה בקורות חיים</a>
             </center>
         </div>
       
