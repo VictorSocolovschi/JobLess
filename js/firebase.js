@@ -109,7 +109,6 @@ export const signedinfunc = () =>
   if (user) {
     //const uid = user.uid;
     loggedinmail = user.email;
-    
     console.log("logged in");
     userkind();  
     // ...
@@ -134,7 +133,7 @@ export const myJobauth = () =>
         if(user.email == loggedinmail)
         { console.log("user");
         userdoc = doc.id; 
-      
+
       }})});
 
   } else {
@@ -297,8 +296,8 @@ export function convertToLowercase(str) {
  * @param {string} standarts
  * 
  */
-export const saveJob = (pubmail,title, description,location,scope,standarts) =>
-  addDoc(collection(db, "Jobs"), {pubmail, title, description,location,scope,standarts });
+export const saveJob = (pubmail,title, description,location,scope,standarts,likes) =>
+  addDoc(collection(db, "Jobs"), {pubmail, title, description,location,scope,standarts,likes });
 
 export const onGetJobs = (callback) =>
   onSnapshot(collection(db, "Jobs"), callback);
@@ -352,5 +351,4 @@ function urltodata(storageRef)
     // Handle any errors
     console.error(error);
   });
-
 }

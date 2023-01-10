@@ -91,9 +91,10 @@ import {
     const location = myJobsForm["job-location"];
     const scope = myJobsForm["job-scope"];
     const standarts = myJobsForm["job-standarts"];
+    var likes = 0;
     try {
       if (!editStatus) {
-        await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value);
+        await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value,likes);
       } else {
         await updateJob(id, {
           pubmail:pubmail,
@@ -102,6 +103,7 @@ import {
           location: location.value,
           scope: scope.value,
           standarts: standarts.value,
+          
         });
    
         editStatus = false;

@@ -1,6 +1,4 @@
 
-
-
 //main firebase unit testing - all new user functions
 
 var firstname = "firstnametest";

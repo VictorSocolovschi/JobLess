@@ -57,11 +57,7 @@ import {
         <div>
             <center>
              <a class="btn btn-outline-dark" href="mailto:${user.email}">צור קשר</a>
-<<<<<<< HEAD
              <a class="btn btn-outline-dark" herf="${user.pdfurl}">צפייה בקורות חיים</a>
-=======
-             <a class="btn btn-outline-dark" href="${user.pdfurl}">קורות חיים</a>
->>>>>>> orel
             </center>
         </div>
       
