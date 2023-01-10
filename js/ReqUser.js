@@ -4,6 +4,7 @@ import {
   updateReqUsers,
   getReqUsers,
   saveReqUser,
+  convertToLowercase
 
 } from "./firebase.js";
   
@@ -21,7 +22,7 @@ ReqUserForm.addEventListener("submit", async (e) =>
   //variabals to store the data.
   const ReqUserFirstName = document.getElementById("ReqUserFirstName").value;
   const ReqUserLastName = document.getElementById("ReqUserLastName").value;
-  const ReqUserEmail = document.getElementById("ReqUserEmail").value;
+  const ReqUserEmail = convertToLowercase(document.getElementById("ReqUserEmail").value);
   const ReqUserPassword = document.getElementById("ReqUserPassword").value;
   const ReqUserPhoneNumber = document.getElementById("ReqUserPhoneNumber").value;
   const ReqUserDescription = document.getElementById("ReqUserDescription").value;

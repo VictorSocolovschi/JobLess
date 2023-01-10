@@ -5,6 +5,8 @@ import { getAuth , createUserWithEmailAndPassword,signInWithEmailAndPassword , o
 //firebase function imports
 import {getFirestore,collection,getDocs,onSnapshot,addDoc,deleteDoc, doc,getDoc,updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+export var loggedinmail="0";
+export var userdoc="0";
 
 // web app's Firebase configuration
 const firebaseConfig = {
@@ -25,13 +27,12 @@ export const db = getFirestore();
 const auth = getAuth(app);
 
 
-
-export const saveUser = (firstname,lastname,email,password,age,location, phonenumber,UserWantedJob,UserExp,UserGeneralExp) =>
+export const saveUser = (firstname,lastname,email,password,age,location, phonenumber, description, pdfurl) =>
 {createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, phonenumber,UserWantedJob,UserExp,UserGeneralExp});
+    addDoc(collection(db, "users" ), { firstname ,lastname,email,password,age,location, phonenumber, description});
     window.alert("משתמש נרשם בהצלחה!");
     // ...
   })
@@ -50,7 +51,7 @@ export const saveHRUser = (companyname,username,email,password,phonenumber, desc
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description });
+    addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description});
     window.alert("משתמש נרשם בהצלחה!");
     
     // ...
@@ -102,7 +103,7 @@ export const loginfunc = (email,password) =>
     const errorMessage = error.message;
   });
 }
-export var loggedinmail="0";
+
 //Auth login 
 export const signedinfunc = () =>
 {onAuthStateChanged(auth, (user) => {
@@ -126,8 +127,7 @@ export const myJobauth = () =>
     //const uid = user.uid;
     loggedinmail = user.email;
     console.log("logged in");
-    console.log(loggedinmail);
-
+    
   } else {
     console.log("logged out");
   }
@@ -143,6 +143,7 @@ onGetUsers((querySnapshot) => {
     const user = doc.data();
     if(user.email == loggedinmail)
     { console.log("user");
+    userdoc = doc.id; 
     var un= document.getElementById("usernavbar");
     un.innerHTML +=`<li class="nav-item">
     <a class="nav-link active" href="viewJobs.html">משרות</a>
@@ -162,7 +163,8 @@ onGetHRUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
     if(user.email == loggedinmail)
-    { console.log("HRuser");
+    { userdoc = doc.id;
+      console.log("HRuser");
     
     var un= document.getElementById("usernavbar");
     un.innerHTML +=` <li class="nav-item">
@@ -184,7 +186,9 @@ onGetReqUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
     if(user.email == loggedinmail)
-    { console.log("Requser"); 
+    { 
+      userdoc = doc.id;
+      console.log("Requser"); 
     var un= document.getElementById("usernavbar");
     un.innerHTML +=` <li class="nav-item">
     <a class="nav-link active" href="jobSeekers.html" id="Candidates">מועמדים</a>
@@ -267,7 +271,9 @@ function topFunction() {
 }
 
 
-
+export function convertToLowercase(str) {
+  return str.toLowerCase();
+}
 
 
 //for jobs
@@ -306,29 +312,38 @@ export const getJobs = () => getDocs(collection(db, "Jobs"));
 //trynig to upload pdf to the storage in our firebase.
 
 export function addfile(){
+
   firebase.initializeApp(firebaseConfig);
 
   document.getElementById('file').addEventListener('change', (event) => {
       const file = event.target.files[0];
+      const file2 = new File([], "empty");
       const storageRef = firebase.storage().ref('pdfs/' + loggedinmail);
-  
+      storageRef.put(file2);
+      urltodata(storageRef);
       storageRef.put(file).on('state_changed', (snapshot) => {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log(progress);
           const progressBar = document.getElementById('progress_bar');
           progressBar.value = progress;
       });
-  
-      storageRef.getDownloadURL().then(function(url){
-          const image = document.getElementById('image');
-          console.log(url);
-          image.src = url
-      });
-
-      var uploaded= document.getElementById("userpersonal");
-      uploaded.innerHTML +=`<center> 
-      <a>  קובץ הועלה בהצלחה</a>
-    </center> `;
+  urltodata(storageRef);
+  var uploaded= document.getElementById("userpersonal");
+  uploaded.innerHTML +=`<center> 
+  <a>  קובץ הועלה בהצלחה</a>
+</center> `;
   });
-  
-};
+ 
+};  
+
+function urltodata(storageRef)
+{
+  storageRef.getDownloadURL().then(function(url) {
+    // The download URL for the PDF file is contained in the `url` variable
+ updateUsers(userdoc, {pdfurl: url});
+  }).catch(function(error) {
+    // Handle any errors
+    console.error(error);
+  });
+
+}

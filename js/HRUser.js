@@ -4,6 +4,7 @@ import {
   updateHRUsers,
   getHRUsers,
   saveHRUser,
+  convertToLowercase
   
 } from "./firebase.js";
 
@@ -22,7 +23,7 @@ HRuserForm.addEventListener("submit", async (e) =>
   //variabals to store the data.
   const HRuserCompanyname = document.getElementById("HRuserCompanyname").value;
   const HRuserUsername= document.getElementById("HRuserUsername").value;
-  const HRuserEmail = document.getElementById("HRuserEmail").value;
+  const HRuserEmail = convertToLowercase(document.getElementById("HRuserEmail").value);
   const HRuserPassword = document.getElementById("HRuserPassword").value;
   const HRuserPhonenumber = document.getElementById("HRuserPhonenumber").value;
   const HRuserDescription = document.getElementById("HRuserCompanyname").value;

@@ -1,11 +1,7 @@
-
 import{ 
-    signedinfunc,
+  myJobauth,
     addfile
   } from "./firebase.js";
 
+myJobauth();
 addfile();
-signedinfunc();
-//logout button id
-const LObutton = document.getElementById("logout-button");
-//on click logout button

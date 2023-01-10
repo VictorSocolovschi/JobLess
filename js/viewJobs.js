@@ -1,17 +1,15 @@
 import {
-    onGetJobs,
-    saveJob,
-    deleteJob,
-    getJob,
-    updateJob,
-    getJobs,
+  getJob,
+    onGetJobs, updateJob,
+    
   } from "./firebase.js";
- 
+  
   const myJobsForm = document.getElementById("myjobs-form");
   const jobsContainer = document.getElementById("jobs-container");
   
   let id = "";
-  
+
+
   window.addEventListener("DOMContentLoaded", async (e) => {
     // const querySnapshot = await getjobs();
     // querySnapshot.forEach((doc) => {
@@ -23,6 +21,7 @@ import {
 
       querySnapshot.forEach((doc) => {
         const job = doc.data();
+        
         jobsContainer.innerHTML += `
     
     <div class="card card-body mt-2 border-dark" style="max-width: 450px;
@@ -57,11 +56,30 @@ import {
           <a class="btn btn-outline-dark" href="mailto:${job.pubmail}">צור קשר</a>
         </center>
       </div>
-        
+
+      <label for="description" class="job-label">
+      <strong>: אנשים שאהבו</strong></label>
+      <p class="job-requirements">${job.likes}</p> 
+
+      <button class="btn btn-outline-dark btn-like" data-id="${doc.id}">
+      אהבתי
+      </button>
     </div>
     `;
 
       });
+      const btnslike = jobsContainer.querySelectorAll(".btn-like");
+      btnslike.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+          try {
+            const doc = await getJob(e.target.dataset.id);
+            const job = doc.data();
+            var newlike = job.likes +1 ;
+            updateJob(doc.id,{likes:newlike}) //adding new like to database
+          } catch (error) {
+            console.log(error);
+          }
+        });
+      });
     });
   });
-
