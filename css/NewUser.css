@@ -30,3 +30,10 @@
 .form-select{
     text-align: right;
 }
+
+input{
+    text-align: right;
+}
+textarea{
+    text-align: right;
+}
