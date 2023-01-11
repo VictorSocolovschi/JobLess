@@ -1,118 +1,129 @@
 
+
 h2{  
-color: #66BFBF;
-font-family: 'Montserrat', sans-serif;
-font-size: 2.5rem;
-font-weight: normal;
-padding: 10px;
-/*add more space between h2 and the text below*/
-}
-
-.cooking{
-width: 30%;
-} 
-
-.coding {
-width: 40%;
-}
-
-h3
-{
-font-weight: bolder;
-
-}
-
-
-h2{
-color: #243763;
-font-family: 'Montserrat', sans-serif;
-font-size: 3.5rem;
-font-weight: normal;
-padding: 10px;
-width: 100%;
-
-
-}
-
-p 
-{
-  line-height: 3; /*line hight will be 2 all across this table*/
-  font-size: 1.1em;
-  text-align: right;
-}
-
-a{
-  margin: 10px 10px;
-}
-
-.top-container
-{
-  position: relative;
-  padding: 50px 0 20px;
+  color: #66BFBF;
   text-align: center;
-}
-
-.skill-row 
-{
-width: 50%;
-margin: 100px auto 100px auto;
-text-align: left;
-}
-
-
-#features{
-padding: 7% 15%;
-}   
-
-.feature-box{
-text-align: center;
-padding: 0 50px 50px 0;
-}
-
-.icon
-{
-width: 65%;
-border-radius: 100%;
-margin: 20px;
-
-}
-
-hr{
-border: dotted #E4F9F5 12px;
-border-bottom: none;
-width: 60%;
-margin: 40px auto;
-}
-
-.container-fluid
-{
-padding: 0 15% 0 auto;
-}
-
-
-.jobless-img{
-  width: 4%;
-  float:right;
-  margin: auto;
-}
-
-
-.dropdown-item{
-  margin-left: 0;
-}
-
-a:link:hover,a:visited:hover{
-  color:rgb(47, 184, 127);
-  text-decoration:none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  padding: 10px;
+  /*add more space between h2 and the text below*/
   }
-ul.dropdown-menu.show{
-  --bs-dropdown-link-hover-bg: #ffffff;
+  
+  .cooking{
+  width: 15%;
+  float: left; /*Use when youd like to wrap a text around an image*/
+  margin-right: 30px;
+  }
+  
+  .coding {
+  width: 25%;
+  float: right;
+  margin-left: 30px;
+  }
+  
+  h3
+  {
+  font-weight: bolder;
+  
+  }
+  
+  
+  h2{
+  color: #243763;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: normal;
+  padding: 10px;
+  width: 100%;
+  
+  }
+  
+  p 
+  {
+    line-height: 3; /*line hight will be 2 all across this table*/
+    font-size: 1.1em;
+    text-align: right;
+  }
+  
+  a{
+    margin: 10px 10px;
+  }
+  
+  .top-container
+  {
+    position: relative;
+    padding: 50px 0 20px;
+    text-align: center;
+  }
 
-}
-a.dropdown-item{
-  text-align: right;
-}
+  .bottom-container
+  {
 
+      position: relative;
+      padding: 50px 0 20px;
+      text-align: center;
+    
+  }
+  
+  .skill-row 
+  {
+  width: 50%;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  }
+  
+  
+  #features{
+  padding: 7% 15%;
+  }   
+  
+  .feature-box{
+  text-align: center;
+  padding: 0 50px 50px 0;
+  }
+  
+  .icon
+  {
+  width: 65%;
+  border-radius: 100%;
+  margin: 20px;
+  
+  }
+  
+  hr{
+  border: dotted #E4F9F5 12px;
+  border-bottom: none;
+  width: 60%;
+  margin: 40px auto;
+  }
+  
+  .container-fluid
+  {
+  padding: 0 15% 0 auto;
+  }
+  
+  
+  .jobless-img{
+    width: 4%;
+    float:right;
+    margin: auto;
+  }
+  
+  .dropdown-item{
+    margin-left: 0;
+  }
+  a:link:hover,a:visited:hover{
+    color:rgb(47, 184, 127);
+    text-decoration:none;
+    }
+  ul.dropdown-menu.show{
+    --bs-dropdown-link-hover-bg: #ffffff;
+  
+  }
+  a.dropdown-item{
+    text-align: right;
+  }
 /* .col{
   margin: 4rem 20rem;
 } */
