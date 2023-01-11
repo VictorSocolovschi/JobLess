@@ -103,7 +103,7 @@ infoForm.addEventListener("submit", async (e) => {
    
         editStatus = false;
         id = "";
-        infoForm["btn-info-form"].innerText = "";
+        infoForm["btn-info-form"].innerText = " ";
       }
       infoForm.reset();
       title.focus();

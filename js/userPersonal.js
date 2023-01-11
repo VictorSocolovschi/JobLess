@@ -1,9 +1,10 @@
-import{onGetUsers,myJobauth,addfile,onGetJobs, loggedinmail,hebrew,updateJob} from "./firebase.js";
+import{onGetUsers , myJobauth , addfile , onGetJobs, loggedinmail, hebrew, updateJob} from "./firebase.js";
 myJobauth();//logged in user
 addfile();//upload pdf function
 
 
 const jobsContainer = document.getElementById("jobs-favorits");
+
 
 var pdf = new jsPDF({
     orientation: 'A4',

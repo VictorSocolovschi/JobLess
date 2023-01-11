@@ -54,7 +54,6 @@ import {
         btn.addEventListener("click", async ({ target: { dataset } }) => {
           try {
             await deleteJob(dataset.id);
-            
           } catch (error) {
             console.log(error);
           }
@@ -96,9 +95,10 @@ import {
     var likes = 0;
     var favorits = "";
     var likeby = "";
+    var intrested = "";
     try {
       if (!editStatus) {
-        await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value,favorits,likes,likeby);
+        await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value,favorits,likes,likeby,intrested);
       } else {
         //edit job information
         await updateJob(id, {

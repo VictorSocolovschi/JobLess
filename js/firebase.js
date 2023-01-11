@@ -39,8 +39,7 @@ export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNum
     const user = userCredential.user;
     addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,});
     window.alert("משתמש נרשם בהצלחה!");
-    
-    
+    location.href = 'index.html';
   })
 
   .catch((error) => {
@@ -60,6 +59,7 @@ export const saveHRUser = (companyname,username,email,password,phonenumber, desc
     const user = userCredential.user;
     addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description});
     window.alert("משתמש נרשם בהצלחה!");
+    location.href = 'index.html';
     
   })
   .catch((error) => {
@@ -79,6 +79,7 @@ export const saveReqUser = (firstname,lastname,email,password,phonenumber, descr
     const user = userCredential.user;
     addDoc(collection(db, "Req-users" ), { firstname,lastname,email,password,phonenumber, description });
     window.alert("משתמש נרשם בהצלחה!");
+    location.href = 'index.html';
  
   })
 
@@ -111,8 +112,10 @@ export const loginfunc = (email,password) =>
   });
 }
 
-//Auth login main page
+//Auth login main index page
+
 export const signedinfunc = () =>
+
 {onAuthStateChanged(auth, (user) => {
   if (user) {
     // identefy logged in 
@@ -120,13 +123,33 @@ export const signedinfunc = () =>
     console.log("logged in");
     console.log(user.email);
     //userkind function to get navbar information
+
     userkind();  
+
+    var psbu= document.getElementById("navbuttons");
+    psbu.innerHTML +=`
+    <button class="btn btn-danger btn-logout">
+    התנתק
+    </button> `;
+
+//auth singout button
+const indexnav = document.getElementById("navbuttons");
+const btnslogout = indexnav.querySelectorAll(".btn-logout");
+btnslogout.forEach((btn) =>
+  btn.addEventListener("click", async (e) => {
+    console.log("signoutfunc");
+    e.preventDefault(); 
+      signoutfunc();
+    
+  })
+);
+
+
   
   } else {
     //identefy not logged in 
     console.log("logged out");
     navbar(); 
-    
   }
 });
 }
@@ -145,6 +168,7 @@ export const myJobauth = () =>
         { console.log("user");
         userdoc = doc.id; 
 
+
       }})});
 
   } else {
@@ -157,6 +181,7 @@ export const myJobauth = () =>
 
 function userkind ()
 {
+
 
 //all functions for regular users that is logged in
 onGetUsers((querySnapshot) => {
@@ -177,7 +202,9 @@ onGetUsers((querySnapshot) => {
     // var mjb= document.getElementById("myjobs-button");
     // mjb.classList.add("button-hidden");
     var psbu= document.getElementById("navbuttons");
-    psbu.innerHTML +=` <button onclick="location.href = 'userPersonal.html';" id="Userinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
+    psbu.innerHTML +=` 
+    <button onclick="location.href = 'userPersonal.html';" id="Userinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>
+`;
    }
   });
 });
@@ -214,7 +241,7 @@ onGetReqUsers((querySnapshot) => {
     { 
       userdoc = doc.id;
       console.log("Requser"); 
-    var un= document.getElementById("navbuttons");
+    var un= document.getElementById("usernavbar");
     un.innerHTML +=` <li class="nav-item">
     <a class="nav-link active" href="jobSeekers.html" id="Candidates">מועמדים</a>
   </li>
@@ -223,8 +250,9 @@ onGetReqUsers((querySnapshot) => {
   </li> `;
     var psbu= document.getElementById("navbuttons");
     // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
-    psbu.innerHTML +=`<button onclick="location.href = 'Reqpersonal.html';" id="Reqinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
-  
+    psbu.innerHTML +=`<button onclick="location.href = 'Reqpersonal.html';" id="Reqinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>
+    `
+    ; 
   }
   });
 });
@@ -247,8 +275,7 @@ function navbar()
   psbu.innerHTML +=`
 <button onclick="location.href = 'signUpPage.html';" id="register" type="button" class="btn btn-success reg-btn" >הרשמה</button>
 <button onclick="location.href = 'login.html';" id="login-button" type="button"  class="btn btn-primary reg-btn" style="margin-left: 20px;">משתמש קיים</button>`;
-    var LgO = document.getElementById("logout-button");
-    LgO.classList.add("button-hidden");
+  
     
 }
 
@@ -311,8 +338,8 @@ export function convertToLowercase(str) {
 //for jobs
 
 //save new job information in database
-export const saveJob = (pubmail,title, description,location,scope,standarts,favorits,likes,likeby) =>
-  addDoc(collection(db, "Jobs"), {pubmail, title, description,location,scope,standarts,favorits,likes ,likeby});
+export const saveJob = (pubmail,title, description,location,scope,standarts,favorits,likes,likeby,intrested) =>
+  addDoc(collection(db, "Jobs"), {pubmail, title, description,location,scope,standarts,favorits,likes ,likeby,intrested});
 
 //get all jobs information
 export const onGetJobs = (callback) =>
