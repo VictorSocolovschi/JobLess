@@ -49,7 +49,7 @@ import {
             infoForm["UserFirstName"].value = data.FirstName;
             infoForm["UserLastName"].value = data.LastName;
             nochangeemail = data.email;
-            nochangepass = data.password;
+            nochangepass = data.Password;
             infoForm["UserAge"].value = data.Age;
             infoForm["UserLocation"].value = data.Location;
             infoForm["UserWantedJob"].value = data.WantedJob;
@@ -87,17 +87,18 @@ infoForm.addEventListener("submit", async (e) => {
       if (!editStatus) {
         
       } else {
+        
         await updateUsers(id, {
-          firstname: UserFirstName,
-            lastname: UserLastName,
+          FirstName: UserFirstName,
+          LastName: UserLastName,
             email: nochangeemail,
-            password: nochangepass,
-            age: UserAge,
-            location: UserLocation,
-            phonenumber: UserPhoneNumber,
-            UserGeneralExp:UserGeneralExp,
-            UserWantedJob:UserWantedJob,
-            UserExp:UserExp,
+            Password: nochangepass,
+            Age: UserAge,
+            Location: UserLocation,
+            PhoneNumber: UserPhoneNumber,
+            GeneralExp:UserGeneralExp,
+            WantedJob:UserWantedJob,
+            Exp:UserExp,
 
         });//seding new updated user data
    

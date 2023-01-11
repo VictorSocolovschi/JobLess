@@ -15,7 +15,75 @@ a{
   float: right !important;
   margin-right: 20px !important;
 }
+a.carousel-control-prev-icon{
+  color: #0d6efd;
+}
 
+a:link:hover,a:visited:hover{
+  color:rgb(47, 184, 127);
+  text-decoration:none;
+  }
+  button-contact:hover {
+    background: #DAE2B6;
+    text-decoration: none;
+  }
+  button-contact {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    -webkit-border-radius: 23;
+    -moz-border-radius: 23;
+    border-radius: 23px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 16px;
+    background: #497694;
+    padding: 9px 20px 10px 20px;
+    border: solid #eddfed 2px;
+    text-decoration: none;
+    transform: translate(-50%, 0);
+    margin-bottom: 30px;
+  }
+  h2{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 3.5rem;
+    font-weight:bolder;
+    color: #497694;
+    padding: 10px ;
+    text-align: center;
+  }
+  .h5{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 3.5rem;
+    font-weight:bolder;
+    color: #497694;
+    padding: 10px ;
+    text-align: center;
+  }
+  p
+  {
+    line-height: 2;
+    margin: 30px auto 30px ;
+    color: #263159;
+    font-size: x-large;
+    
+  }
+
+.carousel-item{
+  padding: 7% 16%;
+}s
+
+#offerings{
+  text-align: center;
+  /* background-color: #F5EBE0; */
+  color: #97DECE;
+}
+
+#offerings {
+  text-align: center;
+  height: 800px;
+  background-color: #efae80;
+}
 
 .skill-row 
 {

@@ -9,6 +9,7 @@ import {
   } from "./firebase.js";
   
 const jobsContainer = document.getElementById("jobs-container");
+const carusel = document.getElementById("carousel");
 
 myJobauth();//user logged in
 
@@ -22,43 +23,111 @@ myJobauth();//user logged in
       querySnapshot.forEach((doc) => {
         const job = doc.data();
          //create job card with like option
+
+         carusel.innerHTML+=`
+         <div class="carousel-item">
+          
+    <center>
+    <h2 class="h5" style="margin:1rem 0;">${job.title}</h2>
+    </center>
+    
+    <div class="row mb-2">
+
+      <div class="col">
+        <label for="description" class="job-label">
+        <strong>תיאור התפקיד</strong></label>
+        <p>${job.description}</p>
+      </div>
+
+
+      <div class="col">
+      <label for="description" class="job-label">
+      <strong>דרישות</strong></label>
+      <p>${job.standarts}</p> 
+      </div>
+
+      
+
+    </div>
+    <div class="row mb-2">
+
+      <div class="col">
+        <label for="description" class="job-label">
+        <strong>היקף המשרה</strong></label>
+        <p>${job.scope}</p>
+      </div>
+
+      <div class="col">
+      <label for="description" class="job-label">
+      <strong>מיקום</strong></label>
+      <p>${job.location}</p> 
+       </div>
+
+    </div>
+      <button class="btn btn-outline-dark btn-contact" data-id="${doc.id}">
+      📧 צור קשר
+      </button>
+
+    <label for="description" class="job-label">
+    <strong>: אנשים שאהבו</strong></label>
+
+    <p class="job-requirements">${job.likes}</p> 
+
+    <button class="btn btn-outline-dark btn-like" data-id="${doc.id}">
+  ️  ❤️ אהבתי 
+    </button>
+    <button class="btn btn-outline-dark btn-fav" data-id="${doc.id}">
+    ⭐ שמור במועדפים
+    </button>
+ 
+            
+         </div>`;
+
         jobsContainer.innerHTML += `
     
-    <div class="card card-body mt-2 border-light" style="max-width: 450px;
+    <div class="card card-body mt-2 mb-2 border-light" style="max-width: 450px;
       max-height: 300px; overflow-y:auto;  position: relative;">
       
-      <center><h2 class="h5">${job.title}</h2></center>
+      <center>
+      <h2 class="h5" style="margin:1rem 0;">${job.title}</h2>
+      </center>
       
-      <div>
+      <div class="row mb-2">
 
+        <div class="col">
+          <label for="description" class="job-label">
+          <strong>תיאור התפקיד</strong></label>
+          <p>${job.description}</p>
+        </div>
+
+
+        <div class="col">
         <label for="description" class="job-label">
-        <strong>: תיאור התפקיד</strong></label>
+        <strong>דרישות</strong></label>
+        <p>${job.standarts}</p> 
+        </div>
+
         
-        <p class="job-description">${job.description}</p>
 
-        <label for="description" class="job-label">
-        <strong>: מיקום</strong></label>
-
-        <p class="job-location">${job.location}</p> 
-        
-        <label for="description" class="job-label">
-        <strong>: היקף המשרה</strong></label>
-
-        <p class="job-scope">${job.scope}</p>  
-
-        <label for="description" class="job-label">
-        <strong>: דרישות</strong></label>
-
-        <p class="job-requirements">${job.standarts}</p> 
       </div>
-      
-       
+      <div class="row mb-2">
+
+        <div class="col">
+          <label for="description" class="job-label">
+          <strong>היקף המשרה</strong></label>
+          <p>${job.scope}</p>
+        </div>
+
+        <div class="col">
+        <label for="description" class="job-label">
+        <strong>מיקום</strong></label>
+        <p>${job.location}</p> 
+         </div>
+
+      </div>
         <button class="btn btn-outline-dark btn-contact" data-id="${doc.id}">
         📧 צור קשר
         </button>
-
-     
-     
 
       <label for="description" class="job-label">
       <strong>: אנשים שאהבו</strong></label>

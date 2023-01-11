@@ -24,8 +24,7 @@ a.dropdown-item{
   text-align: right;
 }
 
-p
-{
+p{
   line-height: 2;
   margin: 30px auto 30px ;
   color: #263159;
@@ -307,6 +306,7 @@ button-contact:hover {
   background: #DAE2B6;
   text-decoration: none;
 }
+
 
 #offerings {
   height: 500px;

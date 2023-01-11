@@ -39,7 +39,7 @@ export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNum
     const user = userCredential.user;
     addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,});
     window.alert("משתמש נרשם בהצלחה!");
-    location.href = 'index.html';
+    
   })
 
   .catch((error) => {
@@ -59,7 +59,7 @@ export const saveHRUser = (companyname,username,email,password,phonenumber, desc
     const user = userCredential.user;
     addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description});
     window.alert("משתמש נרשם בהצלחה!");
-    location.href = 'index.html';
+    
     
   })
   .catch((error) => {
@@ -79,7 +79,7 @@ export const saveReqUser = (firstname,lastname,email,password,phonenumber, descr
     const user = userCredential.user;
     addDoc(collection(db, "Req-users" ), { firstname,lastname,email,password,phonenumber, description });
     window.alert("משתמש נרשם בהצלחה!");
-    location.href = 'index.html';
+    
  
   })
 
@@ -144,8 +144,6 @@ btnslogout.forEach((btn) =>
   })
 );
 
-
-  
   } else {
     //identefy not logged in 
     console.log("logged out");
@@ -153,7 +151,6 @@ btnslogout.forEach((btn) =>
   }
 });
 }
-
 export const myJobauth = () =>
 {onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -181,8 +178,6 @@ export const myJobauth = () =>
 
 function userkind ()
 {
-
-
 //all functions for regular users that is logged in
 onGetUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {

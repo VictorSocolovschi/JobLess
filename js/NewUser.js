@@ -54,7 +54,7 @@ import {
       // if data filled proprotly it will send by this function to the data base.
       sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl);
     }
-  
+             
   });
   
   function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl)

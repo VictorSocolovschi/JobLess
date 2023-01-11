@@ -1,128 +1,174 @@
 
+
 h2{  
-color: #66BFBF;
-font-family: 'Montserrat', sans-serif;
-font-size: 2.5rem;
-font-weight: normal;
-padding: 10px;
-/*add more space between h2 and the text below*/
-}
-
-.cooking{
-width: 25%;
-float: left; /*Use when youd like to wrap a text around an image*/
-margin-right: 30px;
-}
-
-.coding {
-width: 25%;
-float: right;
-margin-left: 30px;
-}
-
-h3
-{
-font-weight: bolder;
-
-}
-
-
-h2{
-color: #243763;
-font-family: 'Montserrat', sans-serif;
-font-size: 3.5rem;
-font-weight: normal;
-padding: 10px;
-width: 100%;
-
-}
-
-p 
-{
-  line-height: 3; /*line hight will be 2 all across this table*/
-  font-size: 1.1em;
-  text-align: right;
-}
-
-a{
-  margin: 10px 10px;
-}
-
-.top-container
-{
-  position: relative;
-  background-color: #F8F4EA;
-  padding: 50px 0 20px;
+  color: #66BFBF;
   text-align: center;
-}
-
-.skill-row 
-{
-width: 50%;
-margin: 100px auto 100px auto;
-text-align: left;
-}
-
-
-#features{
-padding: 7% 15%;
-}   
-
-.feature-box{
-text-align: center;
-padding: 0 50px 50px 0;
-}
-
-.icon
-{
-width: 65%;
-border-radius: 100%;
-margin: 20px;
-
-}
-
-hr{
-border: dotted #E4F9F5 12px;
-border-bottom: none;
-width: 60%;
-margin: 40px auto;
-}
-
-.container-fluid
-{
-padding: 0 15% 0 auto;
-}
-
-
-.jobless-img{
-  width: 4%;
-  float:right;
-  margin: auto;
-}
-
-body{
-  background-color:#F8F4EA ;
-}
-
-.dropdown-item{
-  margin-left: 0;
-}
-
-a:link:hover,a:visited:hover{
-  color:rgb(47, 184, 127);
-  text-decoration:none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  padding: 10px;
+  /*add more space between h2 and the text below*/
   }
-ul.dropdown-menu.show{
-  --bs-dropdown-link-hover-bg: #ffffff;
-
-}
-a.dropdown-item{
-  text-align: right;
-}
-
-.CvExample{
+  
+  .cooking{
+  width: 15%;
+  float: left; /*Use when youd like to wrap a text around an image*/
+  margin-right: 30px;
+  }
+  
+  .coding {
+  width: 25%;
   float: right;
-  width: 33.33%;
-  padding: 5px;
+  margin-left: 30px;
+  }
+  
+  h3
+  {
+  font-weight: bolder;
+  
+  }
+  
+  
+  h2{
+  color: #243763;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: normal;
+  padding: 10px;
+  width: 100%;
+  
+  }
+  
+  p 
+  {
+    line-height: 3; /*line hight will be 2 all across this table*/
+    font-size: 1.1em;
+    text-align: right;
+  }
+  
+  a{
+    margin: 10px 10px;
+  }
+  
+  .top-container
+  {
+    position: relative;
+    padding: 50px 0 20px;
+    text-align: center;
+  }
+
+  .bottom-container
+  {
+
+      position: relative;
+      padding: 50px 0 20px;
+      text-align: center;
+    
+  }
+  
+  .skill-row 
+  {
+  width: 50%;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  }
+  
+  
+  #features{
+  padding: 7% 15%;
+  }   
+  
+  .feature-box{
+  text-align: center;
+  padding: 0 50px 50px 0;
+  }
+  
+  .icon
+  {
+  width: 65%;
+  border-radius: 100%;
+  margin: 20px;
+  
+  }
+  
+  hr{
+  border: dotted #E4F9F5 12px;
+  border-bottom: none;
+  width: 60%;
+  margin: 40px auto;
+  }
+  
+  .container-fluid
+  {
+  padding: 0 15% 0 auto;
+  }
+  
+  
+  .jobless-img{
+    width: 4%;
+    float:right;
+    margin: auto;
+  }
+  
+  .dropdown-item{
+    margin-left: 0;
+  }
+  a:link:hover,a:visited:hover{
+    color:rgb(47, 184, 127);
+    text-decoration:none;
+    }
+  ul.dropdown-menu.show{
+    --bs-dropdown-link-hover-bg: #ffffff;
+  
+  }
+  a.dropdown-item{
+    text-align: right;
+  }
+/* .col{
+  margin: 4rem 20rem;
+} */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 0px  #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
