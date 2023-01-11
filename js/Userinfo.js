@@ -26,7 +26,7 @@ import {
         const data = doc.data();
         if(data.email == loggedinmail){  
         dataContainer.innerHTML += `
-      <h3 class="h5"> שלום ${data.firstname}</h3>
+      <h3 class="h5"> שלום ${data.FirstName}</h3>
       <div>
       <button class="btn btn-secondary btn-edit" data-id="${doc.id}">
       🖉  ערוך פרטים אישיים
@@ -41,19 +41,19 @@ import {
           try {
             const doc = await getUser(e.target.dataset.id);
             const data = doc.data();
-            infoForm["UserFirstName"].value = data.firstname;
-            infoForm["UserLastName"].value = data.lastname;
+            infoForm["UserFirstName"].value = data.FirstName;
+            infoForm["UserLastName"].value = data.LastName;
             //infoForm["UserEmail-info"].value = data.email;
             //infoForm["UserPassword-info"].value = data.password;
             nochangeemail = data.email;
             nochangepass = data.password;
 
-            infoForm["UserAge"].value = data.age;
-            infoForm["UserLocation"].value = data.location;
-            infoForm["UserWantedJob"].value = data.UserWantedJob;
-            infoForm["UserPhoneNumber"].value = data.phonenumber;
-            infoForm["UserExp"].value = data.UserExp;
-            infoForm["UserGeneralExp"].value = data.UserGeneralExp;
+            infoForm["UserAge"].value = data.Age;
+            infoForm["UserLocation"].value = data.Location;
+            infoForm["UserWantedJob"].value = data.WantedJob;
+            infoForm["UserPhoneNumber"].value = data.PhoneNumber;
+            infoForm["UserExp"].value = data.Exp;
+            infoForm["UserGeneralExp"].value = data.GeneralExp;
 
             editStatus = true;
             id = doc.id;

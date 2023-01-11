@@ -126,7 +126,7 @@ export const myJobauth = () =>
     //const uid = user.uid;
     loggedinmail = user.email;
     console.log("logged in");
-    
+    console.log(user.email);
     onGetUsers((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         const user = doc.data();
