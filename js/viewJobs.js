@@ -25,46 +25,60 @@ if(userdoc == "0" ){
          //create job card with like option
         jobsContainer.innerHTML += `
     
-    <div class="card card-body mt-2 border-light" style="max-width: 450px;
+    <div class="card card-body mt-2 mb-2 border-light" style="max-width: 450px;
       max-height: 300px; overflow-y:auto;  position: relative;">
       
-      <center><h2 class="h5">${job.title}</h2></center>
+      <center>
+      <h2 class="h5" style="margin:1rem 0;">${job.title}</h2>
+      </center>
       
-      <div>
+      <div class="row mb-2">
 
-        <label for="description" class="job-label">
-        <strong>: תיאור התפקיד</strong></label>
-        
-        <p class="job-description">${job.description}</p>
+        <div class="col">
+          <label for="description" class="job-label">
+          <strong>תיאור התפקיד</strong></label>
+          <p>${job.description}</p>
+        </div>
 
-        <label for="description" class="job-label">
-        <strong>: מיקום</strong></label>
+        <div class="col">
+          <label for="description" class="job-label">
+          <strong>מיקום</strong></label>
+          <p>${job.location}</p> 
+        </div>
 
-        <p class="job-location">${job.location}</p> 
-        
-        <label for="description" class="job-label">
-        <strong>: היקף המשרה</strong></label>
-
-        <p class="job-scope">${job.scope}</p>  
-
-        <label for="description" class="job-label">
-        <strong>: דרישות</strong></label>
-
-        <p class="job-requirements">${job.standarts}</p> 
       </div>
-      <div>
-        <center>
+
+      <div class="row mb-2">
+
+        <div class="col">
+          <label for="description" class="job-label">
+          <strong>היקף המשרה</strong></label>
+          <p>${job.scope}</p>  
+        </div>
+
+        <div class="col">
+          <label for="description" class="job-label">
+          <strong>דרישות</strong></label>
+          <p>${job.standarts}</p> 
+        </div>
+      
+      </div>
+
+      <div class="row mb-4">
+        <div class="col">
+          <button class="btn btn-outline-dark btn-like" data-id="${doc.id}">אהבתי</button>
+        </div>
+        <div class="col">
+          <label for="description" class="job-label">
+          <strong>אנשים שאהבו את המשרה</strong></label>
+          <p class="job-requirements">${job.likes}</p> 
+        </div>
+        <div class="row">
           <a class="btn btn-outline-dark" href="mailto:${job.pubmail}">צור קשר</a>
-        </center>
+        </div>
       </div>
+      
 
-      <label for="description" class="job-label">
-      <strong>: אנשים שאהבו</strong></label>
-      <p class="job-requirements">${job.likes}</p> 
-
-      <button class="btn btn-outline-dark btn-like" data-id="${doc.id}">
-      אהבתי
-      </button>
     </div>
     `;
 
@@ -101,41 +115,55 @@ else {
     
     <div class="card card-body mt-2 border-light" style="max-width: 450px;
       max-height: 300px; overflow-y:auto;  position: relative;">
-      
       <center><h2 class="h5">${job.title}</h2></center>
       
-      <div>
+        <div class="row">
 
-        <label for="description" class="job-label">
-        <strong>: תיאור התפקיד</strong></label>
+          <div class="col">
+            <label for="description" class="job-label">
+            <strong>תיאור התפקיד</strong></label>
+            <p>${job.description}</p>
+          </div>
+
+          <div class="col">
+            <label for="description" class="job-label">
+            <strong>מיקום</strong></label>
+            <p>${job.location}</p> 
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <label for="description" class="job-label">
+            <strong>היקף המשרה</strong></label>
+            <p>${job.scope}</p>  
+          </div>
+
+          <div class="col">
+            <label for="description" class="job-label">
+            <strong>דרישות</strong></label>
+            <p>${job.standarts}</p> 
+          </div>
         
-        <p class="job-description">${job.description}</p>
+        </div>
 
-        <label for="description" class="job-label">
-        <strong>: מיקום</strong></label>
-
-        <p class="job-location">${job.location}</p> 
+        <div class="row">
+          <center>
+            <label for="description" class="job-label">
+            <strong>אנשים שאהבו את המשרה</strong></label>
+            <p class="job-requirements">${job.likes}</p> 
+          </center>
+        </div>
         
-        <label for="description" class="job-label">
-        <strong>: היקף המשרה</strong></label>
+        <div class="row">
+          <div class="col">
+              <a class="btn btn-outline-dark" href="mailto:${job.pubmail}">צור קשר</a>
+          </div>
+        </div>
 
-        <p class="job-scope">${job.scope}</p>  
-
-        <label for="description" class="job-label">
-        <strong>: דרישות</strong></label>
-
-        <p class="job-requirements">${job.standarts}</p> 
-      </div>
-      <div>
-        <center>
-          <a class="btn btn-outline-dark" href="mailto:${job.pubmail}">צור קשר</a>
-        </center>
-      </div>
-
-      <label for="description" class="job-label">
-      <strong>: אנשים שאהבו</strong></label>
-      <p class="job-requirements">${job.likes}</p> 
-
+      
     </div>
     `;
       });
