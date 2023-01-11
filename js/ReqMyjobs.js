@@ -16,6 +16,7 @@ import {
   let editStatus = false;
   let id = "";
   
+
   window.addEventListener("DOMContentLoaded", async (e) => {
     onGetJobs((querySnapshot) => {
       jobsContainer.innerHTML = "";
@@ -53,6 +54,7 @@ import {
         btn.addEventListener("click", async ({ target: { dataset } }) => {
           try {
             await deleteJob(dataset.id);
+            
           } catch (error) {
             console.log(error);
           }
@@ -96,7 +98,7 @@ import {
     var likeby = "";
     try {
       if (!editStatus) {
-        await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value,likes,favorits,likeby);
+        await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value,favorits,likes,likeby);
       } else {
         //edit job information
         await updateJob(id, {

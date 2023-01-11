@@ -13,8 +13,7 @@ myJobauth();//user logged in
 
 //fix print like button for user only
 
-
-if(userdoc == "0" ){
+if(userdoc == "0"){
   window.addEventListener("DOMContentLoaded", async (e) => {
 
     //get jobs from database
@@ -81,7 +80,7 @@ if(userdoc == "0" ){
             const job = doc.data();
             const infav = job.favorits.includes(loggedinmail);//check if mail already in favorits
             if(!infav){
-            updateJob(doc.id,{favorits:job.favorits+" " + loggedinmail+ "," }) }//adding to favorits
+            updateJob(doc.id,{favorits:job.favorits+" " + loggedinmail+ " " }) }//adding to favorits
           } catch (error) {
             console.log(error);
           }
@@ -94,11 +93,21 @@ if(userdoc == "0" ){
           try {
             const doc = await getJob(e.target.dataset.id);
             const job = doc.data();
-            var newlike = job.likes +1 ;
             const inlikes = job.likeby.includes(loggedinmail);
+
+            //if in likes
             if(!inlikes){
-            updateJob(doc.id,{likes:newlike ,likeby: job.likeby+" " + loggedinmail+ ","}) //adding new like to database
+            var newlike = job.likes +1;
+            //adding new like to database
+            updateJob(doc.id,{likes:newlike , likeby: job.likeby+ " " + loggedinmail+ " "}) 
+            
             }
+            else{
+              //remove like
+               var removelikeby = job.likeby.replace(loggedinmail,"");
+               var newlike = job.likes -1;
+               //removing like to database
+               updateJob(doc.id,{likes:newlike,likeby:removelikeby}) }
           } catch (error) {
             console.log(error);
           }
