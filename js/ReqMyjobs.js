@@ -8,7 +8,7 @@ import {
     loggedinmail
   } from "./firebase.js";
 
-  myJobauth();
+  myJobauth();//logged in function
  
   const myJobsForm = document.getElementById("myjobs-form");
   const jobsContainer = document.getElementById("jobs-container");
@@ -19,9 +19,10 @@ import {
   window.addEventListener("DOMContentLoaded", async (e) => {
     onGetJobs((querySnapshot) => {
       jobsContainer.innerHTML = "";
-      
+      //get all jobs from database
       querySnapshot.forEach((doc) => {
         const job = doc.data();
+        //if logged in has jobs he publishet- enable editing
         if(job.pubmail == loggedinmail){  
         jobsContainer.innerHTML += `
       <div class="card card-body mt-2 border-defult" style="text-align:right">
@@ -91,10 +92,11 @@ import {
     const scope = myJobsForm["job-scope"];
     const standarts = myJobsForm["job-standarts"];
     var likes = 0;
-
+    var favorits = "";
+    var likeby = "";
     try {
       if (!editStatus) {
-        await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value,likes);
+        await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value,likes,favorits,likeby);
       } else {
         //edit job information
         await updateJob(id, {

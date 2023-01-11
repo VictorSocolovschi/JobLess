@@ -83,6 +83,7 @@ import {
              <a class="btn btn-outline-dark" href="mailto:${user.email}">צור קשר</a>
 
              <a class="btn btn-outline-dark" href="${user.pdfurl}">צפייה בקורות חיים</a>
+             
             </center>
         </div>
       

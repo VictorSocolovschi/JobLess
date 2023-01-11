@@ -40,6 +40,7 @@ export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNum
     addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,});
     window.alert("משתמש נרשם בהצלחה!");
     
+    
   })
 
   .catch((error) => {
@@ -310,8 +311,8 @@ export function convertToLowercase(str) {
 //for jobs
 
 //save new job information in database
-export const saveJob = (pubmail,title, description,location,scope,standarts,likes) =>
-  addDoc(collection(db, "Jobs"), {pubmail, title, description,location,scope,standarts,likes });
+export const saveJob = (pubmail,title, description,location,scope,standarts,likes,likeby) =>
+  addDoc(collection(db, "Jobs"), {pubmail, title, description,location,scope,standarts,likes ,likeby});
 
 //get all jobs information
 export const onGetJobs = (callback) =>

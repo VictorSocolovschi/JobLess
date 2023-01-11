@@ -1,5 +1,6 @@
 import {
     getJob,
+    loggedinmail,
     myJobauth,
     onGetJobs,
      updateJob,
@@ -65,11 +66,28 @@ if(userdoc == "0" ){
       <button class="btn btn-outline-dark btn-like" data-id="${doc.id}">
       אהבתי
       </button>
+      <button class="btn btn-outline-dark btn-fav" data-id="${doc.id}">
+      שמור במועדפים
+      </button>
     </div>
-    `;
+    `;});
 
-      });
       //creat like button
+      const btnsfav = jobsContainer.querySelectorAll(".btn-fav");
+      btnsfav.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+          try {
+            const doc = await getJob(e.target.dataset.id);
+            const job = doc.data();
+            const infav = job.favorits.includes(loggedinmail);//check if mail already in favorits
+            if(!infav){
+            updateJob(doc.id,{favorits:job.favorits+" " + loggedinmail+ "," }) }//adding to favorits
+          } catch (error) {
+            console.log(error);
+          }
+        });
+      });
+     
       const btnslike = jobsContainer.querySelectorAll(".btn-like");
       btnslike.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
@@ -77,15 +95,20 @@ if(userdoc == "0" ){
             const doc = await getJob(e.target.dataset.id);
             const job = doc.data();
             var newlike = job.likes +1 ;
-            updateJob(doc.id,{likes:newlike}) //adding new like to database
+            const inlikes = job.likeby.includes(loggedinmail);
+            if(!inlikes){
+            updateJob(doc.id,{likes:newlike ,likeby: job.likeby+" " + loggedinmail+ ","}) //adding new like to database
+            }
           } catch (error) {
             console.log(error);
           }
         });
       });
+
     });
   });
 }
+
 else {
   window.addEventListener("DOMContentLoaded", async (e) => {
 
