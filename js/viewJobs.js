@@ -7,27 +7,22 @@ import {
     
   } from "./firebase.js";
   
-  const myJobsForm = document.getElementById("myjobs-form");
-  const jobsContainer = document.getElementById("jobs-container");
-  
-  let id = "";
-myJobauth();
+const jobsContainer = document.getElementById("jobs-container");
+myJobauth();//user logged in
+
+//fix print like button for user only
 
 
-
-if(userdoc == "0" ){//fix print like button for user only
+if(userdoc == "0" ){
   window.addEventListener("DOMContentLoaded", async (e) => {
-    // const querySnapshot = await getjobs();
-    // querySnapshot.forEach((doc) => {
-    //   console.log(doc.data());
-    // });
-    
+
+    //get jobs from database
     onGetJobs((querySnapshot) => {
       jobsContainer.innerHTML = "";
 
       querySnapshot.forEach((doc) => {
         const job = doc.data();
-        
+         //create job card with like option
         jobsContainer.innerHTML += `
     
     <div class="card card-body mt-2 border-light" style="max-width: 450px;
@@ -74,6 +69,7 @@ if(userdoc == "0" ){//fix print like button for user only
     `;
 
       });
+      //creat like button
       const btnslike = jobsContainer.querySelectorAll(".btn-like");
       btnslike.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
@@ -92,17 +88,15 @@ if(userdoc == "0" ){//fix print like button for user only
 }
 else {
   window.addEventListener("DOMContentLoaded", async (e) => {
-    // const querySnapshot = await getjobs();
-    // querySnapshot.forEach((doc) => {
-    //   console.log(doc.data());
-    // });
-    
+
+    //get jobs from database
     onGetJobs((querySnapshot) => {
       jobsContainer.innerHTML = "";
 
       querySnapshot.forEach((doc) => {
         const job = doc.data();
         
+        //create job card
         jobsContainer.innerHTML += `
     
     <div class="card card-body mt-2 border-light" style="max-width: 450px;

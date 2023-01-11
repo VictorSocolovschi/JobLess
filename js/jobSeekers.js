@@ -4,16 +4,16 @@ import {
  
   const usersContainer = document.getElementById("users-Container");
   
-  let id = "";
-  
+
   window.addEventListener("DOMContentLoaded", async (e) => {  
+    //recive all users from data base
     onGetUsers((querySnapshot) => {
         usersContainer.innerHTML = "";
 
       querySnapshot.forEach((doc) => {
         const user = doc.data();
-
-        console.log(user.pdfurl);
+        
+      //if user has pdf file - create card with pdf download link
       if(user.pdfurl!= "0"){
         usersContainer.innerHTML += `
     
@@ -89,7 +89,7 @@ import {
     </div>
     `;
         }
-        else{
+        else{ //if user does not have pdf file - create normal card
           usersContainer.innerHTML += `
     
         <div class="card card-body mt-2 border-light" style="max-width: 450px;

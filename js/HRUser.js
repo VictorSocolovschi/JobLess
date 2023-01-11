@@ -1,15 +1,8 @@
 import {
-  onGetHRUsers,
-  getHRUser,
-  updateHRUsers,
-  getHRUsers,
   saveHRUser,
   convertToLowercase
   
 } from "./firebase.js";
-
-let editStatus = false;
-let id = "";
 
 //from where to read data.
 const HRuserForm = document.getElementById("HRUser-form");

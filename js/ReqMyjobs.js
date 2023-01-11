@@ -4,7 +4,6 @@ import {
     deleteJob,
     getJob,
     updateJob,
-    getJobs,
     myJobauth,
     loggedinmail
   } from "./firebase.js";
@@ -84,7 +83,7 @@ import {
   
   myJobsForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    //const publisher = user email
+    //getting data from user input
     const pubmail = loggedinmail;
     const title = myJobsForm["job-title"];
     const description = myJobsForm["job-description"];
@@ -92,10 +91,12 @@ import {
     const scope = myJobsForm["job-scope"];
     const standarts = myJobsForm["job-standarts"];
     var likes = 0;
+
     try {
       if (!editStatus) {
         await saveJob(pubmail,title.value, description.value,location.value, scope.value,standarts.value,likes);
       } else {
+        //edit job information
         await updateJob(id, {
           pubmail:pubmail,
           title: title.value,
@@ -103,12 +104,12 @@ import {
           location: location.value,
           scope: scope.value,
           standarts: standarts.value,
-          
+
         });
-   
+
         editStatus = false;
         id = "";
-        myJobsForm["btn-job-form"].innerText = "שמור";
+        myJobsForm["btn-job-form"].innerText = "שמור";//save info button
       }
       myJobsForm.reset();
       title.focus();

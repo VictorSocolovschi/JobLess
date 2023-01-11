@@ -1,17 +1,10 @@
 import {
-    onGetUsers,
-    getUser,
-    updateUsers,
-    getUsers,
     saveUser,
     convertToLowercase,
   
   } from "./firebase.js";
   
-  let editStatus = false;
-  let id = "";
-  
-  //from where to read data.
+ 
   const userForm = document.getElementById("User-form");
   
   userForm.addEventListener("submit", async (e) => 
@@ -19,7 +12,7 @@ import {
     e.preventDefault();
   
     
-    //variabals to store the data.
+    //gettin user input from form
     const UserFirstName = document.getElementById("UserFirstName").value;
     const UserLastName = document.getElementById("UserLastName").value;
     const UserEmail =  convertToLowercase(document.getElementById("UserEmail").value);

@@ -1,16 +1,9 @@
 import {
-  onGetReqUsers,
-  getReqUser,
-  updateReqUsers,
-  getReqUsers,
   saveReqUser,
   convertToLowercase
 
 } from "./firebase.js";
   
-let editStatus = false;
-let id = "";
- 
 //from where to read data.
 const ReqUserForm = document.getElementById("ReqUser-form");
 

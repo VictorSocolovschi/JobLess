@@ -5,8 +5,6 @@ import { getAuth , createUserWithEmailAndPassword,signInWithEmailAndPassword , o
 //firebase function imports
 import {getFirestore,collection,getDocs,onSnapshot,addDoc,deleteDoc, doc,getDoc,updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
-export var loggedinmail="0";
-export var userdoc="0";
 
 // web app's Firebase configuration
 const firebaseConfig = {
@@ -21,66 +19,75 @@ const firebaseConfig = {
 
 // Initializing Firebase
 export const app = initializeApp(firebaseConfig);
+
 // Initializing database
 export const db = getFirestore();
+
 // Intializing auth
 const auth = getAuth(app);
 
+//variable to identify usser logged in
+export var loggedinmail="0";
+export var userdoc="0";
 
+
+//save new user function
 export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl) =>
 {createUserWithEmailAndPassword(auth, email, Password)
   .then((userCredential) => {
-    // Signed in 
+    //user signed up
     const user = userCredential.user;
     addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,});
     window.alert("משתמש נרשם בהצלחה!");
-    // ...
+    
   })
 
   .catch((error) => {
+    //user not signed up currectly
     window.alert("משתמש לא נרשם בהצלחה, אנא העזר בהערה הבאה ");
     const errorCode = error.code;
     window.alert(error.code);
     const errorMessage = error.message;
-        // ..
   });
 }
 
+//save new HRuser function
 export const saveHRUser = (companyname,username,email,password,phonenumber, description) =>
   {createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
+     //user signed up
     const user = userCredential.user;
     addDoc(collection(db, "HR-users" ), { companyname,username,email,password,phonenumber, description});
     window.alert("משתמש נרשם בהצלחה!");
     
-    // ...
   })
   .catch((error) => {
+   //user not signed up currectly
     window.alert("משתמש לא נרשם בהצלחה, אנא העזר בהערה הבאה ");
     const errorCode = error.code;
     window.alert(error.code);
     const errorMessage = error.message;
-        // ..
   });
 }
 
+//save new REQuser function
 export const saveReqUser = (firstname,lastname,email,password,phonenumber, description) =>
   {createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
+    //user signed up
     const user = userCredential.user;
     addDoc(collection(db, "Req-users" ), { firstname,lastname,email,password,phonenumber, description });
     window.alert("משתמש נרשם בהצלחה!");
-    // ...
+ 
   })
 
   .catch((error) => {
+    //user not signed up currectly
     window.alert("משתמש לא נרשם בהצלחה, אנא העזר בהערה הבאה ");
     const errorCode = error.code;
     window.alert(error.code);
     const errorMessage = error.message;
-    // ..
+    
   });
 }
 
@@ -88,14 +95,14 @@ export const saveReqUser = (firstname,lastname,email,password,phonenumber, descr
 export const loginfunc = (email,password) =>
 {signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
+    // logged in 
     const user = userCredential.user;
     window.alert("משתמש התחבר בהצלחה!");
     location.href = 'index.html';
 
-    // ...
   })
   .catch((error) => {
+     // not logged in 
     window.alert("התחברות נכשלה, אנא העזר בהערה הבאה.");
     const errorCode = error.code;
     window.alert(error.code);
@@ -103,19 +110,22 @@ export const loginfunc = (email,password) =>
   });
 }
 
-//Auth login 
+//Auth login main page
 export const signedinfunc = () =>
 {onAuthStateChanged(auth, (user) => {
   if (user) {
-    //const uid = user.uid;
+    // identefy logged in 
     loggedinmail = user.email;
     console.log("logged in");
+    console.log(user.email);
+    //userkind function to get navbar information
     userkind();  
-    // ...
+  
   } else {
+    //identefy not logged in 
     console.log("logged out");
     navbar(); 
-    // ...
+    
   }
 });
 }
@@ -123,7 +133,7 @@ export const signedinfunc = () =>
 export const myJobauth = () =>
 {onAuthStateChanged(auth, (user) => {
   if (user) {
-    //const uid = user.uid;
+    // identefy logged in 
     loggedinmail = user.email;
     console.log("logged in");
     console.log(user.email);
@@ -137,6 +147,7 @@ export const myJobauth = () =>
       }})});
 
   } else {
+    //identefy not logged in 
     console.log("logged out");
   }
 });
@@ -145,6 +156,8 @@ export const myJobauth = () =>
 
 function userkind ()
 {
+
+
 //all functions for regular users that is logged in
 onGetUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
@@ -166,6 +179,8 @@ onGetUsers((querySnapshot) => {
    }
   });
 });
+
+
 //all functions for hr users that is logged in
 onGetHRUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
@@ -184,11 +199,11 @@ onGetHRUsers((querySnapshot) => {
     var psbu= document.getElementById("navbuttons");
     // psbu.innerHTML +=`<button onclick="location.href = 'ReqMyjobs.html';" id="myjobs-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >המשרות שלי</button>`;
     psbu.innerHTML +=`<button onclick="location.href = 'HRpersonal.html';" id="HRinfo-button" type="button" class="btn btn-success reg-btn" style="margin-left: 20px;" >איזור אישי</button>`;
-    
    }
-    
   });
 });
+
+
 //all functions for req users that is logged in
 onGetReqUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
@@ -216,13 +231,16 @@ onGetReqUsers((querySnapshot) => {
 //Auth singout
 export const signoutfunc = () => 
 {
+
   signOut(auth);
   location.href = 'index.html';
 
 }
 
+//regular navbar for not logged in user
 function navbar() 
 {
+  
   var psbu= document.getElementById("navbuttons");
   psbu.innerHTML +=`
 <button onclick="location.href = 'signUpPage.html';" id="register" type="button" class="btn btn-success reg-btn" >הרשמה</button>
@@ -233,7 +251,8 @@ function navbar()
 }
 
 
-// onget users
+//onget users - get user information from database
+
 export const onGetUsers = (callback) =>
   onSnapshot(collection(db, "users"), callback);
 
@@ -244,17 +263,18 @@ export const onGetReqUsers = (callback) =>
   onSnapshot(collection(db, "Req-users"), callback);
 
 
+
 export const deleteUser = (id) => deleteDoc(doc(db, "users", id));
 
-//get useR by ID
+//get user information from database by user id
 export const getUser = (id) => getDoc(doc(db, "users", id));
 
 export const getHRUser = (id) => getDoc(doc(db, "HR-users", id));
 
 export const getReqUser = (id) => getDoc(doc(db, "Req-users", id));
-//update date
 
 
+//update users information from database
 export const updateUsers = (id, newFields) =>
   updateDoc(doc(db, "users", id), newFields);
  
@@ -265,7 +285,7 @@ export const updateUsers = (id, newFields) =>
   updateDoc(doc(db, "Req-users", id), newFields);
 
 
-  //get Users
+//get Users inormation from database 
 export const getUsers = () => getDocs(collection(db, "users"));
 
 export const getHRUsers = () => getDocs(collection(db, "HR-users"));
@@ -278,61 +298,60 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-
+//convert string to lowercase
 export function convertToLowercase(str) {
   return str.toLowerCase();
 }
 
 
+
+
 //for jobs
-/**
-/**
- * Save a New Task in Firestore
- * @param {string} pubmail the publishing email
- * @param {string} title the title of the Task
- * @param {string} description the description of the Task
- * @param {string} location
- * @param {string} scope
- * @param {string} standarts
- * 
- */
+
+//save new job information in database
 export const saveJob = (pubmail,title, description,location,scope,standarts,likes) =>
   addDoc(collection(db, "Jobs"), {pubmail, title, description,location,scope,standarts,likes });
 
+//get all jobs information
 export const onGetJobs = (callback) =>
   onSnapshot(collection(db, "Jobs"), callback);
 
-/**
- *
- * @param {string} id Task ID
- */
+//delete job from database by id
 export const deleteJob = (id) => deleteDoc(doc(db, "Jobs", id));
 
+//get job by id
 export const getJob = (id) => getDoc(doc(db, "Jobs", id));
 
+//update job information from database
 export const updateJob = (id, newFields) =>
   updateDoc(doc(db, "Jobs", id), newFields);
 
+//get all jobs from database
 export const getJobs = () => getDocs(collection(db, "Jobs"));
 
 
-
-//trynig to upload pdf to the storage in our firebase.
+//addfile function enable upload for pdf file 
 
 export function addfile(){
   firebase.initializeApp(firebaseConfig);
   document.getElementById('file').addEventListener('change', (event) => {
+    //creating file input in page
+
       const file = event.target.files[0];
+      //uploading blank file to make storage in data base
       const file2 = new File([], "empty");
       const storageRef = firebase.storage().ref('pdfs/' + loggedinmail);
       storageRef.put(file2);
       urltodata(storageRef);
+      //progress bar initialise
       storageRef.put(file).on('state_changed', (snapshot) => {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log(progress);
           const progressBar = document.getElementById('progress_bar');
           progressBar.value = progress;
       });
+
+  //file uploaded successfuly
   urltodata(storageRef);
   var uploaded= document.getElementById("userpersonal");
   uploaded.innerHTML +=`<center> 
@@ -344,8 +363,10 @@ export function addfile(){
 
 function urltodata(storageRef)
 {
+  //get download link from storage by identifiny pdf by user email.
   storageRef.getDownloadURL().then(function(url) {
-    // The download URL for the PDF file is contained in the `url` variable
+
+ //update user information in database - new download url for pdf file   
  updateUsers(userdoc, {pdfurl: url});
   }).catch(function(error) {
     // Handle any errors

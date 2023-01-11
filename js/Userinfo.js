@@ -10,16 +10,17 @@ import {
   const infoForm = document.getElementById("info-form");
   const dataContainer = document.getElementById("info-container");
   
-
-  myJobauth();//itentify user lokked in 
+  myJobauth();//user logged in
 
   var nochangeemail = "0";
   var nochangepass = "0";
 
   let editStatus = false;
   let id = "";
-  
+
+
   window.addEventListener("DOMContentLoaded", async (e) => {
+    //creating edit information button if logged in
     onGetUsers((querySnapshot) => {
       dataContainer.innerHTML = "";
       querySnapshot.forEach((doc) => {
@@ -36,18 +37,19 @@ import {
      } });
 
       const btnsEdit = dataContainer.querySelectorAll(".btn-edit");
+      //edit information button
       btnsEdit.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
           try {
+
             const doc = await getUser(e.target.dataset.id);
             const data = doc.data();
+
+            //filling up page with user information from database
             infoForm["UserFirstName"].value = data.FirstName;
             infoForm["UserLastName"].value = data.LastName;
-            //infoForm["UserEmail-info"].value = data.email;
-            //infoForm["UserPassword-info"].value = data.password;
             nochangeemail = data.email;
             nochangepass = data.password;
-
             infoForm["UserAge"].value = data.Age;
             infoForm["UserLocation"].value = data.Location;
             infoForm["UserWantedJob"].value = data.WantedJob;
@@ -57,7 +59,7 @@ import {
 
             editStatus = true;
             id = doc.id;
-            infoForm["btn-info-form"].innerText = "עדכן";
+            infoForm["btn-info-form"].innerText = "עדכן";//creating update button
           } catch (error) {
             console.log(error);
           }
@@ -69,11 +71,11 @@ import {
   
 infoForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    //const publisher = user email
+    
+    
+    //reciving data from user inputs
     const UserFirstName = document.getElementById("UserFirstName").value;
     const UserLastName = document.getElementById("UserLastName").value;
-    //const UserEmail = document.getElementById("UserEmail-info").value;
-    //const UserPassword = document.getElementById("UserPassword-info").value;
     const UserAge = document.getElementById("UserAge").value;
     const UserLocation = document.getElementById("UserLocation").value;
     const UserPhoneNumber = document.getElementById("UserPhoneNumber").value;
@@ -97,10 +99,7 @@ infoForm.addEventListener("submit", async (e) => {
             UserWantedJob:UserWantedJob,
             UserExp:UserExp,
 
-
-
-           
-        });
+        });//seding new updated user data
    
         editStatus = false;
         id = "";
