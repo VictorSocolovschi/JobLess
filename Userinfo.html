@@ -38,133 +38,159 @@
 
               <form id="info-form" style="margin-top: 2rem;">
                 <div class="row">
-                  <!-- age input -->
-                  <div class="col-md-4 mb-4">
-                    <div class="form-outline">               
-                        <label for="title">:גיל</label>
-                        <input
-                          type="text"
-                          id="UserAge"
-                          class="form-control mb-3"
-                          class="My First Title"
-                          placeholder="גיל"  
-                          autofocus
-                        />
-                      </div>
-                    </div>
-                  <!-- lastname input  -->
-                  <div class="col-md-4 mb-4">
-                    <div class="form-outline"> 
-                        <label for="title">:שם משפחה</label>
-                        <input
-                          type="text"
-                          id="UserLastName"
-                          class="form-control mb-3"
-                          class="My First Title"
-                          placeholder="שם משפחה"
-                          autofocus
-                        />
-                      </div>
-                  </div>
-
-                   <!-- firstname input  -->
-                  <div class="col-md-4 mb-4">
-                    <div class="form-outline"> 
-                        <label for="title">:שם פרטי</label>
-                        <input
-                          type="text"
-                          id="UserFirstName"
-                          class="form-control mb-3"
-                          class="My First Title"
-                          placeholder="שם פרטי"
-                          autofocus
-                        />
-                      </div>
-                  </div>
-                </div>
-
-
-                 <!-- second row!! -->
-                 <!-- second row!! -->
-
+                  <div class="col-md-6 mb-2">
+                   <div class="form-outline"> 
+                       <label for="title">:שם משפחה</label>
+                       <input
+                         type="text"
+                         id="UserLastName"
+                         class="form-control mb-3"
+                         class="My First Title"
+                         placeholder="שם משפחה"
+                         autofocus
+                       />
+                     </div>
+                 </div>
+ 
+                  <!-- firstname input  -->
+                 <div class="col-md-6 mb-2">
+                   <div class="form-outline"> 
+                       <label for="title">:שם פרטי</label>
+                       <input
+                         type="text"
+                         id="UserFirstName"
+                         class="form-control mb-3"
+                         class="My First Title"
+                         placeholder="שם פרטי"
+                         autofocus
+                       />
+                     </div>
+                 </div>
+              </div>
+ 
+               <div class="row">
+ 
+                   <!-- email input  -->
+                  
+                   
+                   <!-- password input -->
                  
-                 <!-- wishful posting imput -->
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="form-outline"> 
-                            <label for="title">:משרה רצויה</label>
-                            <input
-                            type="text"
-                            id="UserWantedJob"
-                            class="form-control mb-3"
-                            class="My First Title"
-                            placeholder="?במה תרצה לעבוד"
-                            autofocus
-                            />
-                        </div>
-                  </div>
-
-                  <!-- residential area input  -->
-                  <div class="col-md-4 mb-4">
-                    <div class="form-outline"> 
-                        <label for="title">:איזור מגורים</label>
-                        <input
-                          type="text"
-                          id="UserLocation"
-                          class="form-control mb-3"
-                          class="My First Title"
-                          placeholder="מגורים"
-                          autofocus
-                        />
-                      </div>
-                  </div>
-
+                 </div>
+               <div class="row">
+                      <!-- password input -->
+                   <div class="col-md-6 mb-2">
+                     <div class="form-outline">               
+                         <label for="title">:גיל</label>
+                         <input
+                           type="text"
+                           id="UserAge"
+                           class="form-control mb-3"
+                           class="My First Title"
+                           placeholder="גיל"  
+                           autofocus
+                         />
+                       </div>
+                     </div>
+                   <!-- lastname input  -->
                   <!-- phone number input  -->
-                  <div class="col-md-4 mb-4">
-                    <div class="form-outline"> 
-                        <label for="title">:פלאפון</label>
-                        <input
-                          type="text"
-                          id="UserPhoneNumber"
-                          class="form-control mb-3"
-                          class="My First Title"
-                          placeholder="פלאפון"
-                          autofocus
-                        />
-                      </div>
-                  </div>
-                </div>
-
-
-
-                 <!-- third row!! -->
-                 <!-- third row!! -->
-
-                 <div class="row">
-                    <!-- Company phone input  -->
+                   <div class="col-md-6 mb-2">
+                     <div class="form-outline"> 
+                       <label for="title">:פלאפון</label>
+                       <input
+                         type="text"
+                         id="UserPhoneNumber"
+                         class="form-control mb-3"
+                         class="My First Title"
+                         placeholder="פלאפון"
+                         autofocus
+                       />
+                     </div>
+                 </div>
+               </div> 
+ 
+ 
+                  <!-- second row!! -->
+                  <!-- second row!! -->
+ 
+                  
+                  <!-- wishful posting imput -->
+                   <div class="row">
+                     <div class="col-md-6 mb-2">
+                         <div class="form-outline"> 
+                           <label for="title" class="form-label"> משרה רצויה</label>
+                           <select class="form-select" id="UserWantedJob" required>
+                             <option style="text-align: right;">בחר משרה רצויה</option>
+                             <option style="text-align: right;">ראש צוות חומרה</option>
+                             <option style="text-align: right;">מהנדס תוכנה</option>
+                             <option style="text-align: right;">חומרה ניהול</option>
+                             <option style="text-align: right;">מהנדס עיצוב</option>
+                             <option style="text-align: right;">מהנדס אלקטרוניקה</option>
+                             <option style="text-align: right;">בודק קוד</option>
+                             <option style="text-align: right;">ראש צוות חומרה</option>
+                             <option style="text-align: right;">מתכנת</option>
+                             <option style="text-align: right;">מפתח אלגוריתם</option>
+                             <option style="text-align: right;">מעצב אתרים</option>
+                             <option style="text-align: right;">בונה אפליקציות</option>
+                             <option style="text-align: right;">מכירות </option>
+                             <option style="text-align: right;">פיתוח תוכנה </option>
+                             <option style="text-align: right;">JAVA פיתוח </option>
+                             <option style="text-align: right;">FIRMWARE מהנדס </option>
+                             <option style="text-align: right;">Backend מתכנת </option>
+                             <option style="text-align: right;">CRM פיתוח </option>
+                             <option style="text-align: right;">אחר</option>
+                           </select>
+                     </div>
+     
+                   </div>
+ 
+                   <!-- residential area input  -->
+                   <div class="col-md-6 mb-2">
+                     <div class="form-outline"> 
+                       
+                       <label for="title" class="form-label">איזור מגורים</label>
+                       <select class="form-select" id="UserLocation" style="text-align: right;" required>
+                         <option value="">בחר איזור מגורים</option>
+                         <option style="text-align: right;">דרום</option>
+                         <option style="text-align: right;">מרכז</option>
+                         <option style="text-align: right;">צפון</option>
+                       </select>
+                         
+                     </div>
+                   </div>
+ 
+                  
+                 </div>
+ 
+ 
+ 
+                  <!-- third row!! -->
+                  <!-- third row!! -->
+ 
+                  <div class="row">
+                     <!-- Company phone input  -->
+                     <div class="col-md-6 mb-4">
+                         <div class="form-outline"> 
+                           <label for="description">:ניסיון בתחום</label>
+                           <textarea
+                             id="UserExp"
+                             rows="3"
+                             class="form-control mb-3"
+                             
+                           ></textarea>
+                         </div>
+                     </div>
+                     <!-- user description input  -->
                     <div class="col-md-6 mb-4">
-                        <div class="form-outline"> 
-                          <label for="description">:ניסיון בתחום</label>
-                          <textarea
-                            id="UserExp"
-                            rows="3"
-                            class="form-control mb-3"
-                          ></textarea>
-                        </div>
-                    </div>
-                    <!-- user description input  -->
-                   <div class="col-md-6 mb-4">
-                      <div class="form-outline"> 
-                        <label for="description">:ניסיון כללי</label>
-                        <textarea
-                          id="UserGeneralExp"
-                          rows="3"
-                          class="form-control mb-3"
-                        ></textarea>
-                      </div>
-                  </div>
-                </div>
-
+                       <div class="form-outline"> 
+                         <label for="description">:ניסיון כללי</label>
+                         <textarea
+                           id="UserGeneralExp"
+                           rows="3"
+                           class="form-control mb-3"
+                         ></textarea>
+                       </div>
+                   </div>
+                 </div>
 
 
                 <div class="row">
