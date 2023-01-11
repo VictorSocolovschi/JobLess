@@ -51,7 +51,6 @@ a{
 .top-container
 {
   position: relative;
-  background-color: #F8F4EA;
   padding: 50px 0 20px;
   text-align: center;
 }
@@ -100,9 +99,6 @@ padding: 0 15% 0 auto;
   margin: auto;
 }
 
-body{
-  background-color:#F8F4EA ;
-}
 
 .dropdown-item{
   margin-left: 0;
