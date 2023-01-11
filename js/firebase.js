@@ -157,15 +157,16 @@ export const myJobauth = () =>
 function userkind ()
 {
 
-
 //all functions for regular users that is logged in
 onGetUsers((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const user = doc.data();
     if(user.email == loggedinmail)
-    { console.log("user");
+    { 
+    console.log("user");
     userdoc = doc.id; 
-    var un= document.getElementById("usernavbar");
+    var un= document.getElementById("navbuttons");
+    
     un.innerHTML +=`<li class="nav-item">
     <a class="nav-link active" href="viewJobs.html">משרות</a>
   </li>
@@ -189,7 +190,7 @@ onGetHRUsers((querySnapshot) => {
     { userdoc = doc.id;
       console.log("HRuser");
     
-    var un= document.getElementById("usernavbar");
+    var un= document.getElementById("navbuttons");
     un.innerHTML +=` <li class="nav-item">
     <a class="nav-link active" href="jobSeekers.html" id="Candidates">מועמדים</a>
   </li>
@@ -212,7 +213,7 @@ onGetReqUsers((querySnapshot) => {
     { 
       userdoc = doc.id;
       console.log("Requser"); 
-    var un= document.getElementById("usernavbar");
+    var un= document.getElementById("navbuttons");
     un.innerHTML +=` <li class="nav-item">
     <a class="nav-link active" href="jobSeekers.html" id="Candidates">מועמדים</a>
   </li>
