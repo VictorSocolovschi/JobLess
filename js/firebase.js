@@ -32,12 +32,12 @@ export var userdoc="0";
 
 
 //save new user function
-export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl) =>
+export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount) =>
 {createUserWithEmailAndPassword(auth, email, Password)
   .then((userCredential) => {
     //user signed up
     const user = userCredential.user;
-    addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,});
+    addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount});
     window.alert("משתמש נרשם בהצלחה!");
     
   })
@@ -379,7 +379,7 @@ export function addfile(){
   urltodata(storageRef);
   var uploaded= document.getElementById("userpersonal");
   uploaded.innerHTML +=`<center> 
-  <a>  קובץ הועלה בהצלחה</a>
+  <a> קובץ הועלה בהצלחה</a>
 </center> `;
   });
  

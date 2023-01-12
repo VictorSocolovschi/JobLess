@@ -1,5 +1,6 @@
 import{onGetUsers , myJobauth , addfile , onGetJobs, loggedinmail, hebrew, updateJob} from "./firebase.js";
 myJobauth();//logged in user
+
 addfile();//upload pdf function
 
 
@@ -21,7 +22,7 @@ onGetUsers((querySnapshot) => {
     pdf.addFont("MyFont.ttf", "MyFont", "normal");
     pdf.setFont("MyFont");
     var texttitle ='דוח מעכב אישי';
-    var minititle= data.LastName + " " + data.FirstName +" " +"שלום";
+    var minititle="שלום"+ " " + data.LastName + " " + data.FirstName ;
 
     pdf.setFontSize(28);
     pdf.text(125, 20, texttitle); 
@@ -29,7 +30,7 @@ onGetUsers((querySnapshot) => {
     pdf.text(135, 30, minititle); 
     pdf.setFontSize(12); 
 
-    pdf.text(150, 40,"הלו הלו הלו הלו");
+    pdf.text(125, 40,"כמות הורדות לקורות החיים שלי: " + " " +  data.infocount);
 
     pdf.text(150, 50,"הלו הלו הלו הלו");
 
@@ -39,7 +40,6 @@ onGetUsers((querySnapshot) => {
 
     pdf.text(150, 80,"הלו הלו הלו הלו");
 
-
     }})});
 
 //button generates pdf file on click
@@ -47,7 +47,6 @@ document.getElementById("generate-pdf").addEventListener("click", function(){
 //last call- download
 pdf.save("myinfo.pdf");
 });
-
 
 
 window.addEventListener("DOMContentLoaded", async (e) => {

@@ -1,10 +1,13 @@
 import {
+  getUser,
     onGetUsers,
+    updateUsers,
+    myJobauth
   } from "./firebase.js";
  
   const usersContainer = document.getElementById("users-Container");
   
-
+  myJobauth();
   window.addEventListener("DOMContentLoaded", async (e) => {  
     //recive all users from data base
     onGetUsers((querySnapshot) => {
@@ -12,7 +15,7 @@ import {
 
       querySnapshot.forEach((doc) => {
         const user = doc.data();
-        
+
       //if user has pdf file - create card with pdf download link
       if(user.pdfurl!= "0"){
         usersContainer.innerHTML += `
@@ -82,13 +85,18 @@ import {
             <center>
              <a class="btn btn-outline-dark" href="mailto:${user.email}">צור קשר</a>
 
-             <a class="btn btn-outline-dark" href="${user.pdfurl}">צפייה בקורות חיים</a>
-             
+             <button class="btn btn-outline-dark btn-url" data-id="${doc.id}">
+             📧 צפייה בקורות חיים </button>
+
             </center>
+
         </div>
+
       
     </div>
     `;
+
+
         }
         else{ //if user does not have pdf file - create normal card
           usersContainer.innerHTML += `
@@ -165,7 +173,25 @@ import {
           `;
 
         }
+        const btngeturl = usersContainer.querySelectorAll(".btn-url");
+        
+        //initialising user pdf button - counting pdf downloads
+        btngeturl.forEach((btn) =>
+          btn.addEventListener("click", async (e) => {
 
+            try {
+              const doc = await getUser(e.target.dataset.id);
+              const user = doc.data();
+              var newc = user.infocount + 1;
+              updateUsers(doc.id , { infocount: newc } );
+              location.href = user.pdfurl;
+              
+            } catch (error) {
+              console.log(error);
+            }
+          })
+        );
+    
       });
     });
   });

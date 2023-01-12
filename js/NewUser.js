@@ -25,7 +25,7 @@ import {
     const UserExp = document.getElementById("UserExp").value;
     const UserGeneralExp = document.getElementById("UserGeneralExp").value;
     var pdfurl= "0";
-
+    var infocount = 0;
 
     //checking if every box filled correct.
     if(!UserFirstName)
@@ -52,12 +52,12 @@ import {
     else{
   
       // if data filled proprotly it will send by this function to the data base.
-      sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl);
+      sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl,infocount);
     }
-             
+    
   });
-  
-  function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl)
+
+  function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl,infocount)
     {
       //data will be checked for Authentication with fire base.
             try {
@@ -73,7 +73,7 @@ import {
                   UserExp,
                   UserGeneralExp,
                   pdfurl,
-
+                  infocount
                 );
       
             userForm.reset();
