@@ -373,13 +373,17 @@ export function addfile(){
           console.log(progress);
           const progressBar = document.getElementById('progress_bar');
           progressBar.value = progress;
+          if(progress==100)
+          {
+            alert("קורות החיים הועלו בהצלחה");
+          }
       });
 
   //file uploaded successfuly
   urltodata(storageRef);
   var uploaded= document.getElementById("userpersonal");
   uploaded.innerHTML +=`<center> 
-  <a> קובץ הועלה בהצלחה</a>
+  <a style="margin: 2rem 0;> קובץ הועלה בהצלחה</a>
 </center> `;
   });
  
