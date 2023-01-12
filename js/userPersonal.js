@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
         <p>${job.standarts}</p>  
         <div>
         <center>
-          <a class="btn btn-outline-dark" href="mailto:${job.pubmail}">צור קשר</a>
+          <a class="btn btn-success" style="width:100%; margin-left:0rem;" href="mailto:${job.pubmail}">צור קשר</a>
         </center>
         </div>
         <button class="btn btn-danger btn-delete" data-id="${doc.id}">
