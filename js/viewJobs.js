@@ -25,86 +25,93 @@ window.addEventListener("DOMContentLoaded", async (e) => {
        //create job card with like option
       if(job.likes > 9 ){
        carusel.innerHTML+=`
-       <div class="carousel-item">
         
-  <center>
-  <h2 class="h5" style="margin:1rem 0;">${job.title}</h2>
-  </center>
-  
-  <div class="row mb-2">
+    <div class="carousel-item">
+        
+       <center>
+       <h2 style="margin:1rem 0; text-decoration: underline;">${job.title}</h2>
+       </center>
+ 
+       <div class="row mb-2">
 
-    <div class="col">
-      <label for="description" class="job-label">
-      <strong>תיאור התפקיד</strong></label>
-      <p>${job.description}</p>
+         <div class="col">
+           <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
+           <strong>תיאור התפקיד</strong></label>
+           <h4>${job.description}</h4>
+         </div>
+
+         <div class="col">
+           <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
+           <strong>דרישות</strong></label>
+           <h4>${job.standarts}</h4> 
+         </div>    
+
+       </div>
+
+       <div class="row mb-2">
+
+         <div class="col">
+           <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
+           <strong>היקף המשרה</strong></label>
+           <h4>${job.scope}</h4>
+         </div>
+
+         <div class="col">
+           <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
+           <strong>מיקום</strong></label>
+           <h4>${job.location}</h4> 
+         </div>
+
+       </div>
+       
+       <div class="row mb-2">
+           <center>
+             <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
+               <strong>אנשים שאהבו את המשרה</strong></label>
+             <h4 class="job-requirements">${job.likes}</h4> 
+           </center>
+       </div>
+
+       <div class="row" style="margin-left:7rem;">
+         <button class="btn btn-info btn-contact" data-id="${doc.id}" style="margin:10px 1rem; width:25%;">
+         📧 צור קשר
+         </button>
+   
+         <button class="btn btn-primary btn-like" data-id="${doc.id}" style="margin:10px 1rem; width:25%;">
+       ️  ❤️ אהבתי 
+         </button>
+   
+         <button class="btn btn-success btn-fav" data-id="${doc.id}" style="margin:10px 1rem; width:25%;">
+         ⭐ שמור במועדפים
+         </button>
+       </div>
+   
     </div>
-
-
-    <div class="col">
-    <label for="description" class="job-label">
-    <strong>דרישות</strong></label>
-    <p>${job.standarts}</p> 
-    </div>
-
-    
-
-  </div>
-  <div class="row mb-2">
-
-    <div class="col">
-      <label for="description" class="job-label">
-      <strong>היקף המשרה</strong></label>
-      <p>${job.scope}</p>
-    </div>
-
-    <div class="col">
-    <label for="description" class="job-label">
-    <strong>מיקום</strong></label>
-    <p>${job.location}</p> 
-     </div>
-
-  </div>
-    <button class="btn btn-outline-dark btn-contact" data-id="${doc.id}">
-    📧 צור קשר
-    </button>
-
-  <label for="description" class="job-label">
-  <strong>: אנשים שאהבו</strong></label>
-
-  <p class="job-requirements">${job.likes}</p> 
-
-  <button class="btn btn-outline-dark btn-like" data-id="${doc.id}">
-️  ❤️ אהבתי 
-  </button>
-  <button class="btn btn-outline-dark btn-fav" data-id="${doc.id}">
-  ⭐ שמור במועדפים
-  </button>
-
           
-       </div>`;}
+    `;}
 
       jobsContainer.innerHTML += `
   
-  <div class="card card-body mt-2 mb-2 border-light" style="max-width: 450px;
+  <div class="card card-body mt-2 mb-2 border-dark" style="max-width: 450px;
     max-height: 300px; overflow-y:auto;  position: relative;">
     
     <center>
-    <h2 class="h5" style="margin:1rem 0;">${job.title}</h2>
+    <h3 style="margin:1rem 0; text-decoration: underline;">${job.title}</h3>
     </center>
     
     <div class="row mb-2">
 
       <div class="col">
-        <label for="description" class="job-label">
+        <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
         <strong>תיאור התפקיד</strong></label>
-        <p>${job.description}</p>
+        <h5>${job.description}</h5>
       </div>
 
 
       <div class="col">
-      <label for="description" class="job-label">
+      <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
       <strong>דרישות</strong></label>
-      <p>${job.standarts}</p> 
+      <h5>${job.standarts}</h5> 
       </div>
 
       
@@ -113,33 +120,45 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     <div class="row mb-2">
 
       <div class="col">
-        <label for="description" class="job-label">
+        <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
         <strong>היקף המשרה</strong></label>
-        <p>${job.scope}</p>
+        <h5>${job.scope}</h5>
       </div>
 
       <div class="col">
-      <label for="description" class="job-label">
+      <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
       <strong>מיקום</strong></label>
-      <p>${job.location}</p> 
+      <h5>${job.location}</h5> 
        </div>
 
     </div>
-      <button class="btn btn-outline-dark btn-contact" data-id="${doc.id}">
+
+    <div class="row mb-2">
+      <center>
+        <label for="description" class="job-label" style="text-decoration: underline; margin:1rem 0;">
+          <strong>אנשים שאהבו את המשרה</strong>
+        </label>
+        
+        <h5 class="job-requirements">${job.likes}</h5> 
+      </center>
+    </div>
+
+    <div class="row">
+
+      <button class="btn btn-info btn-contact" data-id="${doc.id}" style="margin:10px 1rem; width:25%;">
       📧 צור קשר
       </button>
 
-    <label for="description" class="job-label">
-    <strong>: אנשים שאהבו</strong></label>
+      <button class="btn btn-primary btn-like" data-id="${doc.id}" style="margin:10px 1rem; width:25%;">
+    ️  ❤️ אהבתי 
+      </button>
 
-    <p class="job-requirements">${job.likes}</p> 
+      <button class="btn btn-success btn-fav" data-id="${doc.id}" style="margin:10px 1rem; width:25%;">
+      ⭐ שמור במועדפים
+      </button>
+    
+    </div>
 
-    <button class="btn btn-outline-dark btn-like" data-id="${doc.id}">
-  ️  ❤️ אהבתי 
-    </button>
-    <button class="btn btn-outline-dark btn-fav" data-id="${doc.id}">
-    ⭐ שמור במועדפים
-    </button>
   </div>
   `;});
 
