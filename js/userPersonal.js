@@ -30,7 +30,7 @@ onGetUsers((querySnapshot) => {
     pdf.text(135, 30, minititle); 
     pdf.setFontSize(12); 
 
-    pdf.text(125, 40,"כמות הורדות לקורות החיים: " + " " +  data.infocount);
+    pdf.text(125, 40,"כמות הורדות לקורות החיים שלי: " + " " +  data.infocount);
 
     pdf.text(150, 50,"הלו הלו הלו הלו");
 

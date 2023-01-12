@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     querySnapshot.forEach((doc) => {
       const job = doc.data();
        //create job card with like option
-
+      if(job.likes > 9 ){
        carusel.innerHTML+=`
        <div class="carousel-item">
         
@@ -81,7 +81,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   </button>
 
           
-       </div>`;
+       </div>`;}
 
       jobsContainer.innerHTML += `
   
@@ -195,7 +195,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           
           }
           else{
-
+            
             //remove like
              var removelikeby = job.likeby.replace(loggedinmail,"");
              var newlike = job.likes -1;
