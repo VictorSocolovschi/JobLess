@@ -37,7 +37,6 @@ onGetJobs((querySnapshot) => {
              }
 
             if(infav){
-
               favview+= job.title + "\n" +"מיקום:" + job.location +"\n"+"מייל ליצירת קשר:"+"\n" +job.pubmail;
               favview+="\n\n\n\n\n"
             }
@@ -99,15 +98,17 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
         if(infav) {
         jobsContainer.innerHTML += `
-      <div class="card card-body mt-2 border-defult" style="text-align:right">
-        <h3 class="h5">${job.title}</h3>
-        <label for="description">: תיאור התפקיד</label>
+      <div class="card card-body mt-2 border-dark" style="text-align:right">
+        <center>  
+        <h1 class="h5"><strong>${job.title}</strong></h1>
+        </center>
+        <label for="description"><strong>תיאור המשרה </strong></label>
         <p>${job.description}</p>
-        <label for="description">: מיקום</label>
+        <label for="description"><strong> מיקום המשרה</strong></label>
         <p>${job.location}</p>  
-        <label for="description">: היקף המשרה</label>
+        <label for="description"><strong> היקף המשרה</strong></label>
         <p>${job.scope}</p> 
-        <label for="description"> : דרישות</label>
+        <label for="description"><strong>  דרישות המשרה</strong></label>
         <p>${job.standarts}</p>  
         <div>
         <center>
