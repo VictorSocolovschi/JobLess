@@ -323,9 +323,9 @@ function topFunction() {
 }
 
 //convert string to lowercase
-export function convertToLowercase(str) {
-  return str.toLowerCase();
-}
+// export function convertToLowercase(str) {
+//   return str.toLowerCase();
+// }
 
 
 
