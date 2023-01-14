@@ -62,13 +62,20 @@
                   placeholder="תיאור התפקיד"
                 ></textarea>
                 <!--  דרום/מרכז/צפון   מיקום-->
-                <label for="description">: מיקום המשרה</label>
-                <textarea
-                  id="job-location"
-                  rows="3"
-                  class="form-control mb-3"
-                  placeholder=" דרום/מרכז/צפון: מיקום"
-                ></textarea>    
+         
+              
+                  <div class="form-outline"> 
+                    
+                    <label for="title" class="form-label">מיקום המשרה</label>
+                    <select class="form-select" id="job-location" style="text-align: right;" required>
+                      <option value="">מיקום המשרה</option>
+                      <option style="text-align: right;">דרום</option>
+                      <option style="text-align: right;">מרכז</option>
+                      <option style="text-align: right;">צפון</option>
+                    </select>
+                      
+                  </div>
+                  
                 <!-- היקף המשרה  -->  
                 <label for="description">: היקף המשרה</label>
                 <textarea

@@ -12,18 +12,35 @@ const jobsContainer = document.getElementById("jobs-container");
 const carusel = document.getElementById("carousel");
 
 myJobauth();//user logged in
+const locbtn = document.getElementById("locbtn");
 
+//inittializing location search
+var showloc= "";
+updateJob("byloc",{ref:showloc});
+
+//choose location btn
+locbtn.addEventListener("click", async (e) => {
+  try { 
+    const byloc = document.getElementById("bylocation").value;
+    showloc= byloc;
+    updateJob("byloc",{ref:showloc});
+  } catch (error) {
+    console.log(error);
+  }
+
+});
 
 window.addEventListener("DOMContentLoaded", async (e) => {
 
   //get jobs from database
   onGetJobs((querySnapshot) => {
     jobsContainer.innerHTML = "";
-    
     querySnapshot.forEach((doc) => {
       const job = doc.data();
        //create job card with like option
        const inlikes = job.likeby.includes(loggedinmail);
+
+      if(job.location == showloc || showloc=="" && job.title){
       if(job.likes > 9 ){
         if(!inlikes){   
        carusel.innerHTML+=`
@@ -304,8 +321,9 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   </div>
   `;
     
-  }
+  }}
 });
+
 
     //create contact button
     const btnscontact = jobsContainer.querySelectorAll(".btn-contact");
@@ -406,7 +424,6 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     });
    
     const btnslike2 = carusel.querySelectorAll(".btn-like");
-  
     btnslike2.forEach((btn) => {
       btn.addEventListener("click", async (e) => {
         try {
