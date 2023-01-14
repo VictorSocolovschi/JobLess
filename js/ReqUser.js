@@ -1,8 +1,9 @@
 import {
   saveReqUser,
-  convertToLowercase
+  
 
 } from "./firebase.js";
+import{convertToLowercase} from "./functionTotest.js"
   
 //from where to read data.
 const ReqUserForm = document.getElementById("ReqUser-form");

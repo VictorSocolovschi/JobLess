@@ -6,7 +6,7 @@ import {
     loggedinmail
 
   } from "./firebase.js";
-  
+
   const infoForm = document.getElementById("info-form");
   const dataContainer = document.getElementById("info-container");
   
