@@ -1,8 +1,9 @@
 import {
     saveUser,
-    convertToLowercase,
   
   } from "./firebase.js";
+
+  import{convertToLowercase} from "./functionTotest.js"
   
  
   const userForm = document.getElementById("User-form");
