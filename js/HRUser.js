@@ -1,8 +1,9 @@
 import {
   saveHRUser,
-  convertToLowercase
+  
   
 } from "./firebase.js";
+import{convertToLowercase} from "./functionTotest.js"
 
 //from where to read data.
 const HRuserForm = document.getElementById("HRUser-form");
