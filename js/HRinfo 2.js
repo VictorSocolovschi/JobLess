@@ -53,7 +53,7 @@ import {
 
             editStatus = true;
             id = doc.id;
-            HRinfoForm["btn-info-form"].innerText = "עדכן";
+            HRinfoForm["btn-HRinfo-form"].innerText = "עדכן";
           } catch (error) {
             console.log(error);
           }
@@ -62,19 +62,18 @@ import {
     });
   });
 
-  
 HRinfoForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     //retrive data from user inputs
     const HRUserCompany = document.getElementById("HRUsercompanyname-info").value;
     const HRUserName = document.getElementById("HRUserName-info").value;
-    const HRUserDescription = document.getElementById("UserDescription-info").value;
-    const HRUserPhoneNumber = document.getElementById("UserPhoneNumber-info").value;
+    const HRUserDescription = document.getElementById("HRUserDescription-info").value;
+    const HRUserPhoneNumber = document.getElementById("HRUserPhoneNumber-info").value;
     
     try {
       if (!editStatus) {
-        
+
       } else {
         //send new data for update
         await updateHRUsers(id, {

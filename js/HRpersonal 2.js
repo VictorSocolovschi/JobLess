@@ -24,7 +24,7 @@ onGetJobs((querySnapshot) => {
 
      
           if(job.pubmail == loggedinmail){
-              myjobs+= job.title + "\n" +"מיקום:" + job.location +"\n"+"מייל ליצירת קשר:"+"\n" +job.pubmail + "\n" + "אנשים שהראו התעניינות:"+ "\n" + job.intrested ;
+              myjobs+= job.title + "\n" +"מיקום:" + job.location +"\n"+ "אנשים שהראו התעניינות:"+ "\n" + job.intrested ;
             
               myjobs+="\n\n\n\n\n"
           }
