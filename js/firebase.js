@@ -192,7 +192,7 @@ onGetUsers((querySnapshot) => {
     <a class="nav-link active" href="viewJobs.html">משרות</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="#">קורסים</a>     
+    <a class="nav-link active" href="https://www.udemy.com">קורסים</a>     
   <li class="nav-item"> `;
     // var mjb= document.getElementById("myjobs-button");
     // mjb.classList.add("button-hidden");
