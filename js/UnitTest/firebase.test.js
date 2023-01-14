@@ -1,6 +1,7 @@
 
 //main firebase unit testing - all new user functions
 
+
 var firstname = "firstnametest";
 var lastname = "lastnametest";
 var companyname = "companynametest";
@@ -58,6 +59,44 @@ test('properly save user information.',() => //Loginfunction
     expect(password).toBe("passwordtest");
     }
 });
+
+
+
+test("login function should sign in a user and return an alert message", async () => { //another one for loginfuncion . 
+    //Arrange
+    const email = "emailtest";
+    const password = "passwordtest";
+    
+    //Act
+    loginfunc = (email,password ) =>{
+    
+    //Assert
+    expect(onAuthStateChanged(auth)).toBeCalled();
+    expect(signInWithEmailAndPassword).toBeCalledWith(auth, email, password);
+    expect(window.alert).toHaveBeenCalledWith("משתמש נכנס בהצלחה!");
+    };
+  });
+  
+
+  export const userKind = async (email) => {
+      const snapshot = await collection(db, "users").where("email", "==", email).get();
+      const user = snapshot.docs[0].data();
+      return user.kind;
+  }
+
+  test("getUserKind function should return the correct user kind", async () => {
+    //Arrange
+    const email = "johndoe@example.com";
+    const expectedKind = "hr";
+  
+    //Act
+    const userKind = await userKind(email);
+  
+    //Assert
+    expect(userKind).toEqual(expectedKind);
+});
+
+
 
 /*
 import expect from "expect";
