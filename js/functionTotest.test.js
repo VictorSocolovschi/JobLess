@@ -1,4 +1,5 @@
 // functionTotest.test.js
+
 jest.mock('./functionTotest.js', () => {
     return {
       convertToLowerCase: jest.fn(),
@@ -41,3 +42,8 @@ jest.mock('./functionTotest.js', () => {
   });
 
 
+
+
+
+
+  
