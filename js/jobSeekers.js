@@ -20,10 +20,12 @@ import {
       if(user.pdfurl!= "0"){
         usersContainer.innerHTML += `
     
-    <div class="card card-body mt-2 border-light" style="max-width: 450px;
+    <div class="card card-body mt-2 border-dark" style="max-width: 450px;
       max-height: 300px; overflow-y:auto; position: relative;">
       
-     <center><h3>${user.WantedJob}</h3></center>
+     <center>
+     <h3 style="margin:1rem 0; text-decoration: underline;" >${user.WantedJob}</h3>
+     </center>
         <div>
 
           <div class="row mt-2 mb-2">
@@ -32,14 +34,14 @@ import {
               <label for="description" class="job-label">
               <strong>ניסיון בתחום </strong>
               </label>
-              <p class="job-scope">${user.Exp}</p> 
+              <h5 class="job-scope">${user.Exp}</h5> 
             </div>
             
             <div class="col">
               <label for="description" class="job-label">
               <strong>ניסיון כללי </strong>
               </label>
-              <p class="job-scope">${user.GeneralExp}</p> 
+              <h5 class="job-scope">${user.GeneralExp}</h5> 
             </div>
 
           </div>
@@ -50,15 +52,14 @@ import {
               <label for="description" class="job-label">
               <strong> טלפון ליצירת קשר</strong>
               </label>
-              <p class="job-scope">${user.PhoneNumber}</p> 
+              <h5 class="job-scope">${user.PhoneNumber}</h5> 
             </div>
 
             <div class="col">
               <label for="description" class="job-label">
               <strong>שם העובד </strong>
               </label>
-              <p class="job-location">${user.FirstName + " " + user.LastName}</p> 
-            </div>
+              <h5 class="job-location">${user.FirstName + " " + user.LastName}</h5>
 
           </div>
 
@@ -68,14 +69,14 @@ import {
               <label for="description" class="job-label">
               <strong> גיל </strong>
               </label>
-              <p class="job-scope">${user.Age}</p> 
+              <h5 class="job-scope">${user.Age}</h5> 
             </div>
 
             <div class="col">
               <label for="description" class="job-label">
               <strong>מיקום העובד</strong>
               </label>
-              <p class="job-location">${user.Location}</p> 
+              <h5 class="job-location">${user.Location}</h5> 
             </div>
 
           </div>
@@ -101,10 +102,12 @@ import {
         else{ //if user does not have pdf file - create normal card
           usersContainer.innerHTML += `
     
-        <div class="card card-body mt-2 border-light" style="max-width: 450px;
+        <div class="card card-body mt-2 border-dark" style="max-width: 450px;
             max-height: 300px; overflow-y:auto; position: relative;">
       
-              <center><h3>${user.WantedJob}</h3></center>
+              <center>
+              <h3  style="margin:1rem 0; text-decoration: underline;" >${user.WantedJob}</h3>
+              </center>
           <div>
 
               <div class="row mt-2 mb-2">
@@ -113,14 +116,14 @@ import {
                   <label for="description" class="job-label">
                   <strong>ניסיון בתחום </strong>
                   </label>
-                  <p class="job-scope">${user.Exp}</p> 
+                  <h5 class="job-scope">${user.Exp}</h5> 
                 </div>
               
                 <div class="col">
                   <label for="description" class="job-label">
                   <strong>ניסיון כללי </strong>
                   </label>
-                  <p class="job-scope">${user.GeneralExp}</p> 
+                  <h5 class="job-scope">${user.GeneralExp}</h5> 
                 </div>
 
               </div>
@@ -131,14 +134,14 @@ import {
                   <label for="description" class="job-label">
                   <strong> טלפון ליצירת קשר</strong>
                   </label>
-                  <p class="job-scope">${user.PhoneNumber}</p> 
+                  <h5 class="job-scope">${user.PhoneNumber}</h5> 
                 </div>
 
                 <div class="col">
                   <label for="description" class="job-label">
                   <strong>שם העובד </strong>
                   </label>
-                  <p class="job-location">${user.FirstName + " " + user.LastName}</p> 
+                  <h5 class="job-location">${user.FirstName + " " + user.LastName}</h5> 
                 </div>
               </div>
 
@@ -148,14 +151,14 @@ import {
                   <label for="description" class="job-label">
                   <strong> גיל </strong>
                   </label>
-                  <p class="job-scope">${user.Age}</p> 
+                  <h5 class="job-scope">${user.Age}</h5> 
                 </div>
 
                 <div class="col">
                   <label for="description" class="job-label">
                   <strong>מיקום העובד</strong>
                   </label>
-                  <p class="job-location">${user.Location}</p> 
+                  <h5 class="job-location">${user.Location}</h5> 
                 </div>
 
               </div>
