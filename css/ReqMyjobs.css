@@ -1,0 +1,56 @@
+
+  .card-body{
+      background: #ffffff;
+      border-radius: 25px;
+  }
+  
+body {
+    font-family: sans-serif;
+    
+    
+  }
+  h1 {
+    text-align: center;
+  }
+ /* ul {
+    list-style-type: square;
+    
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: right;
+  }*/
+ 
+
+  .jobless-img{
+    width: 5%;
+    float:right;
+    margin: auto;
+    background-image:url("index.html");
+  }
+  
+  .container-fluid
+  {
+    padding: 0 15%;
+    margin: 0 30%;
+  }
+
+input{
+    text-align: right;
+}
+textarea{
+  text-align: right;
+}
+form{
+  text-align: right;
+}
+a:link:hover,a:visited:hover{
+  color:rgb(47, 184, 127);
+  text-decoration:none;
+  }
+ul.dropdown-menu.show{
+  --bs-dropdown-link-hover-bg: #ffffff;
+
+}
+a.dropdown-item{
+  text-align: right;
+}

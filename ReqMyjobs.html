@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ניהול המשרות שלי</title>
+    <!-- BOOTSWATCH -->
+    <link rel="Website icon" type="img" href="images/jobless_photo-removebg-preview.png">
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/ReqMyjobs.css">
+     <!-- connection to js database file -->
+     <script src="./js/ReqMyjobs.js" type="module"></script>
+  </head>
+
+  <body class="bg-white">
+    <style>
+      body {
+        background-image: url('images/ddd (9).jpg');
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+      }
+  </style>
+    <section class="vh-100 gradient-custom" style="margin-bottom: 50px;">
+    <div class="container p-4">
+      <div class="row">
+
+        <!-- jobs List -->
+        <div class="col-md-6">
+          <div class="card border-dark">
+            <div class="card-body">
+              <h1 class="h4">המשרות שלי</h1>
+              <div class="col-md-6" id="jobs-container"></div>
+            </div>
+          </div>
+        </div>
+
+         <!-- ADD JOB -->
+        <div class="col-md-6">
+          <div class="card border-dark">
+            <div class="card-body">
+              <h1 class="h4">פרסום משרה חדשה</h1>
+                 <!-- שם חברה - תפקיד -->
+              <form id="myjobs-form">
+                <label for="title">: שם החברה</label>
+                <input
+                  type="text"
+                  id="job-title"
+                  class="form-control mb-3"
+                  class="My First Title"
+                  placeholder="שם החברה"
+                  autofocus
+                />
+                 <!-- תיאור תפקיד -->  
+                <label for="description">: תיאור המשרה</label>
+                <textarea
+                  id="job-description"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder="תיאור התפקיד"
+                ></textarea>
+                <!--  דרום/מרכז/צפון   מיקום-->
+         
+              
+                  <div class="form-outline"> 
+                    
+                    <label for="title" class="form-label">מיקום המשרה</label>
+                    <select class="form-select" id="job-location" style="text-align: right;" required>
+                      <option value="">מיקום המשרה</option>
+                      <option style="text-align: right;">דרום</option>
+                      <option style="text-align: right;">מרכז</option>
+                      <option style="text-align: right;">צפון</option>
+                    </select>
+                      
+                  </div>
+                  
+                <!-- היקף המשרה  -->  
+                <label for="description">: היקף המשרה</label>
+                <textarea
+                  id="job-scope"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder="משרה חלקית/מלאה ופרטים נוספים"
+                ></textarea>
+                <!-- דרישות התפקיד  -->  
+                <label for="description"> : דרישות המשרה</label>
+                <textarea
+                  id="job-standarts"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder="דרישות התפקיד"
+                ></textarea>
+                <center>
+                  <button class="btn btn-success" id="btn-job-form">פרסום משרה</button>
+                  <button onclick="location.href = 'index.html';" type="button" class="btn btn-primary">חזרה לדף הבית</button> 
+
+                </center>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </body>
+</html>
