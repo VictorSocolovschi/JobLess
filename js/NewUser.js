@@ -19,11 +19,11 @@ import {
     const UserPassword = document.getElementById("UserPassword").value;
     const UserAge = document.getElementById("UserAge").value;
     const UserLocation = document.getElementById("UserLocation").value;
-  
     const UserPhoneNumber = document.getElementById("UserPhoneNumber").value;
     const UserWantedJob = document.getElementById("UserWantedJob").value;
     const UserExp = document.getElementById("UserExp").value;
     const UserGeneralExp = document.getElementById("UserGeneralExp").value;
+    const Userpub = document.getElementById("newUserpub").value;
     var pdfurl= "0";
     var infocount = 0;
 
@@ -52,12 +52,12 @@ import {
     else{
   
       // if data filled proprotly it will send by this function to the data base.
-      sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl,infocount);
+      sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl,infocount,Userpub);
     }
     
   });
 
-  function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl,infocount)
+  function sendData(UserFirstName,UserLastName,UserEmail,UserPassword,UserAge,UserLocation,UserPhoneNumber,UserWantedJob,UserExp,UserGeneralExp,pdfurl,infocount,Userpub)
     {
       //data will be checked for Authentication with fire base.
             try {
@@ -73,7 +73,8 @@ import {
                   UserExp,
                   UserGeneralExp,
                   pdfurl,
-                  infocount
+                  infocount,
+                  Userpub
                 );
       
             userForm.reset();

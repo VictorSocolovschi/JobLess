@@ -32,12 +32,12 @@ export var userdoc="0";
 
 
 //save new user function
-export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount) =>
+export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount,Publish) =>
 {createUserWithEmailAndPassword(auth, email, Password)
   .then((userCredential) => {
     //user signed up
     const user = userCredential.user;
-    addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount});
+    addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount,Publish});
     window.alert("משתמש נרשם בהצלחה!");
     
   })
