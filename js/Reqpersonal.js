@@ -11,7 +11,7 @@ onGetReqUsers((querySnapshot) => {
         const user = doc.data();
         //if logged in user generate pdf by info
     if(user.email == loggedinmail){
-     texttitle +='דוח מעכב אישי';
+     texttitle +='דוח מעקב אישי';
      minititle +="שלום"+ " " + user.firstname + " " + user.lastname ;
     }})});
 //getting data from jobs
