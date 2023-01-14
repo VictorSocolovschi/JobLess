@@ -16,6 +16,7 @@ jest.mock('./functionTotest.js', () => {
       expect(functionTotest.convertToLowerCase("HELLO")).toEqual("hello");
       expect(functionTotest.convertToLowerCase("WorlD")).toEqual("world");
     });
+    
     test('convertToLowerCase - empty string input', () => {
       const functionTotest = require('./functionTotest');
       functionTotest.convertToLowerCase.mockImplementation(string => string.toLowerCase());
