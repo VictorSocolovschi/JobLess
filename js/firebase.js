@@ -32,12 +32,12 @@ export var userdoc="0";
 
 
 //save new user function
-export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount) =>
+export const saveUser = (FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount,Publish) =>
 {createUserWithEmailAndPassword(auth, email, Password)
   .then((userCredential) => {
     //user signed up
     const user = userCredential.user;
-    addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount});
+    addDoc(collection(db, "users" ), { FirstName,LastName,email,Password,Age,Location,PhoneNumber,WantedJob,Exp,GeneralExp, pdfurl,infocount,Publish});
     window.alert("משתמש נרשם בהצלחה!");
     
   })
@@ -126,14 +126,14 @@ export const signedinfunc = () =>
 
     userkind();  
 
-    var psbu= document.getElementById("navbuttons");
+    var psbu= document.getElementById("navbarCollapse");
     psbu.innerHTML +=`
-    <button class="btn btn-danger btn-logout">
+    <button class="btn btn-danger btn-logout" style="margin-left: 20px;">
     התנתק
     </button> `;
 
 //auth singout button
-const indexnav = document.getElementById("navbuttons");
+const indexnav = document.getElementById("navbarCollapse");
 const btnslogout = indexnav.querySelectorAll(".btn-logout");
 btnslogout.forEach((btn) =>
   btn.addEventListener("click", async (e) => {

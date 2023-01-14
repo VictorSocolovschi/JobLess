@@ -56,7 +56,7 @@ import {
             infoForm["UserPhoneNumber"].value = data.PhoneNumber;
             infoForm["UserExp"].value = data.Exp;
             infoForm["UserGeneralExp"].value = data.GeneralExp;
-
+            infoForm["Userpub"].value = data.Publish;
             editStatus = true;
             id = doc.id;
             infoForm["btn-info-form"].innerText = "עדכן";//creating update button
@@ -82,7 +82,7 @@ infoForm.addEventListener("submit", async (e) => {
     const UserExp = document.getElementById("UserExp").value;
     const UserWantedJob = document.getElementById("UserWantedJob").value;
     const UserGeneralExp = document.getElementById("UserGeneralExp").value;
-    
+    const Userpub = document.getElementById("Userpub").value;
     try {
       if (!editStatus) {
         
@@ -99,6 +99,7 @@ infoForm.addEventListener("submit", async (e) => {
             GeneralExp:UserGeneralExp,
             WantedJob:UserWantedJob,
             Exp:UserExp,
+            Publish:Userpub,
 
         });//seding new updated user data
    

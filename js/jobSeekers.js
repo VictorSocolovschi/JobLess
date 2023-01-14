@@ -15,7 +15,7 @@ import {
 
       querySnapshot.forEach((doc) => {
         const user = doc.data();
-
+        if(user.Publish=="כן"){
       //if user has pdf file - create card with pdf download link
       if(user.pdfurl!= "0"){
         usersContainer.innerHTML += `
@@ -176,6 +176,7 @@ import {
           `;
 
         }
+      }
         const btngeturl = usersContainer.querySelectorAll(".btn-url");
         
         //initialising user pdf button - counting pdf downloads

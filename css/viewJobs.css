@@ -215,4 +215,6 @@ a.dropdown-item{
     height: 100%;
     width: 100%;
 }
-
+.dropdown-item{
+  margin-left: 0px;
+}
