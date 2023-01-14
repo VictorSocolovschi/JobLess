@@ -46,7 +46,7 @@
               </li>
           </ul>
           
-          <button onclick="location.href = 'index.html';" type="button" class="btn btn-success">חזרה לדף הבית</button>
+          <button onclick="location.href = 'index.html';" type="button" class="btn btn-primary">חזרה לדף הבית</button>
 
         </div>
       </div>
@@ -57,7 +57,7 @@
   <body>
     <style>
       body {
-        background-image: url('images/ddd\ \(9\).jpg');
+        background-image: url('images/3d-twisted-backgrounds-2021-09-02-12-57-04-utc/PNG/07.png');
         background-size: cover;
         height: 100%;
         width: 100%;
@@ -66,7 +66,7 @@
     <div class="top-container" style="margin-top: 4rem;">
       <div id="userpersonal">
         
-        <a class="btn btn-lg btn-light" onclick="location.href = 'Userinfo.html';" id="Userinfo-button" type="button" style="width: 80%;">עדכון פרטי משתמש</a>
+        <a class="btn btn-lg btn-light" onclick="location.href = 'Userinfo.html';" id="Userinfo-button" type="button" style="width: 80%; border:1rem;">עדכון פרטי משתמש</a>
         <a class="btn btn-lg btn-light" onclick="location.href = 'viewJobs.html';" style="width: 80%; margin-top: 2rem;">חיפוש משרה</a>
         <button  class="btn btn-lg btn-light"  id="generate-pdf" style="width: 80%; margin-top: 2rem;">דוח מעקב</button>
         
@@ -82,17 +82,15 @@
         <center> 
           <progress id="progress_bar" value="0" max="100" style="margin: 1rem 0;"></progress>
           <img src="" alt="" id="image">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-body" style="width: 100%;">
+            <div class="card"  style="width: 50%;">
+              <div class="card-body" style="width: 100%; margin: 2rem 0rem;">
                 <center>
                   <h1 class="h4" style="margin: 1rem 0;">משרות מועדפות</h1>
                 </center>
-                <div class="col-md-6" id="jobs-favorits"></div>
+                <div class="row-md-6" id="jobs-favorits"></div>
                 
               </div>
             </div>
-          </div>
         </center>
         <script src="js/userPersonal.js" type="text/javascript"></script>
         
