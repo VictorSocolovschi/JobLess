@@ -380,7 +380,6 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           const doc = await getJob(e.target.dataset.id);
           const job = doc.data();
           const incontact = job.intrested.includes(loggedinmail);//check if mail already in favorits
-          
           if(!incontact){
           updateJob(doc.id,{intrested:job.intrested+" " + loggedinmail+ " " }) }//adding to contacts
           location.href="mailto:" + job.pubmail;

@@ -47,7 +47,10 @@ onGetJobs((querySnapshot) => {
 
     })});
 
-
+    const today = new Date();
+    var date = ""+ today.getDate() +"/" + (today.getMonth()+1) + "/"+  today.getFullYear();
+    
+var joblesstitle = "JobLess 4 U";   
 var infocount = 0;
 var minititle= "";
 var texttitle ="";
@@ -64,24 +67,26 @@ document.getElementById("generate-pdf").addEventListener("click", function(){
 
     pdf.setFontSize(28);
     pdf.text(125, 20, texttitle); 
-
+    pdf.text(25, 20, joblesstitle); 
     pdf.setFontSize(14); 
     pdf.text(135, 30, minititle); 
 
     pdf.setFontSize(12); 
-  
+    pdf.text(5,8,date);
 
     pdf.text(125, 40,"כמות הורדות לקורות החיים שלי: " + " " +  infocount);
 
-    pdf.text(150, 50,"משרות שאהבתי:");
+    pdf.text(150, 50,"משרות שאהבתה:");
     pdf.text(65, 50,"משרות המועדפות עלי:");
     
     pdf.text(125, 60,likeview);//liked jobs
 
     pdf.text(50, 60,favview);//favorit jobs
 
-pdf.save("myinfo.pdf");
+    pdf.text(5, 285,"לפרטים נוספים אנא צרו קשר איתנו:");
+    pdf.text(5, 290,"JobLessInfo@gmail.com");
 
+pdf.save("myinfo.pdf");
 });
 
 
