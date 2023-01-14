@@ -1,7 +1,7 @@
 // functionTotest.test.js
 jest.mock('./functionTotest.js', () => {
     return {
-      convertToLowerCase: jest.fn()
+      convertToLowerCase: jest.fn(),
     };
   });
   
@@ -39,3 +39,5 @@ jest.mock('./functionTotest.js', () => {
       expect(functionTotest.convertToLowerCase("already lowercase")).toEqual("already lowercase");
     });
   });
+
+
