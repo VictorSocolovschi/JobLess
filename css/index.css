@@ -1,5 +1,5 @@
 body{
-  color: #40514E;
+  color: #dceae7;
   /*Dark greeeish color for the body - most of the text*/
   margin: 0;
   top: 100px;
@@ -8,17 +8,6 @@ body{
   font-family: 'Montserrat',sans-serif;
 }
 
-/* fonts */
-
-
-/* hr 
-{
-  border: dotted #EAF6F6 6px;
-  border-bottom: none;
-  width: 4%;
-  margin: 100px 300px;
-
-} */
 
 a.dropdown-item{
   text-align: right;
@@ -32,8 +21,8 @@ p{
 }
 
 h1{
-  font-family: Arial;
-  color: #678983;
+  font-family: 'Montserrat',sans-serif;
+  color: #497694;
   text-align: center;
   line-height: 2;
 }
