@@ -1,4 +1,4 @@
-
+import * as convertToLowercase from './firebase.js'
 //main firebase unit testing - all new user functions
 
 
@@ -76,26 +76,27 @@ test("login function should sign in a user and return an alert message", async (
     expect(window.alert).toHaveBeenCalledWith("משתמש נכנס בהצלחה!");
     };
   });
+
+    
   
 
-  export const userKind = async (email) => {
-      const snapshot = await collection(db, "users").where("email", "==", email).get();
-      const user = snapshot.docs[0].data();
-      return user.kind;
-  }
-
-  test("getUserKind function should return the correct user kind", async () => {
+  test("convertToLowercase function should convert a string to lowercase", () => {
+    
     //Arrange
-    const email = "johndoe@example.com";
-    const expectedKind = "hr";
-  
+    const fun = convertToLowercase()
+    var inputString = "HELLO WORLD";
+    var expectedString = "hello world";
+
+
     //Act
-    const userKind = await userKind(email);
+    const result = convertToLowercase(inputString);
   
     //Assert
-    expect(userKind).toEqual(expectedKind);
+    expect(result).toEqual(expectedString);
 });
 
+
+ 
 
 
 /*
