@@ -360,7 +360,6 @@ export function addfile(){
   firebase.initializeApp(firebaseConfig);
   document.getElementById('file').addEventListener('change', (event) => {
     //creating file input in page
-
       const file = event.target.files[0];
       //uploading blank file to make storage in data base
       const file2 = new File([], "empty");
@@ -378,7 +377,6 @@ export function addfile(){
             alert("קורות החיים הועלו בהצלחה");
           }
       });
-
   //file uploaded successfuly
   urltodata(storageRef);
   var uploaded= document.getElementById("userpersonal");
@@ -401,15 +399,6 @@ function urltodata(storageRef)
     console.error(error);
   });
 }
-
-
-
-
-
-
-
-
-
 
 
 
