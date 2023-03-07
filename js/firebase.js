@@ -268,7 +268,7 @@ function navbar()
   
   var psbu= document.getElementById("navbuttons");
   psbu.innerHTML +=`
-<button onclick="location.href = 'signUpPage.html';" id="register" type="button" class="btn btn-success reg-btn" >הרשמה</button>
+<button onclick="location.href = 'SignUpPage.html';" id="register" type="button" class="btn btn-success reg-btn" >הרשמה</button>
 <button onclick="location.href = 'login.html';" id="login-button" type="button"  class="btn btn-primary reg-btn" style="margin-left: 20px;">משתמש קיים</button>`;
   
     
